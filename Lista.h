@@ -55,8 +55,13 @@ public:
     };
 
     //CONSTRUTORAS
-    Lista() {primeiro= nullptr; atual= nullptr;aux= nullptr;}
-    ~Lista() {primeiro= nullptr; atual= nullptr;aux= nullptr;}
+    Lista() {primeiro= nullptr; atual= nullptr;aux= nullptr; tamanho=0;}
+    ~Lista() {
+        limpaLista();
+        primeiro= nullptr;
+        atual= nullptr;
+        aux= nullptr;
+    }
 
     //INCLUIR NA LISTA
     bool includeElemento(TIPO* el);
@@ -67,7 +72,8 @@ public:
     Elemento<TIPO>* getAt();
 
     //REMOVE/RETORNA/LIMPA LISTA
-    TIPO* retornaElemento();
+    void popFront();
+    void popBack();
     bool removeElemento();
     void operator--();
     void limpaLista();
@@ -84,10 +90,7 @@ private:
 
 template<class TIPO>
 bool Lista<TIPO>::vazia() {
-    if (primeiro== nullptr){
-        return true;
-    }
-    return false;
+    return primeiro != nullptr;
 }
 
 template<class TIPO>
@@ -139,9 +142,35 @@ Elemento<TIPO> *Lista<TIPO>::getAt() {
 }
 
 //RETURN/REMOVE/ LIMPA LISTA
+
+//Remove um elemento do começo da lista
 template<class TIPO>
-TIPO *Lista<TIPO>::retornaElemento() {
-    return nullptr;
+void Lista<TIPO>::popFront() {
+    if(!vazia()){
+        aux = primeiro;
+        primeiro = primeiro->getProx();
+        delete aux;
+        aux= nullptr;
+        if(tamanho==1){
+            tamanho--;
+            atual = nullptr;
+        }
+    }
+}
+
+//remove uma elemento do começo da lista
+template<class TIPO>
+void Lista<TIPO>::popBack() {
+    if(!vazia()){
+        aux = atual;
+        atual = atual->getAnte();
+        delete aux;
+        aux = nullptr;
+        if(tamanho==1){
+            tamanho--;
+            primeiro = nullptr;
+        }
+    }
 }
 
 template<class TIPO>
