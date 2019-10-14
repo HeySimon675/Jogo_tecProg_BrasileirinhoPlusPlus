@@ -34,35 +34,52 @@ public:
     void gravaLista();
     void returnLista();
 
+private:
+    bool vazia();
+    bool adicionaPrimeiro(TIPO *el);
 };
+
+template<class TIPO>
+bool Lista<TIPO>::vazia() {
+    if (primeiro== nullptr){
+        return true;
+    }
+    return false;
+}
+
+template<class TIPO>
+bool Lista<TIPO>::adicionaPrimeiro(TIPO *el) {
+    primeiro=aux;
+    atual=aux;
+    aux->setProx(nullptr);
+    aux->setAnte(nullptr);   //Como é o primeiro elemento ele não possui proximo nem anterior
+    aux= nullptr;
+    return true;
+}
+
 //INCLUIR
 template<class TIPO>
 bool Lista<TIPO>::includeElemento(TIPO *el){
     aux = new Elemento<TIPO>(el); //criando um Elemento com o TIPO especificado, para por na lista
-    if (primeiro== nullptr){    //lista vazia
-        primeiro=aux;
-        atual=aux;
-        aux->setProx(nullptr);
-        aux->setAnte(nullptr);   //Como é o primeiro elemento ele não possui proximo nem anterior
-        aux= nullptr;
-
-        return true;
+    if (vazia()){
+        return adicionaPrimeiro(el);
     }else{// a lista possuí 1+ elementos
-            aux= new Elemento<TIPO>(el);
-            aux->setAnte(atual);
-            atual->setProx(aux);
-            aux->setProx(nullptr);
-            atual=aux;
-            aux=nullptr;
-            return true;
+        aux= new Elemento<TIPO>(el);
+        aux->setAnte(atual);
+        atual->setProx(aux);
+        aux->setProx(nullptr);
+        atual=aux;
+        aux=nullptr;
+        return true;
     }
 }
 
 template<class TIPO>
 void Lista<TIPO>::operator=(TIPO *el) {
     if(!includeElemento(el)){
-        //TODO WARNING
+        //TODO
         // Criar aviso para elemento não incluido na lista
+
     }
 }
 

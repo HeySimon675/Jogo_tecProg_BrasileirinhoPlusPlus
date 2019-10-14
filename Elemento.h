@@ -19,8 +19,8 @@ public:
     Elemento<TIPO> *getAnte();
     void setProx(Elemento<TIPO>* px);
     void setAnte(Elemento<TIPO>* at);
-    void setInfo(TIPO* info);
-    TIPO* getInfo();
+    void setInfo(TIPO& info);
+    TIPO& getInfo();
 };
 
 template<class TIPO>
@@ -51,11 +51,11 @@ void Elemento<TIPO>::setAnte(Elemento<TIPO> *at) {
 }
 
 template<class TIPO>
-void Elemento<TIPO>::setInfo(TIPO *info) {
+void Elemento<TIPO>::setInfo(TIPO& info) {
     pInfo=info;
 }
 
 template<class TIPO>
-TIPO *Elemento<TIPO>::getInfo() {
+TIPO& Elemento<TIPO>::getInfo() {
     return pInfo;
 }
