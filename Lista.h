@@ -10,7 +10,50 @@ private:
     Elemento<TIPO>* primeiro;
     Elemento<TIPO>* atual;
     Elemento<TIPO>* aux;
+    unsigned int tamanho;
 public:
+    //Classe Iterator
+    //A classe Iterator foi construida com a ajuda do Ex aluno Adriano Paulik
+    class Iterator{
+    public:
+        friend class Lista<TIPO>;   //TODO pesquisar sobre o que é friend class
+        typedef TIPO& referencia;
+        typedef Elemento<TIPO>* ponteiro;
+    private:
+        ponteiro _elemento;
+    public:
+        Iterator(){_elemento= nullptr;}
+        Iterator(ponteiro p){_elemento= p;}
+
+        referencia operator*(){
+            return  _elemento->getInfo();
+        }
+
+        referencia operator->(){
+            return (*(*this));
+        }
+
+        referencia& operator++(){
+            if(_elemento){
+                _elemento = _elemento->getProx();
+            }
+            return *this;
+        }
+        referencia& operator--(){
+            if(_elemento){
+                _elemento = _elemento->getAnte();
+            }
+            return *this;
+        }
+        bool operator!=(const Iterator& iterator)const {
+            return (_elemento != iterator._elemento);
+        }
+
+        bool operator==(const Iterator iterator) const{
+            return (_elemento == iterator._elemento);
+        }
+    };
+
     //CONSTRUTORAS
     Lista() {primeiro= nullptr; atual= nullptr;aux= nullptr;}
     ~Lista() {primeiro= nullptr; atual= nullptr;aux= nullptr;}
