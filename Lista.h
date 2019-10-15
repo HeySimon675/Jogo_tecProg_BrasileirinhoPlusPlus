@@ -74,7 +74,6 @@ public:
     //REMOVE/RETORNA/LIMPA LISTA
     void popFront();
     void popBack();
-    bool removeElemento();
     void operator--();
     void limpaLista();
 
@@ -173,10 +172,6 @@ void Lista<TIPO>::popBack() {
     }
 }
 
-template<class TIPO>
-bool Lista<TIPO>::removeElemento() {
-    return false;
-}
 
 template<class TIPO>
 void Lista<TIPO>::operator--() {
@@ -185,11 +180,14 @@ void Lista<TIPO>::operator--() {
 
 template<class TIPO>
 void Lista<TIPO>::limpaLista() {
-    //Limpa a lista alocada em memoria, não alterando a ja armazenada em arquivo
-    //construir a função de modo que se limpar a lista e pedir para gravar vai "esvaziar" a lista em arquivo.
+    while (!vazia()){
+        popFront();
+    }
+    primeiro = nullptr;
 }
 
 //NÃO IMPLEMENTADAS
+//todo O objetivo dessas funções é gravar os Elementos da lista em arquivos .txt, tornando assim o savegame possivel
 template<class TIPO>
 void Lista<TIPO>::inicializaLista() {
     //A função inicializa a lista deve buscar elementos ja criados da lista em questão nos arquivos .txt
