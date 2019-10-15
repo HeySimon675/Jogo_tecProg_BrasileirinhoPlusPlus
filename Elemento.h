@@ -15,11 +15,11 @@ public:
     Elemento() {prox= nullptr; ante= nullptr; pInfo= nullptr;}
     Elemento(TIPO* el);
     ~Elemento() {prox= nullptr; ante= nullptr; pInfo= nullptr;}
-    Elemento<TIPO> *getProx();
-    Elemento<TIPO> *getAnte();
+    Elemento<TIPO> *getProx() const;
+    Elemento<TIPO> *getAnte() const;
     void setProx(Elemento<TIPO>* px);
     void setAnte(Elemento<TIPO>* at);
-    void setInfo(TIPO& info);
+    void setInfo(const TIPO& info);
     TIPO& getInfo();
 };
 
@@ -31,12 +31,12 @@ Elemento<TIPO>::Elemento(TIPO *el) {
 }
 
 template<class TIPO>
-Elemento<TIPO> *Elemento<TIPO>::getProx() {
+Elemento<TIPO> *Elemento<TIPO>::getProx() const {
     return prox;
 }
 
 template<class TIPO>
-Elemento<TIPO> *Elemento<TIPO>::getAnte() {
+Elemento<TIPO> *Elemento<TIPO>::getAnte() const {
     return ante;
 }
 
@@ -51,7 +51,7 @@ void Elemento<TIPO>::setAnte(Elemento<TIPO> *at) {
 }
 
 template<class TIPO>
-void Elemento<TIPO>::setInfo(TIPO& info) {
+void Elemento<TIPO>::setInfo(const TIPO& info) {
     pInfo=info;
 }
 
