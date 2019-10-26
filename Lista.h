@@ -77,6 +77,42 @@ public:
     void operator--();
     void limpaLista();
 
+    //FUNÇÕES DE ITERATOR
+    Iterator begin (){
+        return Iterator(primeiro);
+    }
+
+    Iterator end(){
+        return Iterator(atual);
+    }
+
+    void apaga(Iterator i){
+        if( i == begin()){
+             popFront();
+        }else if(i._elemento == end()){
+            popBack();
+        }else{
+            aux = i._elemento;
+            while(aux->getInfo() != i._elemento->getInfo()){
+                aux= aux->getProx();
+            }
+            aux->getAnte()->setProx(aux->getProx());
+            aux->getProx()->setAnte(aux->getAnte());
+            delete aux;
+            tamanho--;
+        }
+    }
+    bool remover(TIPO* pObjeto){
+        for (Iterator i = begin();i!=end();i++){
+            if((*i)==pObjeto){
+                apaga(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     //FUNÇÕES NAO IMPLEMENTADAS
     void inicializaLista();
     void gravaLista();
@@ -186,8 +222,10 @@ void Lista<TIPO>::limpaLista() {
     primeiro = nullptr;
 }
 
+
 //NÃO IMPLEMENTADAS
 //todo O objetivo dessas funções é gravar os Elementos da lista em arquivos .txt, tornando assim o savegame possivel
+// talvez seja necessario criar uma lista geral de entidades, para poder salvar e carregar o jogo.
 template<class TIPO>
 void Lista<TIPO>::inicializaLista() {
     //A função inicializa a lista deve buscar elementos ja criados da lista em questão nos arquivos .txt
