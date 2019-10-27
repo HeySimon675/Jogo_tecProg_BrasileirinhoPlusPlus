@@ -9,8 +9,8 @@ GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
 //Variaveis Static//
 
 //altura e largura da Window
-const unsigned int GerenciadorGrafico::larguraJanela = 200;
-const unsigned int GerenciadorGrafico::alturaJanela = 200;
+const unsigned int GerenciadorGrafico::larguraJanela = 800;
+const unsigned int GerenciadorGrafico::alturaJanela = 600;
 //Tamanho da Window, usado pela View
 const Vector2f GerenciadorGrafico::WindowSize(larguraJanela,alturaJanela);
 const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
@@ -73,12 +73,12 @@ void GerenciadorGrafico::carregaFontes() {
 //Loop
 void GerenciadorGrafico::executar() {
     //TESTE//
-    sf::CircleShape shape(30.f);
+    sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
     //FIM TESTE//
     while (this->isOpen())
     {
-        sf::Event event;
+        Event event;
         while (this->pollEvent(event))
         {
             //fecha a janela
