@@ -4,24 +4,25 @@
 
 #include "GerenciadorGrafico.h"
 
+GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
 //--------------------------------------------------------------------------------------------------------------------//
 //Variaveis Static//
 
 //altura e largura da Window
-const unsigned int larguraJanela = 200;
-const unsigned int alturaJanela = 200;
+const unsigned int GerenciadorGrafico::larguraJanela = 200;
+const unsigned int GerenciadorGrafico::alturaJanela = 200;
 //Tamanho da Window, usado pela View
-const Vector2f WindowSize(larguraJanela,alturaJanela);
-const Vector2f center(0.0f,0.0f);
+const Vector2f GerenciadorGrafico::WindowSize(larguraJanela,alturaJanela);
+const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
 
 //Titulo Da janela e VideoMode da janela
-const String titulo("SFML_The_Game");
-const VideoMode videoMode(larguraJanela,alturaJanela);
+const String GerenciadorGrafico::titulo("SFML_The_Game");
+
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM Variaveis Static//
 
 //Construtora Privada
-GerenciadorGrafico::GerenciadorGrafico() : RenderWindow(videoMode,titulo){
+GerenciadorGrafico::GerenciadorGrafico() : RenderWindow(VideoMode(larguraJanela,alturaJanela),titulo){
     inicializa();
     this->setFramerateLimit(60);
 }//fim da construtora
@@ -37,6 +38,9 @@ GerenciadorGrafico::~GerenciadorGrafico() {
 
 //singleton
 GerenciadorGrafico *GerenciadorGrafico::getGerGrafico() {
+    if(!_instance){
+        _instance = new GerenciadorGrafico();
+    }
     return _instance;
 }
 
@@ -68,6 +72,10 @@ void GerenciadorGrafico::carregaFontes() {
 //--------------------------------------------------------------------------------------------------------------------//
 //Loop
 void GerenciadorGrafico::executar() {
+    //TESTE//
+    sf::CircleShape shape(30.f);
+    shape.setFillColor(sf::Color::Green);
+    //FIM TESTE//
     while (this->isOpen())
     {
         sf::Event event;
@@ -77,6 +85,11 @@ void GerenciadorGrafico::executar() {
             if (event.type == sf::Event::Closed)
                 this->close();
         }
+        // teste//
+        this->clear();
+        this->draw(shape);
+        this->display();
+
     }
 
 }

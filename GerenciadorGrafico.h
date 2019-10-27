@@ -21,13 +21,14 @@ namespace gerenciadores {
 //Gerenciador Grafico
 
 
-class GerenciadorGrafico : public RenderWindow {
+typedef class GerenciadorGrafico : public RenderWindow {
 private:
     View* pView;
     vector<Texture*> _vTexture;
     static GerenciadorGrafico* _instance;   //Singleton
     GerenciadorGrafico();
 public:
+
     ~GerenciadorGrafico();
     static GerenciadorGrafico* getGerGrafico();     //implementação do Singleton
     void executar();
@@ -48,12 +49,11 @@ public:
     static const unsigned int alturaJanela;
     static const Vector2f WindowSize;
     static const String titulo;
-    static const VideoMode videoMode;
     static const Vector2f center;
     //View //
 
 
 
-};
+}gGrafico;
 
 
