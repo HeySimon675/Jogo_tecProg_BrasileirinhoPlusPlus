@@ -1,11 +1,11 @@
 #include <iostream>
-#include "GerenciadorGrafico.h"
+#include "Jogo.h"
 
 
 int main()
 {
 
-    GerenciadorGrafico* g = GerenciadorGrafico::getGerGrafico();
-    g->executar();
+    Jogo* SFML_The_Game = Jogo::getJogo();
+    SFML_The_Game->executar();
     return 0;
 }
