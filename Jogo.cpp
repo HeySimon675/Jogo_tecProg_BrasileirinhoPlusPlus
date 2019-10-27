@@ -43,9 +43,8 @@ void Jogo::executar() {
 }
 
 void Jogo::update() {
-
+    //ira atualizar as posições das Entidades dependendo de seu State
 }
 
 void Jogo::draw() {
-
 }

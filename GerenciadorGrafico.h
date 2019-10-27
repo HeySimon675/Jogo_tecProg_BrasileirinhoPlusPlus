@@ -26,14 +26,25 @@ private:
     View* pView;
     vector<Texture*> _vTexture;
     static GerenciadorGrafico* _instance;   //Singleton
+    Event event;
+//contrutora privada//
     GerenciadorGrafico();
 public:
 
     ~GerenciadorGrafico();
     static GerenciadorGrafico* getGerGrafico();     //implementação do Singleton
+
+//--------------------------------------------------------------------------------------------------------------------//
+//loop//
+public:
     void executar();
+private:
+    void updateSFML();
+    void drawEntidades();
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Inicializadoras//
+public:
     void inicializa();
 private:
     void inicializaView();

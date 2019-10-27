@@ -13,6 +13,7 @@
 
 class Jogo {
 private:
+//atributos//
     //instancia//
     static Jogo* _instance;
     //gerenciadores//
@@ -22,12 +23,14 @@ private:
     float deltaTime;
     //Players
 
+//metodos//
     //construtora privada//
     Jogo();
 
     //inicializadores//
     void inicializa();
 public:
+//metodos//
     //singleton//
     static Jogo* getJogo();
     //destrutora//

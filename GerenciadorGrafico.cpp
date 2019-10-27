@@ -70,7 +70,26 @@ void GerenciadorGrafico::carregaFontes() {
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Loop
+//Loop//
+
+//Update SFML//
+void GerenciadorGrafico::updateSFML() {
+    while(this->pollEvent(event)){
+        if(event.type == Event::Closed){
+            this->close();
+        }
+    }
+}
+//loop draw
+void GerenciadorGrafico::drawEntidades() {
+    this->clear();
+    //todo
+    // a função ficará encarregada de percorrer a lista verificando quais entidades estão marcadas com ative, assim
+    // podendo manter somente uma lista de entidades, então as fases quando chamadas pelo state, iram percorrer a lista
+    // alterando bool active de todas as entidades pertinentes, para que o gerenciador grafico saiba o que desenhar
+}
+
+//Executar//
 void GerenciadorGrafico::executar() {
     //TESTE//
     sf::CircleShape shape(100.f);
@@ -78,15 +97,10 @@ void GerenciadorGrafico::executar() {
     //FIM TESTE//
     while (this->isOpen())
     {
-        Event event;
-        while (this->pollEvent(event))
-        {
-            //fecha a janela
-            if (event.type == sf::Event::Closed)
-                this->close();
-        }
+        updateSFML();
+        drawEntidades();
         // teste//
-        this->clear();
+
         this->draw(shape);
         this->display();
 
