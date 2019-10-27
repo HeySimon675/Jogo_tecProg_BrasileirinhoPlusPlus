@@ -1,27 +1,35 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 27/10/19.
-#pragma once
+
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
-#include "GerenciadorGrafico.h"
+#include "ListaEntidades.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Namespace's
-using namespace sf;
+//Contrutora/Destrutora//
+ListaEntidades::ListaEntidades() {
+
+}
+
+ListaEntidades::~ListaEntidades() {
+
+}
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Classe Entidade//
+//Sets/Gets//
+Lista<Entidade> *ListaEntidades::getLista() {
+    return nullptr;
+}
 
-class Entidade {
-private:
-    Vector2f posicao;
+//--------------------------------------------------------------------------------------------------------------------//
+//metodos de loop//
+void ListaEntidades::draw() {
 
-public:
-    Entidade();
-    ~Entidade();
+}
 
-//Metodos de loop//
-    void update();
-    void draw();
-};
+void ListaEntidades::update() {
+
+}
+

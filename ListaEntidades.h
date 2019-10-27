@@ -1,32 +1,27 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 26/10/19.
+//Created by simao on 27/10/19.
 #pragma once
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Header//
+#include "Lista.h"
 #include "Entidade.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Classe Entidade//
+//Lista especializada para Entidades//
 
-//--------------------------------------------------------------------------------------------------------------------//
-//contrutora/Destrutora//
+class ListaEntidades {
+private:
+    Lista<Entidade> lista;
+    Lista<Entidade>::Iterator i;
 
-Entidade::Entidade() {
+public:
+    ListaEntidades();
+    ~ListaEntidades();
+    Lista<Entidade>* getLista();
+    void draw();
+    void update();
 
-}
-
-Entidade::~Entidade() {
-
-}
-
-//--------------------------------------------------------------------------------------------------------------------//
-//Metodos de loop//
-
-void Entidade::update() {
-
-}
-
-void Entidade::draw() {
-
-}
-
+};
 
