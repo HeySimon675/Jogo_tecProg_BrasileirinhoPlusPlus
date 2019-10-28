@@ -20,7 +20,8 @@ public:
     void setProx(Elemento<TIPO>* px);
     void setAnte(Elemento<TIPO>* at);
     void setInfo(const TIPO& info);
-    TIPO& getInfo();
+    TIPO* getInfo();
+    TIPO* operator*(Elemento<TIPO>* aux);
 };
 
 template<class TIPO>
@@ -56,6 +57,11 @@ void Elemento<TIPO>::setInfo(const TIPO& info) {
 }
 
 template<class TIPO>
-TIPO& Elemento<TIPO>::getInfo() {
+TIPO* Elemento<TIPO>::getInfo() {
     return pInfo;
+}
+
+template<class TIPO>
+TIPO *Elemento<TIPO>::operator*(Elemento<TIPO> *aux) {
+    return getInfo();
 }

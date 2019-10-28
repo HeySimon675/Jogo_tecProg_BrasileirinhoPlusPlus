@@ -15,13 +15,18 @@ class ListaEntidades {
 private:
     Lista<Entidade> lista;
     Lista<Entidade>::Iterator i;
+    Elemento<Entidade>* aux;
 
 public:
     ListaEntidades();
     ~ListaEntidades();
     Lista<Entidade>* getLista();
+//--------------------------------------------------------------------------------------------------------------------//
+//Metodos de loop//
+private:
     void draw();
     void update();
-
+public:
+    void percorrer();
 };
 

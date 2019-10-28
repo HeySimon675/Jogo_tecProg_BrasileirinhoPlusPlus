@@ -20,16 +20,28 @@ ListaEntidades::~ListaEntidades() {
 //--------------------------------------------------------------------------------------------------------------------//
 //Sets/Gets//
 Lista<Entidade> *ListaEntidades::getLista() {
-    return nullptr;
+    return &lista;
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos de loop//
 void ListaEntidades::draw() {
-
+    //chamará o metodo draw do elemento apontado por i
+    aux->getInfo()->draw();
 }
 
 void ListaEntidades::update() {
+    //chamará o metodo update do elemento apontado por i
+    aux->getInfo()->update();
+}
 
+void ListaEntidades::percorrer() {
+    aux = lista.getPrim();
+while (aux != lista.getAt()){
+        draw();
+        update();
+        aux = aux->getProx();
+    }
+    aux = nullptr;
 }
 
