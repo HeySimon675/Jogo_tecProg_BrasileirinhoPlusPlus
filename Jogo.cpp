@@ -39,12 +39,28 @@ void Jogo::inicializa() {
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos principais//
 void Jogo::executar() {
-    g->executar();
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
+    //FIM TESTE//
+    while (g->isOpen())
+    {
+        g->executar();
+        // teste//
+
+        g->draw(shape);
+        g->display();
+
+    }
+
 }
 
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
 void Jogo::update() {
     //ira atualizar as posições das Entidades dependendo de seu State
 }
 
 void Jogo::draw() {
 }
+//--------------------------------------------------------------------------------------------------------------------//

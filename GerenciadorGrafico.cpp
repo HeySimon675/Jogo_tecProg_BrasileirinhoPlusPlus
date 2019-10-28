@@ -80,34 +80,20 @@ void GerenciadorGrafico::updateSFML() {
         }
     }
 }
-//loop draw
+//--------------------------------------------------------------------------------------------------------------------//
+//Função obsoleta nesse estagio do desenvolvimento
 void GerenciadorGrafico::drawEntidades() {
-    this->clear();
-    //todo
-    // a função ficará encarregada de percorrer a lista verificando quais entidades estão marcadas com ative, assim
-    // podendo manter somente uma lista de entidades, então as fases quando chamadas pelo state, iram percorrer a lista
-    // alterando bool active de todas as entidades pertinentes, para que o gerenciador grafico saiba o que desenhar
-}
 
+}
+//--------------------------------------------------------------------------------------------------------------------//
+
+//--------------------------------------------------------------------------------------------------------------------//
 //Executar//
 void GerenciadorGrafico::executar() {
-    //TESTE//
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-    //FIM TESTE//
-    while (this->isOpen())
-    {
-        updateSFML();
-        drawEntidades();
-        // teste//
-
-        this->draw(shape);
-        this->display();
-
-    }
-
+    updateSFML();
+    this->clear();
 }
-
+//--------------------------------------------------------------------------------------------------------------------//
 
 
 

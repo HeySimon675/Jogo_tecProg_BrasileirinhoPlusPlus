@@ -6,6 +6,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "GerenciadorGrafico.h"
+#include "ListaEntidades.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -14,8 +15,8 @@
 class Jogo {
 private:
 //atributos//
-    //instancia//
-    static Jogo* _instance;
+    static Jogo* _instance;     //instancia
+    ListaEntidades lEntidades;  //Lista Principal de Entidades
     //gerenciadores//
     GerenciadorGrafico* g;
 
