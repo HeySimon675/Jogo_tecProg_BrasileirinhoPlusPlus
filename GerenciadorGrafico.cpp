@@ -23,7 +23,7 @@ const String GerenciadorGrafico::titulo("SFML_The_Game");
 //FIM Variaveis Static//
 
 //Construtora Privada
-GerenciadorGrafico::GerenciadorGrafico() : RenderWindow(VideoMode(larguraJanela,alturaJanela),titulo){
+GerenciadorGrafico::GerenciadorGrafico(){
     inicializa();
 }//fim da construtora
 

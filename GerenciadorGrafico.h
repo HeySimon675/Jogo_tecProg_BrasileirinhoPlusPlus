@@ -21,7 +21,7 @@ namespace gerenciadores {
 //Gerenciador Grafico
 
 
-typedef class GerenciadorGrafico : public RenderWindow {
+typedef class GerenciadorGrafico {
 private:
     RenderWindow* _window;
     View* pView;
