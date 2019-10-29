@@ -39,16 +39,28 @@ void Jogo::inicializa() {
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos principais//
 void Jogo::executar() {
+//todo Loop Principal
+//Função que irá conter o loop principal, chamando os metodos principais das classes agregadas em jogo
+//--------------------------------------------------------------------------------------------------------------------//
+//teste
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
-    //FIM TESTE//
+//--------------------------------------------------------------------------------------------------------------------//
+//FIM TESTE//
     while (g->isOpen())
     {
-        g->executar();
-        // teste//
-
+        //ATUALIZA DELTA TIME
+        //METODO EXECUTE DE STATE
+            //cria e marca as Entidades necessarias para o state
+        g->executar();  //metodo executar do gerenciador grafico
+        //METODO DRAW DO STATE
+            //todo pode ser alterado para chamar o metodo draw da lista, ja que states nao terao listas proprias
+//--------------------------------------------------------------------------------------------------------------------//
+//Teste de impressao
         g->draw(shape);
-        g->display();
+//fim teste
+//--------------------------------------------------------------------------------------------------------------------//
+        g->display();   //Display, exibindo em tela o que ja foi renderizado
 
     }
 
