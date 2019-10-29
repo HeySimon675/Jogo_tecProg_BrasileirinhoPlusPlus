@@ -16,9 +16,12 @@ using namespace sf;
 class Entidade {
 private:
     Vector2f posicao;
+    static const GerenciadorGrafico* gerenciadorGrafico;
+
 
 public:
-    Entidade();
+    Entidade(float posX = 0.0f, float posY = 0.0f);
+    Entidade(Vector2f posicao);
     ~Entidade();
 
 //Metodos de loop//

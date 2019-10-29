@@ -10,9 +10,14 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //contrutora/Destrutora//
 
-Entidade::Entidade() {
-
+Entidade::Entidade(float posX, float posY) {
+    posicao = Vector2f(posX,posY);
 }
+
+Entidade::Entidade(Vector2f posicao) {
+    this->posicao = posicao;
+}
+
 
 Entidade::~Entidade() {
 
