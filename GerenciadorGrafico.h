@@ -23,6 +23,7 @@ namespace gerenciadores {
 
 typedef class GerenciadorGrafico : public RenderWindow {
 private:
+    RenderWindow* _window;
     View* pView;
     vector<Texture*> _vTexture;
     static GerenciadorGrafico* _instance;   //Singleton
@@ -33,11 +34,17 @@ public:
 
     ~GerenciadorGrafico();
     static GerenciadorGrafico* getGerGrafico();     //implementação do Singleton
+//--------------------------------------------------------------------------------------------------------------------//
+//METODOS PARA TESTE//
+    RenderWindow* getWindow(){ return _window;}
+//--------------------------------------------------------------------------------------------------------------------//
 
 //--------------------------------------------------------------------------------------------------------------------//
 //loop//
 public:
     void executar();
+    bool janelaAberta();
+    void exibir();
 private:
     void updateSFML();
     void drawEntidades();
@@ -50,6 +57,7 @@ private:
     void inicializaView();
     void carregaTexturas();
     void carregaFontes();
+    void inicializaWindow();
 //end Private
 
 //--------------------------------------------------------------------------------------------------------------------//

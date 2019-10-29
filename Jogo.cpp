@@ -47,7 +47,7 @@ void Jogo::executar() {
     shape.setFillColor(sf::Color::Green);
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM TESTE//
-    while (g->isOpen())
+    while (g->janelaAberta()) //todo criar um metodo em GerenciadorGrafico para verificar se esta aberta a janela
     {
         //ATUALIZA DELTA TIME
         //METODO EXECUTE DE STATE
@@ -57,10 +57,10 @@ void Jogo::executar() {
             //todo pode ser alterado para chamar o metodo draw da lista, ja que states nao terao listas proprias
 //--------------------------------------------------------------------------------------------------------------------//
 //Teste de impressao
-        g->draw(shape);
+        g->getWindow()->draw(shape);
 //fim teste
 //--------------------------------------------------------------------------------------------------------------------//
-        g->display();   //Display, exibindo em tela o que ja foi renderizado
+        g->exibir();   //Display, exibindo em tela o que ja foi renderizado
 
     }
 

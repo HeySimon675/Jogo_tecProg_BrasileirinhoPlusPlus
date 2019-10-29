@@ -1,6 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 26/10/19.
+//Update: 11hrs 29/10
 
 #include "GerenciadorGrafico.h"
 
@@ -24,7 +25,6 @@ const String GerenciadorGrafico::titulo("SFML_The_Game");
 //Construtora Privada
 GerenciadorGrafico::GerenciadorGrafico() : RenderWindow(VideoMode(larguraJanela,alturaJanela),titulo){
     inicializa();
-    this->setFramerateLimit(60);
 }//fim da construtora
 
 //destrutora
@@ -32,7 +32,9 @@ GerenciadorGrafico::~GerenciadorGrafico() {
     if (_instance){
         delete _instance;
     }
-    //todo Desalocar texturas do vector antes de destruir o gerenciador
+    //todo Desalocar
+    // texturas do vector antes de destruir o gerenciador
+    // desalocar objetos dinamicos (_Window, _view)
     _instance = nullptr;
 }   // fim da destrutora
 
@@ -49,6 +51,7 @@ GerenciadorGrafico *GerenciadorGrafico::getGerGrafico() {
 
 //inicializadora principal//
 void GerenciadorGrafico::inicializa() {
+    inicializaWindow(); //metodo que iŕá substituir a generalização de RenderWindow
     inicializaView();
     carregaTexturas();
     carregaFontes();
@@ -56,7 +59,7 @@ void GerenciadorGrafico::inicializa() {
 //inicializa view
 void GerenciadorGrafico::inicializaView() {
     pView = new View(center,WindowSize);
-    this->setView(*pView);
+    _window->setView(*pView);
 }
 
 //todo para Implementar urgente
@@ -68,15 +71,30 @@ void GerenciadorGrafico::carregaTexturas() {
 void GerenciadorGrafico::carregaFontes() {
 
 }
+//inicializa Window//
+void GerenciadorGrafico::inicializaWindow() {
+    _window = new RenderWindow(VideoMode(larguraJanela,alturaJanela),titulo);
+    _window->setFramerateLimit(60);
+}
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Loop//
 
+//Verifica se a Janela Esta Aberta//
+bool GerenciadorGrafico::janelaAberta() {
+    return (_window->isOpen());
+}
+
+//Chama Display, exibindo objetos renderizados//
+void GerenciadorGrafico::exibir() {
+    _window->display();
+}
+
 //Update SFML//
 void GerenciadorGrafico::updateSFML() {
-    while(this->pollEvent(event)){
+    while(_window->pollEvent(event)){
         if(event.type == Event::Closed){
-            this->close();
+            _window->close();
         }
     }
 }
@@ -91,7 +109,7 @@ void GerenciadorGrafico::drawEntidades() {
 //Executar//
 void GerenciadorGrafico::executar() {
     updateSFML();
-    this->clear();
+    _window->clear();
 }
 //--------------------------------------------------------------------------------------------------------------------//
 

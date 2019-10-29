@@ -22,6 +22,6 @@ public:
     ~Entidade();
 
 //Metodos de loop//
-    void update();
-    void draw();
+    virtual void update();
+    virtual void draw();
 };
