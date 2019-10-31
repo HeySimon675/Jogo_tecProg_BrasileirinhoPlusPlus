@@ -10,8 +10,9 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //contrutora/Destrutora//
 
-Entidade::Entidade(float posX, float posY) {
+Entidade::Entidade(float posX, float posY,bool active) {
     posicao = Vector2f(posX,posY);
+    gerenciadorGrafico = GerenciadorGrafico::getGerGrafico();
 }
 
 Entidade::Entidade(Vector2f posicao) {
@@ -20,6 +21,16 @@ Entidade::Entidade(Vector2f posicao) {
 
 
 Entidade::~Entidade() {
+
+}
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Metodo de Ativação//
+void Entidade::ativarEntidade() {
+    _active = true;
+}
+
+void Entidade::desativarEntidade() {
 
 }
 

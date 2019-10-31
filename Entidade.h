@@ -16,13 +16,16 @@ using namespace sf;
 class Entidade {
 private:
     Vector2f posicao;
+    bool _active;
     static const GerenciadorGrafico* gerenciadorGrafico;
 
 
 public:
-    Entidade(float posX = 0.0f, float posY = 0.0f);
+    Entidade(float posX = 0.0f, float posY = 0.0f, bool active = false);
     Entidade(Vector2f posicao);
     ~Entidade();
+    void ativarEntidade();
+    void desativarEntidade();
 
 //Metodos de loop//
     virtual void update();
