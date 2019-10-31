@@ -1,18 +1,20 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 26/10/19.
+//Update on 30/10 - 21hrs
 #pragma once
 #include "Entidade.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Entidade//
+const GerenciadorGrafico* Entidade::gerenciadorGrafico = GerenciadorGrafico::getGerGrafico();
 
 //--------------------------------------------------------------------------------------------------------------------//
 //contrutora/Destrutora//
 
 Entidade::Entidade(float posX, float posY,bool active) {
     posicao = Vector2f(posX,posY);
-    gerenciadorGrafico = GerenciadorGrafico::getGerGrafico();
+
 }
 
 Entidade::Entidade(Vector2f posicao) {

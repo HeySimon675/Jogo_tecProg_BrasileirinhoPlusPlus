@@ -10,8 +10,8 @@ GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
 //Variaveis Static//
 
 //altura e largura da Window
-const unsigned int GerenciadorGrafico::larguraJanela = 800;
-const unsigned int GerenciadorGrafico::alturaJanela = 600;
+const unsigned int GerenciadorGrafico::larguraJanela = 960;
+const unsigned int GerenciadorGrafico::alturaJanela = 720;
 //Tamanho da Window, usado pela View
 const Vector2f GerenciadorGrafico::WindowSize(larguraJanela,alturaJanela);
 const Vector2f GerenciadorGrafico::center(0.0f,0.0f);

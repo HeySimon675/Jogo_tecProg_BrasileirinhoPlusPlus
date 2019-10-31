@@ -18,5 +18,5 @@ if(SFML_FOUND)
     message(STATUS "SFML_VERSION: ${SFML_VERSION}")
 endif()
 
-add_executable(Brasileirinho__ main.cpp Lista.h Elemento.h GerenciadorGrafico.cpp GerenciadorGrafico.h Entidade.cpp Entidade.h Jogo.cpp Jogo.h ListaEntidades.cpp ListaEntidades.h)
+add_executable(Brasileirinho__ main.cpp Lista.h Elemento.h GerenciadorGrafico.cpp GerenciadorGrafico.h Entidade.cpp Entidade.h Jogo.cpp Jogo.h ListaEntidades.cpp ListaEntidades.h Collider.h Collider.cpp)
 target_link_libraries(Brasileirinho__ sfml-graphics sfml-window sfml-system sfml-audio)
