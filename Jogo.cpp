@@ -76,11 +76,11 @@ void Jogo::executar() {
 
     Clock deltaClock;
 
-    while (g->janelaAberta()) //todo criar um metodo em GerenciadorGrafico para verificar se esta aberta a janela
+    while (g->janelaAberta())
     {
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
-
+/*PROTOTIPO MARCADO COMO COMENTARIO
     deltaTime = deltaClock.restart().asSeconds();
     if(deltaTime>1.0f / 20.0f){
         deltaTime = 1.0f / 20.0f;
@@ -122,7 +122,7 @@ void Jogo::executar() {
                 velocity.y=0.0f;
             }
         }
-
+*/
 //fim do prototipo
 //--------------------------------------------------------------------------------------------------------------------//
         //ATUALIZA DELTA TIME
