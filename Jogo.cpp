@@ -50,6 +50,7 @@ void Jogo::executar() {
 //FIM TESTE//
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
+  /*Prototipo marcado como comentario
     //criando o player//
     Texture playerTx;
     IntRect rect;
@@ -75,7 +76,7 @@ void Jogo::executar() {
     Collider plataformaCollider(&plataforma);
 
     Clock deltaClock;
-
+*/
     while (g->janelaAberta())
     {
 //--------------------------------------------------------------------------------------------------------------------//
