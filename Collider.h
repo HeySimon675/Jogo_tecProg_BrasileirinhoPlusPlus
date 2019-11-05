@@ -1,9 +1,10 @@
-//
-// Created by root on 27/05/19.
-//
 
-#ifndef SFML_TEST_4_COLLIDER_H
-#define SFML_TEST_4_COLLIDER_H
+//--------------------------------------------------------------------------------------------------------------------//
+// Created by simao on 27/05/19.
+// Update 27/05
+//todo Classe ainda não otimizada para o projeto
+
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #pragma once
@@ -20,6 +21,3 @@ public:
     sf::Vector2f getPosition(){ return body.getPosition();}
     sf::Vector2f getHalfSize(){ return (body.getSize()/2.0f);}
 };
-
-
-#endif //SFML_TEST_4_COLLIDER_H

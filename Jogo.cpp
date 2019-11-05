@@ -1,6 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 // Created by simao on 27/10/2019//
+// Update 04/11 - 11hrs
 #include "Jogo.h"
 #include "math.h"   //temporario
 #include "Collider.h"//temporario
@@ -50,7 +51,7 @@ void Jogo::executar() {
 //FIM TESTE//
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
-  /*Prototipo marcado como comentario
+  //Prototipo marcado como comentario
     //criando o player//
     Texture playerTx;
     IntRect rect;
@@ -76,12 +77,13 @@ void Jogo::executar() {
     Collider plataformaCollider(&plataforma);
 
     Clock deltaClock;
-*/
+
     while (g->janelaAberta())
     {
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
-/*PROTOTIPO MARCADO COMO COMENTARIO
+
+//PROTOTIPO MARCADO COMO COMENTARIO
     deltaTime = deltaClock.restart().asSeconds();
     if(deltaTime>1.0f / 20.0f){
         deltaTime = 1.0f / 20.0f;
@@ -123,7 +125,7 @@ void Jogo::executar() {
                 velocity.y=0.0f;
             }
         }
-*/
+
 //fim do prototipo
 //--------------------------------------------------------------------------------------------------------------------//
         //ATUALIZA DELTA TIME
