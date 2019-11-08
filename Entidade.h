@@ -17,8 +17,7 @@ class Entidade {
 private:
     Vector2f posicao;
     bool _active;
-    static const GerenciadorGrafico* gerenciadorGrafico;
-
+    static GerenciadorGrafico* gerenciadorGrafico;
 
 public:
     Entidade(float posX = 0.0f, float posY = 0.0f, bool active = false);

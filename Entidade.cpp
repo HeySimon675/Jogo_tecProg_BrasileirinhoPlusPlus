@@ -14,7 +14,7 @@ const GerenciadorGrafico* Entidade::gerenciadorGrafico = GerenciadorGrafico::get
 
 Entidade::Entidade(float posX, float posY,bool active) {
     posicao = Vector2f(posX,posY);
-
+    _active = active;
 }
 
 Entidade::Entidade(Vector2f posicao) {
@@ -44,7 +44,7 @@ void Entidade::update() {
 }
 
 void Entidade::draw() {
-
+    //tera sua implementação em subclasses, a ideia é passar o body da Entidade especifica pro gerenciador grafico
 }
 
 

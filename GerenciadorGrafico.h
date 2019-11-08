@@ -36,6 +36,7 @@ public:
     static GerenciadorGrafico* getGerGrafico();     //implementação do Singleton
 //--------------------------------------------------------------------------------------------------------------------//
 //METODOS PARA TESTE//
+private:
     RenderWindow* getWindow(){ return _window;}
 //--------------------------------------------------------------------------------------------------------------------//
 
@@ -45,9 +46,11 @@ public:
     void executar();
     bool janelaAberta();
     void exibir();
+    void drawEntidade(Entidade* entidade);
+    void draw(Drawable body);
 private:
     void updateSFML();
-    void drawEntidades();
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Inicializadoras//

@@ -51,6 +51,7 @@ void Jogo::executar() {
 //FIM TESTE//
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
+/*
   //Prototipo marcado como comentario
     //criando o player//
     Texture playerTx;
@@ -77,12 +78,12 @@ void Jogo::executar() {
     Collider plataformaCollider(&plataforma);
 
     Clock deltaClock;
-
+*/
     while (g->janelaAberta())
     {
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
-
+/*
 //PROTOTIPO MARCADO COMO COMENTARIO
     deltaTime = deltaClock.restart().asSeconds();
     if(deltaTime>1.0f / 20.0f){
@@ -125,7 +126,7 @@ void Jogo::executar() {
                 velocity.y=0.0f;
             }
         }
-
+*/
 //fim do prototipo
 //--------------------------------------------------------------------------------------------------------------------//
         //ATUALIZA DELTA TIME
@@ -136,8 +137,9 @@ void Jogo::executar() {
             //todo pode ser alterado para chamar o metodo draw da lista, ja que states nao terao listas proprias
 //--------------------------------------------------------------------------------------------------------------------//
 //Teste de impressao
-        g->getWindow()->draw(player);
-        g->getWindow()->draw(plataforma);
+        //g->getWindow()->draw(player);
+        //g->getWindow()->draw(plataforma);
+        //g->getWindow()->draw((shape));
 //fim teste
 //--------------------------------------------------------------------------------------------------------------------//
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
