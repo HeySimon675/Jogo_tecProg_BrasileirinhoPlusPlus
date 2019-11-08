@@ -7,7 +7,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Entidade//
-const GerenciadorGrafico* Entidade::gerenciadorGrafico = GerenciadorGrafico::getGerGrafico();
+GerenciadorGrafico* Entidade::gerenciadorGrafico = GerenciadorGrafico::getGerGrafico();
 
 //--------------------------------------------------------------------------------------------------------------------//
 //contrutora/Destrutora//
