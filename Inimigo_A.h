@@ -4,21 +4,15 @@
 //Last Update 11/11 12hrs
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
-//Herança de Personagem
-
-//Deriva as Classes:
-    //Inimigo_A
-    //Inimigo_B
-    //Inimigo_Boss
-
+//Herança de Inimigo
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
-#include "Personagem.h"
+#include "Inimigo.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Classe Inimigo//
-class Inimigo : public Personagem{
+//Classe Inimigo_A//
+class Inimigo_A : public Inimigo{
 
 };
 
