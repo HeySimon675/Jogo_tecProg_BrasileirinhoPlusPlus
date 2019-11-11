@@ -47,7 +47,7 @@ public:
     bool janelaAberta();
     void exibir();
     void drawEntidade(Entidade* entidade);
-    void draw(Drawable body);
+    void draw(RectangleShape body);
 private:
     void updateSFML();
 

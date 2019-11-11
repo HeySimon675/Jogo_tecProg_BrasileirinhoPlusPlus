@@ -106,7 +106,7 @@ void GerenciadorGrafico::executar() {
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //draw//
-void GerenciadorGrafico::draw(const Drawable body) {
+void GerenciadorGrafico::draw(const RectangleShape body) {
     getWindow()->draw(body);
 }
 
