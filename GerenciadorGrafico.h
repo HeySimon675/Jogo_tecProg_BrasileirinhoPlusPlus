@@ -34,6 +34,7 @@ public:
 
     ~GerenciadorGrafico();
     static GerenciadorGrafico* getGerGrafico();     //implementação do Singleton
+    vector<Texture*>* getVector();
 //--------------------------------------------------------------------------------------------------------------------//
 //METODOS PARA TESTE//
 private:
@@ -61,6 +62,7 @@ private:
     void carregaTexturas();
     void carregaFontes();
     void inicializaWindow();
+    void load(const String _caminho,const String _arquivo);
 //end Private
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -73,6 +75,12 @@ public:
     static const String titulo;
     static const Vector2f center;
     //View //
+
+    //Textures//
+    static const String TEXTURE_DIR;
+
+    //player//
+    static const String JOGADOR_1_tx;
 
 
 
