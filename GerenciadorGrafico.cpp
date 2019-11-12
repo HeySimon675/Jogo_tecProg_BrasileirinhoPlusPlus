@@ -9,6 +9,7 @@ GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
 //--------------------------------------------------------------------------------------------------------------------//
 //Variaveis Static//
 
+//teste
 //altura e largura da Window
 const unsigned int GerenciadorGrafico::larguraJanela = 1000;
 const unsigned int GerenciadorGrafico::alturaJanela = 650;
