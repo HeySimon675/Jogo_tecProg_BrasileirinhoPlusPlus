@@ -62,7 +62,7 @@ private:
     void carregaTexturas();
     void carregaFontes();
     void inicializaWindow();
-    void load(const String _caminho,const String _arquivo);
+    void load(const String _caminho);
 //end Private
 
 //--------------------------------------------------------------------------------------------------------------------//

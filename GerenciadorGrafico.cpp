@@ -20,10 +20,10 @@ const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
 const String GerenciadorGrafico::titulo("SFML_The_Game");
 
 //Textures//
-const String GerenciadorGrafico::TEXTURE_DIR("Texture/");
+const String GerenciadorGrafico::TEXTURE_DIR("../Texture/");
 
 //player
-const String GerenciadorGrafico::JOGADOR_1_tx("Jogador_1_texture.png");
+const String GerenciadorGrafico::JOGADOR_1_tx = TEXTURE_DIR + "Jogador_1_texture.png";
 
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM Variaveis Static//
@@ -78,15 +78,15 @@ void GerenciadorGrafico::inicializaView() {
 
 //Carrega texturas//
 
-void GerenciadorGrafico::load(const String _caminho, const String _arquivo) {
+void GerenciadorGrafico::load(const String _caminho) {
     Texture* tx = new Texture;
-    tx->loadFromFile(_caminho+_arquivo);
+    tx->loadFromFile(_caminho);
     GerenciadorGrafico::getGerGrafico()->getVector()->push_back(tx);
 }
 
 void GerenciadorGrafico::carregaTexturas() {
     //todo colocar try catch para carregar textura
-    load(TEXTURE_DIR,JOGADOR_1_tx);
+    load(JOGADOR_1_tx);
 
 }
 //Carrega fontes//
