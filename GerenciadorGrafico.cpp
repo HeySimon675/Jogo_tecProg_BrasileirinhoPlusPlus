@@ -20,7 +20,7 @@ const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
 const String GerenciadorGrafico::titulo("SFML_The_Game");
 
 //Textures//
-const String GerenciadorGrafico::TEXTURE_DIR("../Textures/");
+const String GerenciadorGrafico::TEXTURE_DIR("Textures/");
 
 //player
 const String GerenciadorGrafico::JOGADOR_1_tx = TEXTURE_DIR + "Jogador_1_texture.png";
