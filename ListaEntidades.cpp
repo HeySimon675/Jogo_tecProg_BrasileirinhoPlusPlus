@@ -42,6 +42,6 @@ while (aux != lista.getAt()){
         update();
         aux = aux->getProx();
     }
-    aux = nullptr;
+    aux = NULL;
 }
 

@@ -2,7 +2,7 @@
 // Created by simao on 16/04/19.
 //
 #pragma once
-
+#include <iostream>
 //adicionar uma função de adicionar primeiro elemento à lista, para fins de coesão
     //e então tirar essa parte da Lista::includeElemento
 
@@ -12,9 +12,9 @@ private:
     Elemento<TIPO>* ante;
     TIPO* pInfo;
 public:
-    Elemento() {prox= nullptr; ante= nullptr; pInfo= nullptr;}
+    Elemento() {prox= NULL; ante= NULL; pInfo= NULL;}
     Elemento(TIPO* el);
-    ~Elemento() {prox= nullptr; ante= nullptr; pInfo= nullptr;}
+    ~Elemento() {prox= NULL; ante= NULL; pInfo= NULL;}
     Elemento<TIPO> *getProx() const;
     Elemento<TIPO> *getAnte() const;
     void setProx(Elemento<TIPO>* px);
@@ -26,8 +26,8 @@ public:
 
 template<class TIPO>
 Elemento<TIPO>::Elemento(TIPO *el) {
-    prox= nullptr;
-    ante= nullptr;
+    prox= NULL;
+    ante= NULL;
     setInfo(el);
 }
 
