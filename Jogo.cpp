@@ -37,6 +37,8 @@ Jogo::~Jogo() {
 //inicializadores//
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();
+    p1.inicializaJogador_1(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(100.0f, 100.0f), true, 100.0f, 50.0f,
+                           sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos principais//
@@ -49,6 +51,10 @@ void Jogo::executar() {
     shape.setFillColor(sf::Color::Green);
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM TESTE//
+//--------------------------------------------------------------------------------------------------------------------//
+float deltaTime = 0.0f;
+	sf::Clock clock;
+
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
 /*
@@ -81,6 +87,10 @@ void Jogo::executar() {
 */
     while (g->janelaAberta())
     {
+
+        deltaTime = clock.restart().asSeconds();
+		if (deltaTime > 1.0f / 60.0f)
+			deltaTime = 1.0f / 60.0f;
 //--------------------------------------------------------------------------------------------------------------------//
 //implementação do prototipo//
 /*
@@ -140,21 +150,26 @@ void Jogo::executar() {
         //g->getWindow()->draw(player);
         //g->getWindow()->draw(plataforma);
         //g->getWindow()->draw((shape));
+        update(deltaTime);
+        draw();
+
+
 //fim teste
 //--------------------------------------------------------------------------------------------------------------------//
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
 
     }
-
 }
 
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
-void Jogo::update() {
+void Jogo::update(float deltaTime) {
     //ira atualizar as posições das Entidades dependendo de seu State
+    p1.update(deltaTime);
 }
 
 void Jogo::draw() {
+    p1.draw();
 }
 //--------------------------------------------------------------------------------------------------------------------//

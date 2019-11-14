@@ -13,6 +13,18 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogador//
-class Jogador_2 : public Jogador{
+class Jogador_1 : public Jogador{
+
+private:
+
+public:
+
+    Jogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
+                                    sf::Keyboard::Key left, sf::Keyboard::Key jump);
+    Jogador_1();
+    ~Jogador_1();
+    void inicializaJogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
+                                    sf::Keyboard::Key left, sf::Keyboard::Key jump);
+    void calculaMovimento(const float deltaTempo);
 
 };

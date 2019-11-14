@@ -81,14 +81,14 @@ void GerenciadorGrafico::inicializaView() {
 
 void GerenciadorGrafico::load(const String _caminho) {
     Texture* tx = new Texture;
+    tx->loadFromFile(_caminho);
     //tx->loadFromFile(_caminho);
     this->getVector()->push_back(tx);
 }
 
 void GerenciadorGrafico::carregaTexturas() {
-    //todo colocar try catch para carregar textura
+    //TODO colocar try catch para carregar textura
     load(JOGADOR_1_tx);
-
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {

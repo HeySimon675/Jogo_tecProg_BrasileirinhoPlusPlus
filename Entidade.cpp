@@ -43,6 +43,12 @@ void Entidade::update() {
 
 }
 
+void Entidade::inicializaEntidade(sf::Vector2f position, sf::Vector2f size, bool active)
+{
+    posicao = position;
+    _active = active;
+}
+
 void Entidade::draw() {
     //tera sua implementação em subclasses, a ideia é passar o body da Entidade especifica pro gerenciador grafico
 }
