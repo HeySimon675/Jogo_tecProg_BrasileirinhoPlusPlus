@@ -4,6 +4,7 @@
 
 #include "Jogador_1.h"
 #include <iostream>
+#include <math.h>
 
 Jogador_1::Jogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
                                     sf::Keyboard::Key left, sf::Keyboard::Key jump)

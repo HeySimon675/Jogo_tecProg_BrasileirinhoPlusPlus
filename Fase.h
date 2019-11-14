@@ -14,8 +14,37 @@
 //Header//
 #include "Entidade.h"
 
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase//
 class Fase : public Entidade {
+protected:
+    //Matriz de construção da fase
+    char** matrizFase;
+    int ROW;
+    int COL;
+
+    //listas
+
+
+public:
+    Fase();
+    ~Fase();
+//--------------------------------------------------------------------------------------------------------------------//
+//metodos de inicialização
+private:
+    virtual void constroiMatriz();
+    void inicializaLista();
+    void carregaInimigo();
+    void carregaObstaculo();
+public:
+    void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
+
+    //implementação de update, onde vai percorrer as listas verificando colisão
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Constantes//
+    static const String FASES_DIR;
+
 
 };
