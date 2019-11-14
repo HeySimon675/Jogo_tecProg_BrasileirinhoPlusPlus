@@ -81,6 +81,7 @@ void GerenciadorGrafico::inicializaView() {
 void GerenciadorGrafico::load(const String _caminho) {
     Texture* tx = new Texture;
     tx->loadFromFile(_caminho);
+    //tx->loadFromFile(_caminho);
     this->getVector()->push_back(tx);
 }
 

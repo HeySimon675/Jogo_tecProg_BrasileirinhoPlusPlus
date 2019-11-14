@@ -7,6 +7,8 @@
 //Header//
 #include "GerenciadorGrafico.h"
 #include "ListaEntidades.h"
+#include "Personagem.h"
+#include "Jogador_1.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -17,8 +19,12 @@ private:
 //atributos//
     static Jogo* _instance;     //instancia
     ListaEntidades lEntidades;  //Lista Principal de Entidades
+    Jogador_1 p1;
+
     //gerenciadores//
     GerenciadorGrafico* g;
+
+
 
     //delta//
     float deltaTime;
@@ -39,7 +45,7 @@ public:
 
     //metodos principais//
     void executar();
-    void update();
+    void update(float deltaTime);
     void draw();
 };
 
