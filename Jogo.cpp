@@ -46,11 +46,7 @@ void Jogo::executar() {
 //todo Loop Principal
 //Função que irá conter o loop principal, chamando os metodos principais das classes agregadas em jogo
 //--------------------------------------------------------------------------------------------------------------------//
-//teste
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-//--------------------------------------------------------------------------------------------------------------------//
-//FIM TESTE//
+
 //--------------------------------------------------------------------------------------------------------------------//
 float deltaTime = 0.0f;
 	sf::Clock clock;
@@ -72,18 +68,9 @@ float deltaTime = 0.0f;
         //METODO DRAW DO STATE
             //todo pode ser alterado para chamar o metodo draw da lista, ja que states nao terao listas proprias
 //--------------------------------------------------------------------------------------------------------------------//
-//Teste de impressao
-        //g->getWindow()->draw(player);
-        //g->getWindow()->draw(plataforma);
-        //g->getWindow()->draw((shape));
         update(deltaTime);
         draw();
-
-
-//fim teste
-//--------------------------------------------------------------------------------------------------------------------//
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
-
     }
 }
 
@@ -96,6 +83,7 @@ void Jogo::update(float deltaTime) {
 }
 
 void Jogo::draw() {
-    p1.draw();
+    //p1.draw();
+    lEntidades.percorrer();
 }
 //--------------------------------------------------------------------------------------------------------------------//

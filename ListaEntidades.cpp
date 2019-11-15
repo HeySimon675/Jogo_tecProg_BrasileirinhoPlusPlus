@@ -42,9 +42,10 @@ void ListaEntidades::percorrer() {
     aux = lista.getPrim();
 while (aux != lista.getAt()){
         draw();
-        update();
+        //update();
         aux = aux->getProx();
     }
+    draw();
     aux = NULL;
 }
 
