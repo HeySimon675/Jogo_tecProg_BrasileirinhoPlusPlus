@@ -99,6 +99,7 @@ void GerenciadorGrafico::load(const String _caminho) {
 void GerenciadorGrafico::carregaTexturas() {
     //TODO colocar try catch para carregar textura
     load(JOGADOR_1_tx);
+
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {
