@@ -4,6 +4,8 @@
 //Update: 11hrs 29/10
 
 #include "GerenciadorGrafico.h"
+#include <iostream>
+#include <bits/stdc++.h>
 
 GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
 //--------------------------------------------------------------------------------------------------------------------//

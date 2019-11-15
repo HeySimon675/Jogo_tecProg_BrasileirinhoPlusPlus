@@ -4,6 +4,15 @@
 
 #include "Fase.h"
 
+
+//--------------------------------------------------------------------------------------------------------------------//
+/*PREFIXO DO SISTEMA//
+    "../"      -> LINUX
+    ""         -> WINDOWS
+*/
+//const String GerenciadorGrafico::SYSTEM_PREFIX = "../";
+
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
 
@@ -33,6 +42,4 @@ void Fase::carregaObstaculo() {
 
 }
 
-void Fase::inicializa() {
-
-}
+void Fase::inicializa() {}

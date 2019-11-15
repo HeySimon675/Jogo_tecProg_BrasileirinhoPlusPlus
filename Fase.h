@@ -23,6 +23,9 @@ protected:
     char** matrizFase;
     int ROW;
     int COL;
+//--------------------------------------------------------------------------------------------------------------------//
+//Arquivo
+    FILE* arqFase;
 
     //listas
 
@@ -38,13 +41,14 @@ private:
     void carregaInimigo();
     void carregaObstaculo();
 public:
-    void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
+    virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
 
     //implementação de update, onde vai percorrer as listas verificando colisão
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
+protected:
     static const String FASES_DIR;
-
+    //static const String SYSTEM_PREFIX;
 
 };
