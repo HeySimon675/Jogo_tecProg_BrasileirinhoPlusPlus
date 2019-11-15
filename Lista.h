@@ -125,7 +125,7 @@ private:
 
 template<class TIPO>
 bool Lista<TIPO>::vazia() {
-    return primeiro != nullptr;
+    return (primeiro == nullptr);
 }
 
 template<class TIPO>

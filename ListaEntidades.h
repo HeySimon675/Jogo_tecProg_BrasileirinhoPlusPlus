@@ -25,7 +25,7 @@ public:
 //Metodos de loop//
 private:
     void draw();
-    void update();
+    void update();  //atualmente em desuso
 public:
     void percorrer();
     void incluir(Entidade* entidade);

@@ -29,11 +29,14 @@ void ListaEntidades::draw() {
     //chamará o metodo draw do elemento apontado por i
     aux->getInfo()->draw();
 }
-
+//--------------------------------------------------------------------------------------------------------------------//
+//metodos que provávelmente será descontinuado
 void ListaEntidades::update() {
     //chamará o metodo update do elemento apontado por i
     aux->getInfo()->update();
 }
+//--------------------------------------------------------------------------------------------------------------------//
+
 
 void ListaEntidades::percorrer() {
     aux = lista.getPrim();

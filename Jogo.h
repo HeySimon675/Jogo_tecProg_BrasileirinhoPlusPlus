@@ -9,7 +9,8 @@
 #include "ListaEntidades.h"
 #include "Personagem.h"
 #include "Jogador_1.h"
-
+#include <cmath>   //temporario
+#include "Collider.h"//temporario
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogo//
