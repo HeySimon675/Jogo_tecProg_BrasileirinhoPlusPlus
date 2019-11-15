@@ -77,6 +77,7 @@ public:
     //View //
 
     //Textures//
+    static const String SYSTEM_PREFIX;
     static const String TEXTURE_DIR;
 
     //player//

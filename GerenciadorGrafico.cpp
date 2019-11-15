@@ -7,9 +7,17 @@
 
 GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
 //--------------------------------------------------------------------------------------------------------------------//
+/*PREFIXO DO SISTEMA//
+    "../"      -> LINUX
+    ""         -> WINDOWS
+*/
+const String GerenciadorGrafico::SYSTEM_PREFIX = "../";
+
+
+//--------------------------------------------------------------------------------------------------------------------//
 //Variaveis Static//
 
-//teste
+
 //altura e largura da Window
 const unsigned int GerenciadorGrafico::larguraJanela = 1000;
 const unsigned int GerenciadorGrafico::alturaJanela = 650;
@@ -21,7 +29,7 @@ const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
 const String GerenciadorGrafico::titulo("SFML_The_Game");
 
 //Textures//
-const String GerenciadorGrafico::TEXTURE_DIR("Textures/");
+const String GerenciadorGrafico::TEXTURE_DIR = SYSTEM_PREFIX + "Textures/";
 
 //player
 const String GerenciadorGrafico::JOGADOR_1_tx = TEXTURE_DIR + "Jogador_1_texture.png";
