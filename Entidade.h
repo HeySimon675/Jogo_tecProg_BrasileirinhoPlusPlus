@@ -18,12 +18,18 @@ protected:
     Vector2f posicao;
     bool _active;
     static GerenciadorGrafico* gerenciadorGrafico;
+    virtual const String getID();
 
 public:
     Entidade(float posX = 0.0f, float posY = 0.0f, bool active = false);
     Entidade(Vector2f posicao);
-    Entidade(sf::Vector2f position, sf::Vector2f size, float speed, float jump_height, sf::Keyboard::Key right,
-                                    sf::Keyboard::Key left, sf::Keyboard::Key jump);
+
+//--------------------------------------------------------------------------------------------------------------------//
+//NECESSARIO??
+    //Entidade(sf::Vector2f position, sf::Vector2f size, float speed, float jump_height, sf::Keyboard::Key right,
+    //                                sf::Keyboard::Key left, sf::Keyboard::Key jump);
+
+//--------------------------------------------------------------------------------------------------------------------//
     virtual ~Entidade();
     void ativarEntidade();
     void desativarEntidade();

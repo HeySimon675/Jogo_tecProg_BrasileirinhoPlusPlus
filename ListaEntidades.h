@@ -27,7 +27,7 @@ private:
     void draw();
     void update();  //atualmente em desuso
 public:
-    void percorrer();
+    void drawEntidades();
     void incluir(Entidade* entidade);
 };
 

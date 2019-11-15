@@ -38,7 +38,7 @@ void ListaEntidades::update() {
 //--------------------------------------------------------------------------------------------------------------------//
 
 
-void ListaEntidades::percorrer() {
+void ListaEntidades::drawEntidades() {
     aux = lista.getPrim();
 while (aux != lista.getAt()){
         draw();

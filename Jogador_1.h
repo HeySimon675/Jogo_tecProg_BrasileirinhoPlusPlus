@@ -15,16 +15,24 @@
 //Classe Jogador//
 class Jogador_1 : public Jogador{
 
+//--------------------------------------------------------------------------------------------------------------------//
+//construção
 private:
-
+    static const String ID;
 public:
+    Jogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height, Keyboard::Key right,
+                                    Keyboard::Key left, Keyboard::Key jump);
 
-    Jogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
-                                    sf::Keyboard::Key left, sf::Keyboard::Key jump);
+    void inicializaJogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height,
+                             Keyboard::Key right, Keyboard::Key left, Keyboard::Key jump);
     Jogador_1();
     ~Jogador_1();
-    void inicializaJogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
-                                    sf::Keyboard::Key left, sf::Keyboard::Key jump);
+
+    const String getID();
+
+//--------------------------------------------------------------------------------------------------------------------//
+//movimento
+public:
     void calculaMovimento(const float deltaTempo);
 
 };

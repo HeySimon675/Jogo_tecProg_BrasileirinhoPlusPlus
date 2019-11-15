@@ -84,6 +84,6 @@ void Jogo::update(float deltaTime) {
 
 void Jogo::draw() {
     //p1.draw();
-    lEntidades.percorrer();
+    lEntidades.drawEntidades();
 }
 //--------------------------------------------------------------------------------------------------------------------//

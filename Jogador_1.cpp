@@ -6,28 +6,35 @@
 #include <iostream>
 #include <math.h>
 
+//--------------------------------------------------------------------------------------------------------------------//
+//constantes
+    const String Jogador_1::ID = "1";
+
+//--------------------------------------------------------------------------------------------------------------------//
+//construção
+
 Jogador_1::Jogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
                                     sf::Keyboard::Key left, sf::Keyboard::Key jump)
 {
     inicializaJogador_1(position, size, active, speed, jump_height, right, left, jump);
 }
 
-Jogador_1::Jogador_1()
-{
+Jogador_1::Jogador_1(){}
 
-}
+Jogador_1::~Jogador_1(){}
 
-Jogador_1::~Jogador_1()
-{
-
-}
-
-void Jogador_1::inicializaJogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
-                         sf::Keyboard::Key right, sf::Keyboard::Key left, sf::Keyboard::Key jump)
+void Jogador_1::inicializaJogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height,
+                         Keyboard::Key right, Keyboard::Key left, Keyboard::Key jump)
 {
     inicializaJogador(position, size, active, speed, jump_height, right, left, jump);
 }
 
+const String Jogador_1::getID() {
+    return ID;
+}
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Atualização
 void Jogador_1::calculaMovimento(const float deltaTime)
 {
     vel.x = 0.0f;
@@ -48,4 +55,5 @@ void Jogador_1::calculaMovimento(const float deltaTime)
 		//vel.y += 981.0f * deltaTime;
 
 }
+//--------------------------------------------------------------------------------------------------------------------//
 
