@@ -3,6 +3,9 @@
 // Created by simao on 11/11/2019.
 
 #include "Fase_A.h"
+#include <iostream>
+#include <string>
+#include <cstring>
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -21,11 +24,14 @@ void Fase_A::constroiMatriz() {
 
 
 void Fase_A::inicializa() {
-    char charFaseFile[FASE_FILE.getSize()+1];
+    char* charFaseFile = new char[FASE_FILE.getSize()];
     std::copy(FASE_FILE.begin(),FASE_FILE.end(),charFaseFile);
+    charFaseFile[FASE_FILE.getSize()]  = '\0';
     arqFase = fopen(charFaseFile,"rt");
     if(!arqFase){
         printf("Arquivo %s não foi aberto \n",charFaseFile);
+
+
     }
     constroiMatriz();
 

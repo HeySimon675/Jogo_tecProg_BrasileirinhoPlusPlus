@@ -118,8 +118,10 @@ public:
     void gravaLista();
     void returnLista();
 
-private:
+public:
     bool vazia();
+private:
+
     bool adicionaPrimeiro(TIPO *el);
 };
 

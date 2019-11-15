@@ -39,14 +39,16 @@ void ListaEntidades::update() {
 
 
 void ListaEntidades::drawEntidades() {
-    aux = lista.getPrim();
-while (aux != lista.getAt()){
+    if(!lista.vazia()){
+        aux = lista.getPrim();
+        while (aux != lista.getAt()){
+            draw();
+            //update();
+            aux = aux->getProx();
+        }
         draw();
-        //update();
-        aux = aux->getProx();
+        aux = NULL;
     }
-    draw();
-    aux = NULL;
 }
 
 //--------------------------------------------------------------------------------------------------------------------//

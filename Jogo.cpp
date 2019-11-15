@@ -36,9 +36,9 @@ Jogo::~Jogo() {
 //inicializadores//
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();
-    p1.inicializaJogador_1(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(100.0f, 100.0f),true,
-            100.0f, 50.0f,sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
-    lEntidades.incluir(static_cast<Entidade*>(&p1));
+    //p1.inicializaJogador_1(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(100.0f, 100.0f),true,
+    //        100.0f, 50.0f,sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
+    //lEntidades.incluir(static_cast<Entidade*>(&p1));
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos principais//
@@ -79,7 +79,7 @@ float deltaTime = 0.0f;
 //Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
 void Jogo::update(float deltaTime) {
     //ira atualizar as posições das Entidades dependendo de seu State
-    p1.update(deltaTime);
+    //p1.update(deltaTime);
 }
 
 void Jogo::draw() {
