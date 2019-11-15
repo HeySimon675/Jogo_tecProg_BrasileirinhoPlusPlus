@@ -43,7 +43,7 @@ void Personagem::draw()
 
 void Personagem::update(float deltaTime)
 {
-    std::cout<<"Estou dando update?"<<std::endl;
+    //std::cout<<"Estou dando update?"<<std::endl;
     calculaMovimento(deltaTime);
     body.move(vel * deltaTime);
 

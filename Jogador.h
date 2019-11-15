@@ -33,7 +33,9 @@ public:
     void inicializaJogador(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
                                  sf::Keyboard::Key right,  sf::Keyboard::Key left, sf::Keyboard::Key jump);
 
-    void calculaMovimento(const float deltaTempo){ std::cout<<"calculando..."<<std::endl;}
+    void calculaMovimento(const float deltaTempo){
+        std::cout<<"calculando..."<<std::endl;
+    }
 
 
 };

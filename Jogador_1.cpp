@@ -43,7 +43,7 @@ void Jogador_1::calculaMovimento(const float deltaTime)
 			vel.y = -sqrtf(2.0f * 981.0f * jump_height);
 		}
 
-		std::cout<<body.getPosition().x<<std::endl;
+		//std::cout<<body.getPosition().x<<std::endl;
 
 		//vel.y += 981.0f * deltaTime;
 
