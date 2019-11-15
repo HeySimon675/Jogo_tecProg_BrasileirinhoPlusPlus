@@ -28,5 +28,6 @@ private:
     void update();
 public:
     void percorrer();
+    void incluir(Entidade* entidade);
 };
 

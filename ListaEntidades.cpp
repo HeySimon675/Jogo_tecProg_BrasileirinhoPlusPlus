@@ -45,3 +45,8 @@ while (aux != lista.getAt()){
     aux = NULL;
 }
 
+//--------------------------------------------------------------------------------------------------------------------//
+//Inclui entidades na lista//
+void ListaEntidades::incluir(Entidade* entidade) {
+    lista=(entidade);
+}

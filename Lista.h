@@ -156,12 +156,13 @@ bool Lista<TIPO>::includeElemento(TIPO *el){
 }
 
 template<class TIPO>
-void Lista<TIPO>::operator=(TIPO *el) {
+void Lista<TIPO>::operator=(TIPO* el) {
     if(!includeElemento(el)){
         //TODO
         // Criar aviso para elemento não incluido na lista
-
-    }
+        printf("elemento nao incluido");
+    }else
+        printf("elemento incluido");
 }
 
 
