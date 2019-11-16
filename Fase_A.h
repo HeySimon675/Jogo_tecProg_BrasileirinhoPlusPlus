@@ -24,7 +24,7 @@ private:
     //para teste//
     void printaMatriz();
 public:
-    Fase_A();
+    Fase_A(ListaEntidades* lista = nullptr);
     ~Fase_A();
     void inicializa();
 //--------------------------------------------------------------------------------------------------------------------//

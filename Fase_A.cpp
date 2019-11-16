@@ -11,7 +11,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Construção
-Fase_A::Fase_A() : Fase() {
+Fase_A::Fase_A(ListaEntidades* lista) : Fase(lista) {
     inicializa();
 }
 
@@ -72,7 +72,7 @@ void Fase_A::constroiMatriz() {
 }
 
 
-void Fase_A::inicializa() {
+void Fase_A::inicializa()  {
     char* charFaseFile = new char[FASE_FILE.getSize()];
     std::copy(FASE_FILE.begin(),FASE_FILE.end(),charFaseFile);
     charFaseFile[FASE_FILE.getSize()]  = '\0';

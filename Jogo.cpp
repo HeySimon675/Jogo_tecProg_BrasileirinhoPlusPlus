@@ -21,7 +21,9 @@ Jogo *Jogo::getJogo() {
 
 //--------------------------------------------------------------------------------------------------------------------//
 //construtora Privada//
-Jogo::Jogo() {
+Jogo::Jogo() :
+    faseA(&lEntidades)
+{
     inicializa();
 }   //end Construtora
 

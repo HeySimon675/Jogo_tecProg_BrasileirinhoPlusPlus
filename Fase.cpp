@@ -20,7 +20,7 @@ const String Fase::FASES_DIR = "Fases/";
 const int Fase::FASE_HEIGHT = 10;
 const int Fase::FASE_WIDTH = 10;
 
-Fase::Fase() {
+Fase::Fase(ListaEntidades* lista) : Entidade() {
 
 }
 
