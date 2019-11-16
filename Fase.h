@@ -13,7 +13,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Entidade.h"
-
+#include <fstream>
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase//
@@ -25,7 +25,8 @@ protected:
     int COL;
 //--------------------------------------------------------------------------------------------------------------------//
 //Arquivo
-    FILE* arqFase;
+
+    std::ifstream* arqFase;
 
     //listas
 
@@ -50,5 +51,7 @@ public:
 protected:
     static const String FASES_DIR;
     //static const String SYSTEM_PREFIX;
+    static const int FASE_HEIGHT;
+    static const int FASE_WIDTH;
 
 };

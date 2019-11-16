@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "Fase.h"
 
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase_A//
 class Fase_A : public Fase{
@@ -19,6 +20,9 @@ class Fase_A : public Fase{
 //construção
 private:
     void constroiMatriz();
+
+    //para teste//
+    void printaMatriz();
 public:
     Fase_A();
     ~Fase_A();
@@ -32,5 +36,6 @@ public:
 private:
     static const String FASE_FILE;
     //static const char* charFaseFile;
-
+    static const int FASE_WIDTH;
+    static const int FASE_HEIGHT;
 };
