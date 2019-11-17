@@ -14,6 +14,8 @@
 //Header//
 #include "Entidade.h"
 #include "ListaEntidades.h"
+#include "ListaInimigos.h"
+#include "ListaObstaculos.h"
 #include <fstream>
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -31,6 +33,8 @@ protected:
 
     //listas
     ListaEntidades* listaEntidades;
+    ListaInimigos listaInimigos;
+    ListaObstaculos listaObstaculos;
 
 public:
     Fase(ListaEntidades* lista = nullptr);

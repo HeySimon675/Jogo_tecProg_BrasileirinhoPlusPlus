@@ -13,7 +13,8 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //ENTIDADES QUE A FASE CONNHECE
-//teste
+//todo fases não criam nem agregam o(s) jogador(es) foi incluido somente para testar a construção da fase, remover
+// assim que a fase estiver criando Inimigos e Obstaculos
 #include "Jogador_1.h"
 
 
