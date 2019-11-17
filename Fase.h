@@ -24,14 +24,13 @@ protected:
     char** matrizFase;
     int ROW;
     int COL;
-    ListaEntidades* listaEntidades;
-//--------------------------------------------------------------------------------------------------------------------//
-//Arquivo
 
+//--------------------------------------------------------------------------------------------------------------------//
+    //Arquivo
     std::ifstream* arqFase;
 
     //listas
-
+    ListaEntidades* listaEntidades;
 
 public:
     Fase(ListaEntidades* lista = nullptr);
@@ -40,7 +39,7 @@ public:
 //metodos de inicialização
 private:
     virtual void constroiMatriz();
-    void inicializaLista();
+    virtual void criaEntidade(char aux);
     void carregaInimigo();
     void carregaObstaculo();
 public:

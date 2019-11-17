@@ -21,12 +21,12 @@ class Jogo {
 private:
 //atributos//
     static Jogo* _instance;     //instancia
-    ListaEntidades lEntidades;  //Lista Principal de Entidades
+    ListaEntidades* lEntidades;  //Lista Principal de Entidades
 
 //--------------------------------------------------------------------------------------------------------------------//
 // TESTE
     //Jogador_1 p1;
-    Fase_A faseA;
+    Fase_A* faseA;
 //--------------------------------------------------------------------------------------------------------------------//
 
 

@@ -21,7 +21,7 @@ const int Fase::FASE_HEIGHT = 10;
 const int Fase::FASE_WIDTH = 10;
 
 Fase::Fase(ListaEntidades* lista) : Entidade() {
-
+    listaEntidades = lista;
 }
 
 Fase::~Fase() {
@@ -32,9 +32,7 @@ void Fase::constroiMatriz() {
 
 }
 
-void Fase::inicializaLista() {
-
-}
+void Fase::criaEntidade(char aux) {}
 
 void Fase::carregaInimigo() {
 

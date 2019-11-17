@@ -9,6 +9,8 @@
 
 
 
+
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Construção
 Fase_A::Fase_A(ListaEntidades* lista) : Fase(lista) {
@@ -18,8 +20,8 @@ Fase_A::Fase_A(ListaEntidades* lista) : Fase(lista) {
 Fase_A::~Fase_A() {
 
 }
-
-//função para printar a matriz, podendo assim verificar a
+//--------------------------------------------------------------------------------------------------------------------//
+//função para printar a matriz, podendo assim verificar a integridade da matriz
 void Fase_A::printaMatriz() {
     for(ROW = 0; ROW < FASE_HEIGHT; ROW++){
         for (COL = 0; COL < FASE_WIDTH; COL++) {
@@ -40,6 +42,7 @@ void Fase_A::constroiMatriz() {
     (*arqFase) >> aux;
     while (!(*arqFase).eof()){
         matrizFase[ROW][COL] = aux;
+        criaEntidade(aux);
         (*arqFase) >> aux;
         if (COL == FASE_WIDTH-1){
             ROW++;
@@ -71,6 +74,26 @@ void Fase_A::constroiMatriz() {
     */
 }
 
+void Fase_A::criaJogador(){
+    Jogador_1 *j1;
+    j1 = new Jogador_1();
+    j1->inicializaJogador_1(Vector2f(0.0f, 0.0f), Vector2f(100.0f, 100.0f),true,
+                            100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
+    listaEntidades->incluir((static_cast<Entidade*>(j1)));
+
+}
+
+void Fase_A::criaEntidade(char aux) {
+
+    switch (aux){
+        //Alterar ja que fases não iram criar Jogadores
+        case '1' :
+            criaJogador();
+            break;
+        default:
+            break;
+    }
+}
 
 void Fase_A::inicializa()  {
     char* charFaseFile = new char[FASE_FILE.getSize()];
@@ -83,7 +106,7 @@ void Fase_A::inicializa()  {
     }
 
     constroiMatriz();
-    printaMatriz();
+    //printaMatriz();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//

@@ -21,9 +21,10 @@ Jogo *Jogo::getJogo() {
 
 //--------------------------------------------------------------------------------------------------------------------//
 //construtora Privada//
-Jogo::Jogo() :
-    faseA(&lEntidades)
+Jogo::Jogo() 
 {
+    lEntidades = new ListaEntidades;
+    faseA = new Fase_A(lEntidades);
     inicializa();
 }   //end Construtora
 
@@ -86,6 +87,6 @@ void Jogo::update(float deltaTime) {
 
 void Jogo::draw() {
     //p1.draw();
-    lEntidades.drawEntidades();
+    lEntidades->drawEntidades();
 }
 //--------------------------------------------------------------------------------------------------------------------//
