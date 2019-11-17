@@ -18,5 +18,22 @@
 //Classe Projetil//
 class Projetil : Entidade {
 
+protected:
+    sf::RectangleShape body;
+    sf::Vector2f vel;
+    float speed;
+
+private:
+
+public:
+    Projetil(sf::Vector2f position, sf::Vector2f size, bool active, float speed);
+    Projetil();
+    ~Projetil();
+    void inicializaProjetil(sf::Vector2f position, sf::Vector2f size, bool active, float speed);
+    void update(const float deltaTime);
+    void draw();
+    virtual void calculaMovimento() = 0;
+
+
 };
 
