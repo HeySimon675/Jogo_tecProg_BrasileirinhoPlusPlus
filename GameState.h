@@ -1,30 +1,27 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 17/11/2019.
+//Created by simao on 18/11/2019.
 //
 
-#include "InterfaceState.h"
+#pragma once
+//--------------------------------------------------------------------------------------------------------------------//
+//Header
+
+
 
 //--------------------------------------------------------------------------------------------------------------------//
-//construção
-InterfaceState::InterfaceState() {
+//classe
+class GameState {
+public:
+    static GameState* getState();
 
-}
+private:
+    static GameState* _instance;
+protected:
+    virtual void inicializar();
+    virtual void executar();
+    virtual void changeState(GameState* pState);
 
-InterfaceState::~InterfaceState() {
 
-}
+};
 
-//--------------------------------------------------------------------------------------------------------------------//
-
-void InterfaceState::inicializar() {
-
-}
-
-void InterfaceState::changeState(GameState *pState) {
-
-}
-
-void InterfaceState::executar() {
-
-}

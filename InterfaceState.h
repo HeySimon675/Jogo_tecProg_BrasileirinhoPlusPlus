@@ -6,7 +6,7 @@
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Header
-
+#include "GameState.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -14,7 +14,11 @@
 class GameState;
 
 class InterfaceState {
+    friend class GameState;
 public:
+    InterfaceState();
+    ~InterfaceState();
+
     void inicializar();
     void executar();
     void changeState(GameState* pState);
