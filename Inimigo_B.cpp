@@ -4,7 +4,7 @@
 
 #include "Inimigo_B.h"
 #include <iostream>
-#include <windows.h>
+//#include <windows.h>
 
 Inimigo_B::Inimigo_B(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
 {
@@ -45,7 +45,7 @@ void Inimigo_B::calculaMovimento(const float deltaTime)
     {
         delete pt1;
         projetilCriado = false;
-        deltaDeltaTempo = 0;
+        //deltaDeltaTempo = 0;
     }
 
 }

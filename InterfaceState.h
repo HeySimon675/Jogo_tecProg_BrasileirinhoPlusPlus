@@ -14,16 +14,19 @@
 class GameState;
 
 class InterfaceState {
-    friend class GameState;
+
 public:
     InterfaceState();
     ~InterfaceState();
 
-    void inicializar();
-    void executar();
-    void changeState(GameState* pState);
+    void inicializar(); //cria e chama os Menus
+    void executar();    //inicia o state novo jogo e a partir dele, chama state fase
+    void pausar();      //chamado a partir de fase, e retorna a fase
+
 
 private:
+    friend class GameState;
+    void changeState(GameState* pState);
     GameState* state;
 };
 

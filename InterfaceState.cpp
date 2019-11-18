@@ -28,3 +28,7 @@ void InterfaceState::changeState(GameState *pState) {
 void InterfaceState::executar() {
 
 }
+
+void InterfaceState::pausar() {
+
+}

@@ -4,16 +4,14 @@
 //
 
 #include "GameState.h"
-
+/*
 GameState *GameState::getState() {
     if(!_instance){
-        _instance = new GameState();
-        return _instance;
-    } else{
-        return _instance;
+        _instance = new GameState;
     }
+        return _instance;
 }
-
+*/
 void GameState::inicializar() {
 
 }

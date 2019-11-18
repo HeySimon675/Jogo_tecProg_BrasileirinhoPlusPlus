@@ -12,6 +12,8 @@
 #include <cmath>   //temporario
 #include "Collider.h"//temporario
 #include "Fase_A.h" //teste
+#include "Inimigo_B.h"
+#include "Inimigo_A.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//

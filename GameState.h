@@ -12,11 +12,12 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //classe
 class GameState {
-public:
-    static GameState* getState();
 
 private:
     static GameState* _instance;
+public:
+    //static GameState* getState();
+
 protected:
     virtual void inicializar();
     virtual void executar();

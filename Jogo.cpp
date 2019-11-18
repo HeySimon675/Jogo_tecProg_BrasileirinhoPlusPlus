@@ -12,6 +12,7 @@ Jogo* Jogo::_instance = nullptr;
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodo Singleton//
+
 Jogo *Jogo::getJogo() {
     if(!_instance){
         _instance = new Jogo;
@@ -82,9 +83,9 @@ float deltaTime = 0.0f;
 //Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
 void Jogo::update(float deltaTime) {
     //ira atualizar as posições das Entidades dependendo de seu State
-    //p1.update(deltaTime);
+
 	
-	p1.update(deltaTime);
+
     inimigoA.update(deltaTime);
     inimigoB.update(deltaTime);
 }
@@ -92,10 +93,7 @@ void Jogo::update(float deltaTime) {
 void Jogo::draw() {
     //p1.draw();
 	plataforma.draw();
-    p1.draw(sf::Color::Cyan);
-    inimigoA.draw(sf::Color::Red);
-    inimigoB.draw(sf::Color::Yellow);
-	
+
     lEntidades->drawEntidades();
 }
 //--------------------------------------------------------------------------------------------------------------------//
