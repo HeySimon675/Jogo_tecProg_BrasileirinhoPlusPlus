@@ -6,8 +6,19 @@
 #include "Obstaculo.h"
 #include <iostream>
 
-Obstaculo::Obstaculo(sf::Vector2f position, sf::Vector2f size, bool active)
+
+
+//--------------------------------------------------------------------------------------------------------------------//
+//constantes
+const Vector2f Obstaculo::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
+const Vector2f Obstaculo::POSICAO_PADRAO = Vector2f(50.0f,50.0f);
+
+Obstaculo::Obstaculo(Vector2f position,Vector2f size, bool active)
 {
+    Vector2f pos = POSICAO_PADRAO;
+    if(pos != position){
+    
+    }
     inicializaObstaculo(position, size, active);
 }
 
