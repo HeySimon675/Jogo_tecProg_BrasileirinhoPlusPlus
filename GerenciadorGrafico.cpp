@@ -30,6 +30,8 @@ const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
 //Titulo Da janela e VideoMode da janela
 const String GerenciadorGrafico::titulo("SFML_The_Game");
 
+//Chave do Map
+int GerenciadorGrafico::key = 0;
 //Textures//
 const String GerenciadorGrafico::TEXTURE_DIR = SYSTEM_PREFIX + "Textures/";
 
@@ -76,12 +78,18 @@ GerenciadorGrafico *GerenciadorGrafico::getGerGrafico() {
     return _instance;
 }
 
-//get Vector
-
+//--------------------------------------------------------------------------------------------------------------------//
+//- SOMENTE PARA TESTE
+//get Vector    
 vector<Texture *> *GerenciadorGrafico::getVector() {
     return &_vTexture;
 }
 
+//get map
+
+map<int,Texture*> * GerenciadorGrafico::getMap(){
+    return &_mTexture;
+}
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Inicializadoras//
@@ -107,6 +115,9 @@ void GerenciadorGrafico::load(const String _caminho) {
     tx->loadFromFile(_caminho);
     //tx->loadFromFile(_caminho);
     this->getVector()->push_back(tx);
+    //TODO: TESTE DE INCLUSÃO EM MAP
+    this->mTextures[key] = tx;
+    key++;
 }
 
 void GerenciadorGrafico::carregaTexturas() {
@@ -168,12 +179,23 @@ void GerenciadorGrafico::draw(const RectangleShape body) {
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
+//Ferramentas
+
+Texture* GerenciadorGrafico::getTexture(int chave){
+    if(chave < getLastKey()){
+        return this->mTexture[chave];
+    }
+}
+
+void GerenciadorGrafico::associaTextura(Entidade* entidade){
+    //TODO: para implementar, se necessário   
+}
+
+//--------------------------------------------------------------------------------------------------------------------//
 //Função obsoleta nesse estagio do desenvolvimento
 void GerenciadorGrafico::drawEntidade(Entidade* entidade) {
 
 }
-//--------------------------------------------------------------------------------------------------------------------//
-
 
 //--------------------------------------------------------------------------------------------------------------------//
 
