@@ -45,9 +45,9 @@ const String GerenciadorGrafico::INIMIGO_B_tx = TEXTURE_DIR + "Inimigo_B_texture
 const String GerenciadorGrafico::INIMIGO_BOSS_tx = TEXTURE_DIR + "Inimigo_Boss_texture.png";
 
 //Obstaculos//
-const String GerenciadorGrafico::OBSTACULO_PLATAFORMA = TEXTURE_DIR + "Obstaculo_Plataforma_texture.png";
-const String GerenciadorGrafico::OBSTACULO_CAIXA = TEXTURE_DIR + "Obstaculo_Caixa_texture.png";
-const String GerenciadorGrafico::OBSTACULO_SPIKE = TEXTURE_DIR + "Obstaculo_Spike_texture.png";
+const String GerenciadorGrafico::OBSTACULO_PLATAFORMA_tx = TEXTURE_DIR + "Obstaculo_Plataforma_texture.png";
+const String GerenciadorGrafico::OBSTACULO_CAIXA_tx = TEXTURE_DIR + "Obstaculo_Caixa_texture.png";
+const String GerenciadorGrafico::OBSTACULO_SPIKE_tx = TEXTURE_DIR + "Obstaculo_Spike_texture.png";
 
 //Projetil//
 const String GerenciadorGrafico::PROJETIL_tx = TEXTURE_DIR + "Projetil_texture.png";
@@ -116,24 +116,24 @@ void GerenciadorGrafico::load(const String _caminho) {
     //tx->loadFromFile(_caminho);
     this->getVector()->push_back(tx);
     //TODO: TESTE DE INCLUSÃO EM MAP
-    this->mTextures[key] = tx;
+    this->_mTexture[key] = tx;
     key++;
 }
 
 void GerenciadorGrafico::carregaTexturas() {
     //TODO colocar try catch para carregar textura
     load(JOGADOR_1_tx);
-    load(JOGADOR_2_tx);
+    //load(JOGADOR_2_tx);
     
-    load(INIMIGO_A_tx);
-    load(INIMIGO_B_tx);
-    load(INIMIGO_BOSS_tx);
+    //load(INIMIGO_A_tx);
+    //load(INIMIGO_B_tx);
+    //load(INIMIGO_BOSS_tx);
     
-    load(OBSTACULO_PLATAFORMA_tx);
-    load(OBSTACULO_CAIXA_tx);
-    load(OBSTACULO_SPIKE_tx);
+    //load(OBSTACULO_PLATAFORMA_tx);
+    //load(OBSTACULO_CAIXA_tx);
+    //load(OBSTACULO_SPIKE_tx);
     
-    load(PROJETIL_tx);
+    //load(PROJETIL_tx);
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {
@@ -183,7 +183,7 @@ void GerenciadorGrafico::draw(const RectangleShape body) {
 
 Texture* GerenciadorGrafico::getTexture(int chave){
     if(chave < getLastKey()){
-        return this->mTexture[chave];
+        return this->_mTexture[chave];
     }
 }
 

@@ -34,7 +34,7 @@ private:
 	
 public:
     Obstaculo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, bool active = true);
-    Obstaculo();
+
 	~Obstaculo();
 	void inicializaObstaculo(Vector2f position, Vector2f size, bool active);
 	void setCanMove(bool canMove);

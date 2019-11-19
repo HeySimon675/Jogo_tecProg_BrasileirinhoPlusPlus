@@ -23,6 +23,7 @@ protected:
 public:
     Entidade(float posX = 0.0f, float posY = 0.0f, bool active = false);
     Entidade(Vector2f posicao);
+    bool isActive() { return _active;}
 
 //--------------------------------------------------------------------------------------------------------------------//
 //NECESSARIO??

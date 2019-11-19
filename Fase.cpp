@@ -31,7 +31,7 @@ Fase::~Fase() {
 //Criação de Entidadades
 void Fase::criaPlataforma() {
     Obstaculo* obstaculo;
-    obstaculo = new Obstaculo;
+    obstaculo = new Obstaculo();
     obstaculo->inicializaObstaculo(Vector2f(200,200),Vector2f(50,50), true);
     listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
 }

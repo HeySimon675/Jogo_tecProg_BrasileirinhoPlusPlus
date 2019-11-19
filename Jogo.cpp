@@ -83,17 +83,9 @@ float deltaTime = 0.0f;
 //Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
 void Jogo::update(float deltaTime) {
     //ira atualizar as posições das Entidades dependendo de seu State
-
-	
-
-    //inimigoA.update(deltaTime);
-    //inimigoB.update(deltaTime);
 }
 
 void Jogo::draw() {
-    //p1.draw();
-	//plataforma.draw();
-
     lEntidades->drawEntidades();
 }
 //--------------------------------------------------------------------------------------------------------------------//

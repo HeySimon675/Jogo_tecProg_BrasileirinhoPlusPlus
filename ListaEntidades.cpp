@@ -27,7 +27,9 @@ Lista<Entidade> *ListaEntidades::getLista() {
 //metodos de loop//
 void ListaEntidades::draw() {
     //chamará o metodo draw do elemento apontado por i
-    aux->getInfo()->draw();
+    if(aux->getInfo()->isActive()){
+        aux->getInfo()->draw();
+    }
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos que provávelmente será descontinuado

@@ -22,10 +22,6 @@ Obstaculo::Obstaculo(Vector2f position,Vector2f size, bool active)
     inicializaObstaculo(position, size, active);
 }
 
-Obstaculo::Obstaculo()
-{
-
-}
 
 Obstaculo::~Obstaculo()
 {

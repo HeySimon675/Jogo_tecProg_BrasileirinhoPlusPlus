@@ -25,7 +25,7 @@ void Inimigo_A::draw() {
     gerenciadorGrafico->draw(body);
 }
 
-void Inimigo_A::inicializaInimigo_A(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
+void Inimigo_A::inicializaInimigo_A(Vector2f position,Vector2f size, bool active, float speed, float jump_height)
 {
     Vector2f pos;
     if(position != POSICAO_PADRAO){
