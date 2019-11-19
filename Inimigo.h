@@ -32,7 +32,7 @@ public:
 
     void inicializaInimigo(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
     void calculaMovimento(const float deltaTempo){
-        std::cout<<"calculando..."<<std::endl;
+        //std::cout<<"calculando..."<<std::endl;
     }
 
 
