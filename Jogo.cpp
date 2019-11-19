@@ -40,9 +40,9 @@ Jogo::~Jogo() {
 //inicializadores//
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();
-    //p1.inicializaJogador_1(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(100.0f, 100.0f),true,
-    //        100.0f, 50.0f,sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
-    //lEntidades.incluir(static_cast<Entidade*>(&p1));
+    p1.inicializaJogador_1(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(100.0f, 100.0f),true,
+            100.0f, 50.0f,sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
+    lEntidades->incluir(static_cast<Entidade*>(&p1));
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos principais//
@@ -73,6 +73,7 @@ float deltaTime = 0.0f;
             //todo pode ser alterado para chamar o metodo draw da lista, ja que states nao terao listas proprias
 //--------------------------------------------------------------------------------------------------------------------//
         update(deltaTime);
+        p1.update(deltaTime);
         draw();
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
     }

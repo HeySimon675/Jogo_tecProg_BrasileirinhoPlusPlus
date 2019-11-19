@@ -37,12 +37,13 @@ void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, bool act
     body.setSize(size);
     speed = sp;
     jump_height = jh;
+    body.setTexture(gerenciadorGrafico->getTexture(this->getID()));
 }
 
 void Personagem::draw()
 {
     /**Teste para botar uma cor no body**/
-    body.setFillColor(sf::Color::Cyan);
+    //body.setFillColor(sf::Color::Cyan);
     //Draw do body em si
     gerenciadorGrafico->draw(body);
 }

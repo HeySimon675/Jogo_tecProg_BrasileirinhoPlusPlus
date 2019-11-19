@@ -49,7 +49,6 @@ public:
     const bool isDead();
     void setPositionx(const float positionx);
 
-
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
     static const Vector2f TAMANHO_PADRAO;

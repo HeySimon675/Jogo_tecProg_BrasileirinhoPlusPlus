@@ -18,7 +18,8 @@ class Jogador_1 : public Jogador{
 //--------------------------------------------------------------------------------------------------------------------//
 //construção
 private:
-    static const String ID;
+    //constante
+    static const int id;
 public:
     Jogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height, Keyboard::Key right,
                                     Keyboard::Key left, Keyboard::Key jump);
@@ -28,7 +29,7 @@ public:
     Jogador_1();
     ~Jogador_1();
 
-    const String getID();
+    const int getID();
 
 //--------------------------------------------------------------------------------------------------------------------//
 //movimento

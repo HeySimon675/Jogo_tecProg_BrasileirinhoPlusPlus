@@ -8,7 +8,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //constantes
-    const String Jogador_1::ID = "1";
+const int Jogador_1::id = 0;
 
 //--------------------------------------------------------------------------------------------------------------------//
 //construção
@@ -29,8 +29,8 @@ void Jogador_1::inicializaJogador_1(Vector2f position, Vector2f size, bool activ
     inicializaJogador(position, size, active, speed, jump_height, right, left, jump);
 }
 
-const String Jogador_1::getID() {
-    return ID;
+const int Jogador_1::getID() {
+    return id;
 }
 
 //--------------------------------------------------------------------------------------------------------------------//

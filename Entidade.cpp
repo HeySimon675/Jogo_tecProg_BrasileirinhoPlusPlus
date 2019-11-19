@@ -53,6 +53,3 @@ void Entidade::draw() {
     //tera sua implementação em subclasses, a ideia é passar o body da Entidade especifica pro gerenciador grafico
 }
 
-const String Entidade::getID() {
-
-}

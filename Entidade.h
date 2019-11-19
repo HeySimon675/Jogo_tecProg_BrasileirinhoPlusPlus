@@ -18,7 +18,8 @@ protected:
     Vector2f posicao;
     bool _active;
     static GerenciadorGrafico* gerenciadorGrafico;
-    virtual const String getID();
+    virtual const int getID() {};
+
 
 public:
     Entidade(float posX = 0.0f, float posY = 0.0f, bool active = false);
