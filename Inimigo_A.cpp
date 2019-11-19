@@ -25,10 +25,16 @@ void Inimigo_A::draw() {
     gerenciadorGrafico->draw(body);
 }
 
-void Inimigo_A::inicializaInimigo_A(sf::Vector2f position = POSICAO_PADRAO, sf::Vector2f size = TAMANHO_PADRAO, bool active = true, float speed = 100, float jump_height = 50)
+void Inimigo_A::inicializaInimigo_A(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
 {
-
-    inicializaInimigo(position, size, active, speed, jump_height);
+    Vector2f pos;
+    if(position != POSICAO_PADRAO){
+        pos.x = POSICAO_PADRAO.x * position.x;
+        pos.y = POSICAO_PADRAO.y * position.y;
+    }else{
+        pos = position;
+    }
+    inicializaInimigo(pos, size, active, speed, jump_height);
     position_X_inicial = position.x;
     goingLeft = true;
 }

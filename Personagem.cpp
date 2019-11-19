@@ -29,7 +29,7 @@ Personagem::~Personagem()
 
 }
 
-void Personagem::inicializaPersonagem(sf::Vector2f position = POSICAO_PADRAO, sf::Vector2f size = TAMANHO_PADRAO, bool active = true, float sp = 100.0f, float jh = 50.0f)
+void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, bool active, float sp, float jh)
 {
     inicializaEntidade(position, size, active);
 

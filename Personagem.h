@@ -42,7 +42,7 @@ public:
     Personagem();
     virtual ~Personagem();
 
-    void inicializaPersonagem(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
+    void inicializaPersonagem(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, bool active = true, float sp = 100.0f, float jh = 50.0f);
     virtual void calculaMovimento(const float deltaTime) = 0;
     void draw();
     void update(float deltaTime);

@@ -19,7 +19,7 @@ public:
     Inimigo_A();
     ~Inimigo_A();
 
-    void inicializaInimigo_A(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
+    void inicializaInimigo_A(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, bool active = true, float speed = 100, float jump_height = 50);
     void calculaMovimento(const float deltaTime);
     void draw();
 
