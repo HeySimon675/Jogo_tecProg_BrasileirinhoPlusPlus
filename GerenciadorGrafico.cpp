@@ -25,7 +25,7 @@ const unsigned int GerenciadorGrafico::larguraJanela = 800;
 const unsigned int GerenciadorGrafico::alturaJanela = 600;
 //Tamanho da Window, usado pela View
 const Vector2f GerenciadorGrafico::WindowSize(larguraJanela,alturaJanela);
-const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
+const Vector2f GerenciadorGrafico::center(larguraJanela/2,alturaJanela/2);
 
 //Titulo Da janela e VideoMode da janela
 const String GerenciadorGrafico::titulo("SFML_The_Game");
