@@ -28,7 +28,36 @@ Fase::~Fase() {
 
 }
 
+//função para printar a matriz, podendo assim verificar a integridade da matriz
+void Fase::printaMatriz() {
+    for(ROW = 0; ROW < FASE_HEIGHT; ROW++){
+        for (COL = 0; COL < FASE_WIDTH; COL++) {
+            printf("%c ",matrizFase[ROW][COL]);
+        }
+        printf("\n");
+    }
+}
+
 void Fase::constroiMatriz() {
+    char aux;
+    matrizFase = new char*[FASE_HEIGHT];
+    for (int row = 0; row < FASE_WIDTH; row++){
+        matrizFase[row] = new char[FASE_WIDTH];
+    }
+    ROW = 0;
+    COL = 0;
+    (*arqFase) >> aux;
+    while (!(*arqFase).eof()){
+        matrizFase[ROW][COL] = aux;
+        criaEntidade(aux);
+        (*arqFase) >> aux;
+        if (COL == FASE_WIDTH-1){
+            ROW++;
+            COL = 0;
+        } else{
+            COL++;
+        }
+    }
 
 }
 

@@ -162,9 +162,9 @@ void Lista<TIPO>::operator=(TIPO* el) {
     if(!includeElemento(el)){
         //TODO
         // Criar aviso para elemento não incluido na lista
-        printf("elemento nao incluido");
+        printf("elemento nao incluido\n");
     }else
-        printf("elemento incluido");
+        printf("elemento incluido\n");
 }
 
 

@@ -18,6 +18,8 @@
 #include "ListaObstaculos.h"
 #include <fstream>
 
+#include "Inimigo_B.h"
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase//
 class Fase : public Entidade {
@@ -41,9 +43,10 @@ public:
     ~Fase();
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos de inicialização
-private:
+protected:
     virtual void constroiMatriz();
     virtual void criaEntidade(char aux);
+    void printaMatriz();
     void carregaInimigo();
     void carregaObstaculo();
 public:

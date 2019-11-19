@@ -21,58 +21,8 @@ Fase_A::~Fase_A() {
 
 }
 //--------------------------------------------------------------------------------------------------------------------//
-//função para printar a matriz, podendo assim verificar a integridade da matriz
-void Fase_A::printaMatriz() {
-    for(ROW = 0; ROW < FASE_HEIGHT; ROW++){
-        for (COL = 0; COL < FASE_WIDTH; COL++) {
-            printf("%c ",matrizFase[ROW][COL]);
-        }
-        printf("\n");
-    }
-}
 
-void Fase_A::constroiMatriz() {
-    char aux;
-    matrizFase = new char*[FASE_HEIGHT];
-    for (int row = 0; row < FASE_WIDTH; row++){
-        matrizFase[row] = new char[FASE_WIDTH];
-    }
-    ROW = 0;
-    COL = 0;
-    (*arqFase) >> aux;
-    while (!(*arqFase).eof()){
-        matrizFase[ROW][COL] = aux;
-        criaEntidade(aux);
-        (*arqFase) >> aux;
-        if (COL == FASE_WIDTH-1){
-            ROW++;
-            COL = 0;
-        } else{
-            COL++;
-        }
-    }
 
-    /*
-    char aux;
-    matrizFase = new char*[FASE_HEIGHT];
-    for (int row = 0; row < FASE_WIDTH; row++){
-        matrizFase[row] = new char[FASE_WIDTH];
-    }
-    fscanf(arqFase,"%c",&aux);
-    ROW = 0;
-    COL = 0;
-    while (aux != EOF){
-        matrizFase[ROW][COL] = aux;
-        fscanf(arqFase,"%c ",&aux);
-        if (aux == '\n'){
-            ROW++;
-            COL = 0;
-        } else{
-            COL++;
-        }
-    }
-    */
-}
 
 void Fase_A::criaJogador(){
     Jogador_1 *j1;
@@ -83,13 +33,23 @@ void Fase_A::criaJogador(){
 
 }
 
+void Fase_A::criaInimigoA() {
+    Inimigo_A *nA;
+    nA = new Inimigo_A();
+    nA->inicializaInimigo_A(Vector2f(10.0f,10.0f),Vector2f(50,50), true,100.0f,50.0f);
+    listaEntidades->incluir(static_cast<Entidade*>(nA));
+}
+
 void Fase_A::criaEntidade(char aux) {
 
     switch (aux){
         //Alterar ja que fases não iram criar Jogadores
         case '1' :
+            //case somente para teste de construção
             criaJogador();
             break;
+        case 'A':   //Inimigo_A
+            criaInimigoA();
         default:
             break;
     }
@@ -106,7 +66,7 @@ void Fase_A::inicializa()  {
     }
 
     constroiMatriz();
-    //printaMatriz();
+    printaMatriz();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//

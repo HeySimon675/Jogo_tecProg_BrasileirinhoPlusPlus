@@ -20,6 +20,11 @@ Inimigo_A::~Inimigo_A()
 
 }
 
+void Inimigo_A::draw() {
+    body.setFillColor(Color::Green);
+    gerenciadorGrafico->draw(body);
+}
+
 void Inimigo_A::inicializaInimigo_A(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
 {
     inicializaInimigo(position, size, active, speed, jump_height);

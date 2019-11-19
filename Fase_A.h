@@ -17,6 +17,8 @@
 // assim que a fase estiver criando Inimigos e Obstaculos
 #include "Jogador_1.h"
 
+#include "Inimigo_A.h"
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase_A//
@@ -25,12 +27,16 @@ class Fase_A : public Fase{
 //--------------------------------------------------------------------------------------------------------------------//
 //construção
 private:
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Criação de Entidades
     void criaJogador(); //teste
     void criaEntidade(char aux);
-    void constroiMatriz();
+    void criaInimigoA();
+
 
     //para teste//
-    void printaMatriz();
+
 public:
     Fase_A(ListaEntidades* lista = nullptr);
     ~Fase_A();

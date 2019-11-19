@@ -86,13 +86,13 @@ void Jogo::update(float deltaTime) {
 
 	
 
-    inimigoA.update(deltaTime);
-    inimigoB.update(deltaTime);
+    //inimigoA.update(deltaTime);
+    //inimigoB.update(deltaTime);
 }
 
 void Jogo::draw() {
     //p1.draw();
-	plataforma.draw();
+	//plataforma.draw();
 
     lEntidades->drawEntidades();
 }
