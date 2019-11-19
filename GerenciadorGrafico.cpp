@@ -21,8 +21,8 @@ const String GerenciadorGrafico::SYSTEM_PREFIX = "../";
 
 
 //altura e largura da Window
-const unsigned int GerenciadorGrafico::larguraJanela = 1000;
-const unsigned int GerenciadorGrafico::alturaJanela = 650;
+const unsigned int GerenciadorGrafico::larguraJanela = 800;
+const unsigned int GerenciadorGrafico::alturaJanela = 600;
 //Tamanho da Window, usado pela View
 const Vector2f GerenciadorGrafico::WindowSize(larguraJanela,alturaJanela);
 const Vector2f GerenciadorGrafico::center(0.0f,0.0f);
@@ -33,9 +33,22 @@ const String GerenciadorGrafico::titulo("SFML_The_Game");
 //Textures//
 const String GerenciadorGrafico::TEXTURE_DIR = SYSTEM_PREFIX + "Textures/";
 
-//player
+//players//
 const String GerenciadorGrafico::JOGADOR_1_tx = TEXTURE_DIR + "Jogador_1_texture.png";
+const String GerenciadorGrafico::JOGADOR_2_tx = TEXTURE_DIR + "Jogador_2_texture.png";
 
+//Inimigos//
+const String GerenciadorGrafico::INIMIGO_A_tx = TEXTURE_DIR + "Inimigo_A_texture.png";
+const String GerenciadorGrafico::INIMIGO_B_tx = TEXTURE_DIR + "Inimigo_B_texture.png";
+const String GerenciadorGrafico::INIMIGO_BOSS_tx = TEXTURE_DIR + "Inimigo_Boss_texture.png";
+
+//Obstaculos//
+const String GerenciadorGrafico::OBSTACULO_PLATAFORMA = TEXTURE_DIR + "Obstaculo_Plataforma_texture.png";
+const String GerenciadorGrafico::OBSTACULO_CAIXA = TEXTURE_DIR + "Obstaculo_Caixa_texture.png";
+const String GerenciadorGrafico::OBSTACULO_SPIKE = TEXTURE_DIR + "Obstaculo_Spike_texture.png";
+
+//Projetil//
+const String GerenciadorGrafico::PROJETIL_tx = TEXTURE_DIR + "Projetil_texture.png";
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM Variaveis Static//
 
@@ -99,7 +112,17 @@ void GerenciadorGrafico::load(const String _caminho) {
 void GerenciadorGrafico::carregaTexturas() {
     //TODO colocar try catch para carregar textura
     load(JOGADOR_1_tx);
-
+    load(JOGADOR_2_tx);
+    
+    load(INIMIGO_A_tx);
+    load(INIMIGO_B_tx);
+    load(INIMIGO_BOSS_tx);
+    
+    load(OBSTACULO_PLATAFORMA_tx);
+    load(OBSTACULO_CAIXA_tx);
+    load(OBSTACULO_SPIKE_tx);
+    
+    load(PROJETIL_tx);
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {
