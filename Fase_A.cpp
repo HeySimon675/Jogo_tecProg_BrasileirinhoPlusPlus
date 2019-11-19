@@ -50,6 +50,10 @@ void Fase_A::criaEntidade(char aux) {
             break;
         case 'A':   //Inimigo_A
             criaInimigoA();
+            break;
+        case 'P':
+            criaPlataforma();
+            break;
         default:
             break;
     }

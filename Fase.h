@@ -19,6 +19,7 @@
 #include <fstream>
 
 #include "Inimigo_B.h"
+#include "Obstaculo.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase//
@@ -44,8 +45,13 @@ public:
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos de inicialização
 protected:
-    virtual void constroiMatriz();
+//--------------------------------------------------------------------------------------------------------------------//
+//Criando Entidades
     virtual void criaEntidade(char aux);
+    void criaPlataforma();
+
+
+    virtual void constroiMatriz();
     void printaMatriz();
     void carregaInimigo();
     void carregaObstaculo();

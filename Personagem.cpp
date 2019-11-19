@@ -6,6 +6,12 @@
 #include "Personagem.h"
 #include <iostream>
 
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Constantes
+    const Vector2f Personagem::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
+    const Vector2f Personagem::POSICAO_PADRAO = Vector2f(0,0);
+
 //--------------------------------------------------------------------------------------------------------------------//
 //
 Personagem::Personagem(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
@@ -23,7 +29,7 @@ Personagem::~Personagem()
 
 }
 
-void Personagem::inicializaPersonagem(sf::Vector2f position, sf::Vector2f size, bool active, float sp, float jh)
+void Personagem::inicializaPersonagem(sf::Vector2f position = POSICAO_PADRAO, sf::Vector2f size = TAMANHO_PADRAO, bool active = true, float sp = 100.0f, float jh = 50.0f)
 {
     inicializaEntidade(position, size, active);
 

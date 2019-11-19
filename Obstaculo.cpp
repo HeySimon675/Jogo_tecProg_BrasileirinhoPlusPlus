@@ -55,8 +55,7 @@ void Obstaculo::draw()
     body.setFillColor(sf::Color::White);
     //Draw do body em si
     gerenciadorGrafico->draw(body);
-
-    std::cout<<"desenhou?"<<std::endl;
+    //std::cout<<"desenhou?"<<std::endl;
 }
 /**
 Collider Obstaculo::GetCollider()
