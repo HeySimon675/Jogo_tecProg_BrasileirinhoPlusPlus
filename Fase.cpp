@@ -57,7 +57,7 @@ void Fase::constroiMatriz() {
     (*arqFase) >> aux;
     while (!(*arqFase).eof()){
         matrizFase[ROW][COL] = aux;
-        criaEntidade(aux);
+        criaEntidade(aux,Vector2f(COL,ROW));
         (*arqFase) >> aux;
         if (COL == FASE_WIDTH-1){
             ROW++;
@@ -69,7 +69,7 @@ void Fase::constroiMatriz() {
 
 }
 
-void Fase::criaEntidade(char aux) {}
+void Fase::criaEntidade(char aux, Vector2f pos) {}
 
 void Fase::carregaInimigo() {
 

@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes
     const Vector2f Personagem::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
-    const Vector2f Personagem::POSICAO_PADRAO = Vector2f(0,0);
+    const Vector2f Personagem::POSICAO_PADRAO = Vector2f(50,50);
 
 //--------------------------------------------------------------------------------------------------------------------//
 //

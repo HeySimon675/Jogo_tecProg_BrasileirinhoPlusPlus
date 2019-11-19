@@ -31,8 +31,8 @@ private:
 //--------------------------------------------------------------------------------------------------------------------//
 //Criação de Entidades
     void criaJogador(); //teste
-    void criaEntidade(char aux);
-    void criaInimigoA();
+    void criaEntidade(char aux, Vector2f pos);
+    void criaInimigoA(Vector2f pos);
 
 
     //para teste//

@@ -47,7 +47,7 @@ public:
 protected:
 //--------------------------------------------------------------------------------------------------------------------//
 //Criando Entidades
-    virtual void criaEntidade(char aux);
+    virtual void criaEntidade(char aux, Vector2f pos);
     void criaPlataforma();
 
 

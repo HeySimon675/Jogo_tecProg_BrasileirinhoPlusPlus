@@ -33,14 +33,14 @@ void Fase_A::criaJogador(){
 
 }
 
-void Fase_A::criaInimigoA() {
+void Fase_A::criaInimigoA(Vector2f pos) {
     Inimigo_A *nA;
     nA = new Inimigo_A();
-    nA->inicializaInimigo_A(Vector2f(10.0f,10.0f),Vector2f(50,50), true,100.0f,50.0f);
+    nA->inicializaInimigo_A(pos);
     listaEntidades->incluir(static_cast<Entidade*>(nA));
 }
 
-void Fase_A::criaEntidade(char aux) {
+void Fase_A::criaEntidade(char aux, Vector2f pos) {
 
     switch (aux){
         //Alterar ja que fases não iram criar Jogadores
@@ -49,7 +49,7 @@ void Fase_A::criaEntidade(char aux) {
             criaJogador();
             break;
         case 'A':   //Inimigo_A
-            criaInimigoA();
+            criaInimigoA(pos);
             break;
         case 'P':
             criaPlataforma();
