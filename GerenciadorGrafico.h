@@ -8,12 +8,16 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <string>
+#include <map>
+
 class Entidade;
 //--------------------------------------------------------------------------------------------------------------------//
 //Namespace's
 using namespace sf;
+using namespace std;
 using std::vector;
 using std::string;
+
 namespace gerenciadores {
     class GerenciadorGrafico;
 }
@@ -25,9 +29,11 @@ typedef class GerenciadorGrafico {
 private:
     RenderWindow* _window;
     View* pView;
+    map<int, Texture*> _mTexture;  //testando nova estrutura para poder carregar mais facilmente a textura das Entidades
     vector<Texture*> _vTexture;
     static GerenciadorGrafico* _instance;   //Singleton
     Event event;
+    static int key; //chave do Map
 //contrutora privada//
     GerenciadorGrafico();
 public:
@@ -35,6 +41,8 @@ public:
     ~GerenciadorGrafico();
     static GerenciadorGrafico* getGerGrafico();     //implementação do Singleton
     vector<Texture*>* getVector();
+    map<int,Texture*>* getMap();
+    int getLastKey(){return key;}
 //--------------------------------------------------------------------------------------------------------------------//
 //METODOS PARA TESTE//
 private:
@@ -49,6 +57,14 @@ public:
     void exibir();
     void drawEntidade(Entidade* entidade);
     void draw(RectangleShape body);
+    
+    //verifica atravez do id se a entidade possui uma textura e então associa ela atravez do map de Texturas
+    void associaTextura(Entidade* entidade);
+    
+    //ou poderia implementar um metodo que só retorna a textura para a Entidade, somente passando o proprio id
+    //a função iria acessar o map pelo id, retornando a textura, não teria como verificar se é a textura certa, mas como
+    //nao metodos para usuario, não vejo problema.
+    Texture* getTexture(int id);
 private:
     void updateSFML();
 
@@ -97,9 +113,6 @@ public:
     //Projetil//
     static const String PROJETIL_tx;
     
-    
-
-
 }gGrafico;
 
 
