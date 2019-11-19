@@ -82,7 +82,22 @@ public:
 
     //player//
     static const String JOGADOR_1_tx;
-
+    static const String JOGADOR_2_tx;
+    
+    //Inimigo//
+    static const String INIMIGO_A_tx;
+    static const String INIMIGO_B_tx;
+    static const String INIMIGO_BOSS_tx;
+    
+    //Obstaculos//
+    static const String OBSTACULO_PLATAFORMA_tx;
+    static const String OBSTACULO_CAIXA_tx;
+    static const String OBSTACULO_SPIKE_tx;
+    
+    //Projetil//
+    static const String PROJETIL_tx;
+    
+    
 
 
 }gGrafico;
