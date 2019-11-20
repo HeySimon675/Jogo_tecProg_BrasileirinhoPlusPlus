@@ -17,8 +17,8 @@
 //Constantes//
 
 const String Fase::FASES_DIR = "Fases/";
-const int Fase::FASE_HEIGHT = 10;
-const int Fase::FASE_WIDTH = 10;
+const int Fase::FASE_HEIGHT = 12;
+const int Fase::FASE_WIDTH = 16;
 
 Fase::Fase(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     listaEntidades = lista;

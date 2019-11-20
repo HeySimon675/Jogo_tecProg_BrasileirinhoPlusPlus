@@ -4,14 +4,17 @@
 //
 
 #include "GameState.h"
-/*
+
+//singleton
+GameState* GameState::_instance = nullptr;
+
 GameState *GameState::getState() {
     if(!_instance){
         _instance = new GameState;
     }
         return _instance;
 }
-*/
+
 void GameState::inicializar() {
 
 }

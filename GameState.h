@@ -16,7 +16,7 @@ class GameState {
 private:
     static GameState* _instance;
 public:
-    //static GameState* getState();
+    static GameState* getState();
 
 protected:
     virtual void inicializar();
