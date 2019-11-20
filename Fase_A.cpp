@@ -3,13 +3,6 @@
 // Created by simao on 11/11/2019.
 
 #include "Fase_A.h"
-#include <iostream>
-#include <string>
-#include <cstring>
-
-
-
-
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Construção
@@ -27,10 +20,6 @@ Fase_A::~Fase_A() {
     destroimatriz();
 }
 //--------------------------------------------------------------------------------------------------------------------//
-
-
-
-
 
 void Fase_A::criaInimigoA(Vector2f pos) {
     Inimigo_A *nA;

@@ -10,13 +10,31 @@
 //Header//
 #include "Fase.h"
 
-
+//--------------------------------------------------------------------------------------------------------------------//
 //Entidades da Fase
-//#include "Inimigo_Boss.h"
+#include "Inimigo_Boss.h"
 //#include "Obstaculo_caixa.h"
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase_B//
 class Fase_B : public Fase {
-    static const String faseFile;
+private:
+
+//--------------------------------------------------------------------------------------------------------------------//
+//constantes	
+    static const String FASE_FILE;
+    static const int FASE_WIDTH;
+    static const int FASE_HEIGHT;
+
+//--------------------------------------------------------------------------------------------------------------------//
+//funções
+    void criaEntidade(char aux, Vector2f pos);
+    void criaInimigoBoss(Vector2f pos);
+
+public:
+	Fase_B(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
+	~Fase_B();
+	void inicializa();
+
 };

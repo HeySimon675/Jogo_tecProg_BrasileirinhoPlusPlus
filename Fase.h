@@ -18,6 +18,10 @@
 #include "Jogador_2.h"
 #include <fstream>
 
+#include <iostream>
+#include <string>   //testar remover string
+#include <cstring>
+
 
 
 #include "Inimigo_B.h"
