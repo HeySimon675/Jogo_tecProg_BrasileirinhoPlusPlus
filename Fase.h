@@ -58,7 +58,7 @@ protected:
     void criaPlataforma();
     void posicionaJogador(Vector2f pos);
 
-
+    void destroiMatriz();
     virtual void constroiMatriz();
     void printaMatriz();
     void carregaInimigo();

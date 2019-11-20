@@ -27,6 +27,11 @@ Fase::Fase(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : En
 }
 
 Fase::~Fase() {
+    destroimatriz();
+    pJ1 = nullptr;
+    pJ2 = nullptr;
+    listaEntidades = nullptr;
+    arqFase = nullptr;
 
 }
 //--------------------------------------------------------------------------------------------------------------------//
@@ -54,6 +59,14 @@ void Fase::printaMatriz() {
         }
         printf("\n");
     }
+}
+
+void Fase::destroimatriz(){
+    for(int row =0; row < FASE_WIDTH , row++){
+        delete matrizFase[i];
+    }
+    delete matrizFase;
+    matrizFase = nullptr;
 }
 
 void Fase::constroiMatriz() {

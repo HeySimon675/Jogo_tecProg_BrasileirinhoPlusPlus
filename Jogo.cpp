@@ -36,7 +36,16 @@ Jogo::Jogo()
 //destrutora//
 
 Jogo::~Jogo() {
+    //TODO: destrutora 
+    //delete lEntidades;
+    delete g;
+    //delete pstate;
 
+
+    if(_instance){
+        delete _instance;
+    }
+    _instance = nullptr;
 }   //end Destrutora
 
 //--------------------------------------------------------------------------------------------------------------------//

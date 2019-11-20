@@ -18,7 +18,8 @@ Fase_A::Fase_A(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) 
 }
 
 Fase_A::~Fase_A() {
-
+    delete arqFase;
+    destroimatriz();
 }
 //--------------------------------------------------------------------------------------------------------------------//
 
@@ -70,6 +71,7 @@ void Fase_A::inicializa()  {
 //Constantes//
 
 const String Fase_A::FASE_FILE = "../" + FASES_DIR + "FaseTest.txt";
-const int Fase_A::FASE_WIDTH = 10;
-const int Fase_A::FASE_HEIGHT = 10;
-
+const int Fase_A::FASE_WIDTH = 16;
+const int Fase_A::FASE_HEIGHT = 12;
+//fase agora tem o a dimensão da view, a ideia é expandir tanto vertical, quanto horizontalmente, percorrendo a view,
+//ou deixando a view menor, fazendo à caminhar pela fase, seguindo o jogador

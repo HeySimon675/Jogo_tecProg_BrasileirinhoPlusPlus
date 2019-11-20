@@ -14,6 +14,7 @@ ListaEntidades::ListaEntidades() {
 }
 
 ListaEntidades::~ListaEntidades() {
+    aux = nullptr;
 
 }
 

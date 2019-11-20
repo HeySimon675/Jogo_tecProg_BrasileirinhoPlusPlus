@@ -61,12 +61,18 @@ GerenciadorGrafico::GerenciadorGrafico(){
 
 //destrutora
 GerenciadorGrafico::~GerenciadorGrafico() {
+    //todo Desalocar
+    // texturas do vector antes de destruir o gerenciador
+    for(int i = 0; i< key ; i++){
+        delete _mTexture[i];
+        //verificar se map possui push back
+    }
+    // desalocar objetos dinamicos (_Window, _view)
+    delete _view;
+    delete _window;
     if (_instance){
         delete _instance;
     }
-    //todo Desalocar
-    // texturas do vector antes de destruir o gerenciador
-    // desalocar objetos dinamicos (_Window, _view)
     _instance = nullptr;
 }   // fim da destrutora
 
@@ -113,8 +119,7 @@ void GerenciadorGrafico::inicializaView() {
 void GerenciadorGrafico::load(const String _caminho) {
     Texture* tx = new Texture;
     tx->loadFromFile(_caminho);
-    //tx->loadFromFile(_caminho);
-    this->getVector()->push_back(tx);
+    //this->getVector()->push_back(tx);
     //TODO: TESTE DE INCLUSÃO EM MAP
     this->_mTexture[key] = tx;
     key++;
