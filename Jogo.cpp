@@ -24,6 +24,9 @@ Jogo *Jogo::getJogo() {
 //construtora Privada//
 Jogo::Jogo() 
 {
+
+
+    //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
     lEntidades = new ListaEntidades;
     faseA = new Fase_A(lEntidades);
     inicializa();
@@ -39,8 +42,8 @@ Jogo::~Jogo() {
 //--------------------------------------------------------------------------------------------------------------------//
 //inicializadores//
 void Jogo::inicializa() {
-    g = GerenciadorGrafico::getGerGrafico();
-    p1.inicializaJogador_1(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(100.0f, 100.0f),true,
+    g = GerenciadorGrafico::getGerGrafico();    //carrega e inicializa o gerenciador grafico
+    p1.inicializaJogador_1(Vector2f(0.0f, 0.0f), Vector2f(100.0f, 100.0f),true,
             100.0f, 50.0f,sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
     lEntidades->incluir(static_cast<Entidade*>(&p1));
 }
@@ -58,23 +61,32 @@ float deltaTime = 0.0f;
 //--------------------------------------------------------------------------------------------------------------------//
     while (g->janelaAberta())
     {
-
+        //ATUALIZA DELTA TIME
         deltaTime = clock.restart().asSeconds();
 		if (deltaTime > 1.0f / 60.0f){
             deltaTime = 1.0f / 60.0f;
 		}
 
 //--------------------------------------------------------------------------------------------------------------------//
-        //ATUALIZA DELTA TIME
+        
         //METODO EXECUTE DE STATE
             //cria e marca as Entidades necessarias para o state
+                //se o State alocar a lista, então irá controlar seu percorrimento, chamando somente um metodo
+
+        //TODO: Verificar em qual ordem deve ser feita a chamada de função, se lista->percorrer() vem antes ou depois
+        //de g->executar()
+
         g->executar();  //metodo executar do gerenciador grafico
-        //METODO DRAW DO STATE
-            //todo pode ser alterado para chamar o metodo draw da lista, ja que states nao terao listas proprias
+
+
 //--------------------------------------------------------------------------------------------------------------------//
-        update(deltaTime);
+//Testes//       
+        //update(deltaTime);    
         p1.update(deltaTime);
         draw();
+
+//teste//
+
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
     }
 }
@@ -83,10 +95,12 @@ float deltaTime = 0.0f;
 //--------------------------------------------------------------------------------------------------------------------//
 //Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
 void Jogo::update(float deltaTime) {
-    //ira atualizar as posições das Entidades dependendo de seu State
+    
 }
 
 void Jogo::draw() {
     lEntidades->drawEntidades();
+    //testar e então substituir por lista->percorrer()
+    //depois usar o metodo percorrer diretamente ou só chamar o metodo pState->executar() caso ele agregue a lista
 }
 //--------------------------------------------------------------------------------------------------------------------//

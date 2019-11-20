@@ -14,12 +14,17 @@
 //Header//
 #include "Entidade.h"
 #include "ListaEntidades.h"
-#include "ListaInimigos.h"
-#include "ListaObstaculos.h"
+#include "Jogador_1.h"
+#include "Jogador_2.h"
 #include <fstream>
 
+
+
 #include "Inimigo_B.h"
-#include "Obstaculo.h"
+#include "Obstaculo.h"  //remover assim que possivel
+
+//#include "Obstaculo_Plataforma"
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase//
@@ -34,13 +39,15 @@ protected:
     //Arquivo
     std::ifstream* arqFase;
 
-    //listas
+    //lista
     ListaEntidades* listaEntidades;
-    ListaInimigos listaInimigos;
-    ListaObstaculos listaObstaculos;
+
+    //Jogadores
+    Jogador_1* pJ1;
+    Jogador_2* pJ2;
 
 public:
-    Fase(ListaEntidades* lista = nullptr);
+    Fase(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase();
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos de inicialização
@@ -49,6 +56,7 @@ protected:
 //Criando Entidades
     virtual void criaEntidade(char aux, Vector2f pos);
     void criaPlataforma();
+    void posicionaJogador(Vector2f pos);
 
 
     virtual void constroiMatriz();

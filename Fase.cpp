@@ -10,7 +10,7 @@
     "../"      -> LINUX
     ""         -> WINDOWS
 */
-//const String GerenciadorGrafico::SYSTEM_PREFIX = "../";
+//const String Fase::SYSTEM_PREFIX = "../";
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -20,8 +20,10 @@ const String Fase::FASES_DIR = "Fases/";
 const int Fase::FASE_HEIGHT = 10;
 const int Fase::FASE_WIDTH = 10;
 
-Fase::Fase(ListaEntidades* lista) : Entidade() {
+Fase::Fase(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     listaEntidades = lista;
+    pJ1 = jogador1;
+    pJ2 = jogador2;
 }
 
 Fase::~Fase() {
@@ -34,6 +36,14 @@ void Fase::criaPlataforma() {
     obstaculo = new Obstaculo();
     obstaculo->inicializaObstaculo(Vector2f(200,200),Vector2f(50,50), true);
     listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+}
+
+void Fase::posicionaJogador(Vector2f pos){
+    pJ1->setPosition(pos);
+    if(pJ2){
+        Vector2f pos2(pos.x+2, pos.y);
+        pJ2->setPosition(pos2);
+    }
 }
 
 //função para printar a matriz, podendo assim verificar a integridade da matriz

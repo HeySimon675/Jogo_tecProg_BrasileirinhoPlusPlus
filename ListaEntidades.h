@@ -25,9 +25,11 @@ public:
 //Metodos de loop//
 private:
     void draw();
-    void update();  //atualmente em desuso
+    void update(float deltaTime);
+    void executar(float deltaTime = 0.0f);  //paramentro default somente para teste
 public:
     void drawEntidades();
+    void percorrer(float deltaTime);    //testar em jogo
     void incluir(Entidade* entidade);
 };
 

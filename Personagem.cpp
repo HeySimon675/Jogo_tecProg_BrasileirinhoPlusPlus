@@ -13,8 +13,25 @@
     const Vector2f Personagem::POSICAO_PADRAO = Vector2f(50,50);
 
 //--------------------------------------------------------------------------------------------------------------------//
-//
-Personagem::Personagem(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
+//Ferramentas para fase
+    void Personagem::setPosition(Vector2f position){
+        Vector2f pos;
+        if(position != POSICAO_PADRAO){
+            pos.x = POSICAO_PADRAO.x * position.x;
+            pos.y = POSICAO_PADRAO.y * position.y;
+        }else{
+            pos = position;
+        }
+        body.setPosition(pos);
+    }
+
+
+
+
+
+
+
+Personagem::Personagem(Vector2f position, Vector2f size, bool active, float speed, float jump_height)
 {
     inicializaPersonagem(position, size, active, speed, jump_height);
 }
@@ -33,7 +50,7 @@ void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, bool act
 {
     inicializaEntidade(position, size, active);
 
-    body.setPosition(position);
+    setPosition(position);
     body.setSize(size);
     speed = sp;
     jump_height = jh;

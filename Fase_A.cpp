@@ -13,7 +13,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Construção
-Fase_A::Fase_A(ListaEntidades* lista) : Fase(lista) {
+Fase_A::Fase_A(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : Fase(lista, jogador1, jogador2) {
     inicializa();
 }
 
@@ -24,14 +24,7 @@ Fase_A::~Fase_A() {
 
 
 
-void Fase_A::criaJogador(){
-    Jogador_1 *j1;
-    j1 = new Jogador_1();
-    j1->inicializaJogador_1(Vector2f(0.0f, 0.0f), Vector2f(100.0f, 100.0f),true,
-                            100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
-    listaEntidades->incluir((static_cast<Entidade*>(j1)));
 
-}
 
 void Fase_A::criaInimigoA(Vector2f pos) {
     Inimigo_A *nA;
@@ -44,9 +37,9 @@ void Fase_A::criaEntidade(char aux, Vector2f pos) {
 
     switch (aux){
         //Alterar ja que fases não iram criar Jogadores
-        case '1' :
-            //case somente para teste de construção
-            criaJogador();
+        case 'J' :
+            //modificar nome da função, pois a função posiciona o jogador
+            posicionaJogador(pos);
             break;
         case 'A':   //Inimigo_A
             criaInimigoA(pos);

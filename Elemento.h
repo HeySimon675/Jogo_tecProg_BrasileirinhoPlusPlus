@@ -22,6 +22,7 @@ public:
     void setInfo( TIPO* info);
     TIPO* getInfo();
     TIPO* operator*(Elemento<TIPO>* aux);
+    Elemento<TIPO>* operator++();
 };
 
 template<class TIPO>
@@ -59,6 +60,12 @@ void Elemento<TIPO>::setInfo( TIPO* info) {
 template<class TIPO>
 TIPO* Elemento<TIPO>::getInfo() {
     return pInfo;
+}
+
+//TODO: TESTAR
+template<class TIPO>
+Elemento<TIPO>* operator++(){
+    return getInfo();
 }
 
 template<class TIPO>

@@ -26,32 +26,57 @@ Lista<Entidade> *ListaEntidades::getLista() {
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos de loop//
 void ListaEntidades::draw() {
-    //chamará o metodo draw do elemento apontado por i
+    //TESTAR USAR OPERADOR * DA LISTA PARA ACESSAR INFO
+    aux->getInfo()->draw();
+    
+}
+//--------------------------------------------------------------------------------------------------------------------//
+//TODO: TESTAR
+void ListaEntidades::update(float deltaTime) {
+    //TESTAR USAR OPERADOR * DA LISTA PARA ACESSAR INFO
+    aux->getInfo()->update(deltaTime);
+    
+    
+}
+//TESTAR
+void ListaEntidades::executar(float deltaTime){
+    //testar operador *
     if(aux->getInfo()->isActive()){
-        aux->getInfo()->draw();
+        update(deltaTime);
+        draw();
     }
 }
 //--------------------------------------------------------------------------------------------------------------------//
-//metodos que provávelmente será descontinuado
-void ListaEntidades::update() {
-    //chamará o metodo update do elemento apontado por i
-    aux->getInfo()->update();
-}
-//--------------------------------------------------------------------------------------------------------------------//
+//LOOP//
 
-
+//testar e se funcional, migrar para a função para 'Percorrer'
 void ListaEntidades::drawEntidades() {
     if(!lista.vazia()){
-        aux = lista.getPrim();
-        while (aux != lista.getAt()){
-            draw();
-            //update();
-            aux = aux->getProx();
+        aux = lista.inicio();
+        while (aux != lista.fim()){
+            executar();
+            //aux = aux->getProx();
+            aux = aux++;    //testar metodo, se possivel trocar por um iterator, assim incrementando somente o iterator
         }
-        draw();
-        aux = NULL;
+        executar();
+        aux = nullptr;
     }
 }
+
+//função principal de loop
+void ListaEntidades::Percorrer(float deltaTime){
+    if(!lista.vazia()){
+        aux = lista.inicio();
+        while (aux != lista.fim()){
+            executar(deltaTime);
+            //aux = aux->getProx();
+            aux = aux++;    //testar metodo, se possivel trocar por um iterator, assim incrementando somente o iterator
+        }
+        executar(deltaTime);
+        aux = nullptr;
+    }
+}
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Inclui entidades na lista//

@@ -27,6 +27,7 @@ void Inimigo_A::draw() {
 
 void Inimigo_A::inicializaInimigo_A(Vector2f position,Vector2f size, bool active, float speed, float jump_height)
 {
+    /* TODO: tecnicamente esse codigo não é mais necessario, avaliar a necessidade de chamar inicializa das funções acima  
     Vector2f pos;
     if(position != POSICAO_PADRAO){
         pos.x = POSICAO_PADRAO.x * position.x;
@@ -34,6 +35,7 @@ void Inimigo_A::inicializaInimigo_A(Vector2f position,Vector2f size, bool active
     }else{
         pos = position;
     }
+    */
     inicializaInimigo(pos, size, active, speed, jump_height);
     position_X_inicial = position.x;
     goingLeft = true;

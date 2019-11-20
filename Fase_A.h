@@ -12,12 +12,15 @@
 #include "Fase.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
-//ENTIDADES QUE A FASE CONNHECE
+//ENTIDADES QUE A FASE CONHECE
 //todo fases não criam nem agregam o(s) jogador(es) foi incluido somente para testar a construção da fase, remover
 // assim que a fase estiver criando Inimigos e Obstaculos
-#include "Jogador_1.h"
+#include "Jogador_1.h"  //teste
 
 #include "Inimigo_A.h"
+//Inimigo_B está incluso atraves de Fase
+//Obstaculo_Plataforma está incluso atraves de Fase
+//#include "Obstaculo_Spike.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -30,7 +33,7 @@ private:
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Criação de Entidades
-    void criaJogador(); //teste
+    
     void criaEntidade(char aux, Vector2f pos);
     void criaInimigoA(Vector2f pos);
 
@@ -38,7 +41,7 @@ private:
     //para teste//
 
 public:
-    Fase_A(ListaEntidades* lista = nullptr);
+    Fase_A(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase_A();
     void inicializa();
 //--------------------------------------------------------------------------------------------------------------------//

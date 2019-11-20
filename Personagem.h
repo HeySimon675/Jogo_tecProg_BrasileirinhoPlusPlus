@@ -32,6 +32,9 @@ protected:
     /**booleano para dizer se sofreu dano ou não**/
     bool dead;
 
+    //função para setar posição
+    void setPosition(Vector2f position);
+
 public:
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -48,6 +51,8 @@ public:
     void update(float deltaTime);
     const bool isDead();
     void setPositionx(const float positionx);
+
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//

@@ -10,6 +10,11 @@
 //Header//
 #include "Fase.h"
 
+
+//Entidades da Fase
+//#include "Inimigo_Boss.h"
+//#include "Obstaculo_caixa.h"
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Fase_B//
 class Fase_B : public Fase {

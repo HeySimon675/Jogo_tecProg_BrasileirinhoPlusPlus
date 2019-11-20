@@ -71,6 +71,10 @@ public:
     Elemento<TIPO>* getPrim();
     Elemento<TIPO>* getAt();
 
+    //Novas funções para limites de percorrimento
+    Elemento<TIPO>* inicio();
+    Elemento<TIPO>* fim();
+
     //REMOVE/RETORNA/LIMPA LISTA
     void popFront();
     void popBack();
@@ -168,14 +172,25 @@ void Lista<TIPO>::operator=(TIPO* el) {
 }
 
 
-//GETS
+//REMOVER FUNÇÃO
 template<class TIPO>
 Elemento<TIPO> *Lista<TIPO>::getPrim() {
     return primeiro;
 }
 
+//REMOVER FUNÇÃO
 template<class TIPO>
 Elemento<TIPO> *Lista<TIPO>::getAt() {
+    return atual;
+}
+
+template<class TIPO>
+Elemento<TIPO> * Lista<TIPO>::inicio(){
+    return primeiro;
+}
+
+template<class TIPO>
+Elemento<TIPO> *Lista<TIPO>::fim() {
     return atual;
 }
 
