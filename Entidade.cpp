@@ -39,7 +39,7 @@ void Entidade::desativarEntidade() {
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos de loop//
 
-void Entidade::update() {
+void Entidade::update(float deltaTime) {
 
 }
 

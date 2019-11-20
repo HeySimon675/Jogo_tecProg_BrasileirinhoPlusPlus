@@ -68,7 +68,7 @@ GerenciadorGrafico::~GerenciadorGrafico() {
         //verificar se map possui push back
     }
     // desalocar objetos dinamicos (_Window, _view)
-    delete _view;
+    delete pView;
     delete _window;
     if (_instance){
         delete _instance;
@@ -128,17 +128,17 @@ void GerenciadorGrafico::load(const String _caminho) {
 void GerenciadorGrafico::carregaTexturas() {
     //TODO colocar try catch para carregar textura
     load(JOGADOR_1_tx);
-    //load(JOGADOR_2_tx);
+    load(JOGADOR_2_tx);
     
-    //load(INIMIGO_A_tx);
+    load(INIMIGO_A_tx);
     //load(INIMIGO_B_tx);
     //load(INIMIGO_BOSS_tx);
     
-    //load(OBSTACULO_PLATAFORMA_tx);
-    //load(OBSTACULO_CAIXA_tx);
-    //load(OBSTACULO_SPIKE_tx);
+    load(OBSTACULO_PLATAFORMA_tx);
+    load(OBSTACULO_CAIXA_tx);
+    load(OBSTACULO_SPIKE_tx);
     
-    //load(PROJETIL_tx);
+    load(PROJETIL_tx);
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {

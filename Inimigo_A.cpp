@@ -36,7 +36,7 @@ void Inimigo_A::inicializaInimigo_A(Vector2f position,Vector2f size, bool active
         pos = position;
     }
     */
-    inicializaInimigo(pos, size, active, speed, jump_height);
+    inicializaInimigo(position, size, active, speed, jump_height);
     position_X_inicial = position.x;
     goingLeft = true;
 }

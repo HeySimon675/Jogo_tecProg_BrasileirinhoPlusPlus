@@ -60,7 +60,7 @@ protected:
 //--------------------------------------------------------------------------------------------------------------------//
 //Criando Entidades
     virtual void criaEntidade(char aux, Vector2f pos);
-    void criaPlataforma();
+    void criaPlataforma(Vector2f pos);
     void posicionaJogador(Vector2f pos);
     void criaSpike(Vector2f pos);
     void criaProjetil(Vector2f pos);

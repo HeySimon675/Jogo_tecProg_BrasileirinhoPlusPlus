@@ -10,8 +10,8 @@
 //Constantes//
 
 const String Fase_B::FASE_FILE = "Fase_B.txt";
-const int Fase_A::FASE_WIDTH = 16;
-const int Fase_A::FASE_HEIGHT = 12;
+const int Fase_B::FASE_WIDTH = 16;
+const int Fase_B::FASE_HEIGHT = 12;
 //fase agora tem o a dimensão da view, a ideia é expandir tanto vertical, quanto horizontalmente, percorrendo a view,
 //ou deixando a view menor, fazendo à caminhar pela fase, seguindo o jogador
 
@@ -29,16 +29,16 @@ Fase_B::~Fase_B() {
     }
 
     delete arqFase;
-    destroimatriz();
+    destroiMatriz();
 }
 
-void inicializa(){
+void Fase_B::inicializa(){
 	//terá implementação semelhante à de FaseA
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //Entidades
 
-void Fase_B::criaEntidades(char aux, Vector2f pos){
+void Fase_B::criaEntidade(char aux, Vector2f pos){
 	//implementar switch
 }
 

@@ -38,6 +38,6 @@ public:
     void inicializaEntidade(sf::Vector2f position, sf::Vector2f size, bool active);
 
 //Metodos de loop//
-    virtual void update();
+    virtual void update(float deltaTime);
     virtual void draw();
 };

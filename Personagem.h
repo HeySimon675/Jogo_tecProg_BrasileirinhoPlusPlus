@@ -33,12 +33,14 @@ protected:
     bool dead;
 
     //função para setar posição
-    void setPosition(Vector2f position);
+
 
 public:
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos//
+
+    void setPosition(Vector2f position);
 
 public:
     Personagem(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);

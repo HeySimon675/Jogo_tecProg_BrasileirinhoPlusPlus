@@ -65,7 +65,7 @@ void ListaEntidades::drawEntidades() {
 }
 
 //função principal de loop
-void ListaEntidades::Percorrer(float deltaTime){
+void ListaEntidades::percorrer(float deltaTime){
     if(!lista.vazia()){
         aux = lista.inicio();
         while (aux != lista.fim()){

@@ -27,7 +27,7 @@ Fase::Fase(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : En
 }
 
 Fase::~Fase() {
-    destroimatriz();
+    destroiMatriz();
     pJ1 = nullptr;
     pJ2 = nullptr;
     listaEntidades = nullptr;
@@ -36,7 +36,7 @@ Fase::~Fase() {
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //Criação de Entidadades
-void Fase::criaPlataforma() {
+void Fase::criaPlataforma(Vector2f pos) {
     //Obstaculo_Plataforma* obstaculo;
     //obstaculo = new Obstaculo();
     //obstaculo->inicializa(pos);
@@ -82,9 +82,9 @@ void Fase::printaMatriz() {
     }
 }
 
-void Fase::destroimatriz(){
-    for(int row =0; row < FASE_WIDTH , row++){
-        delete matrizFase[i];
+void Fase::destroiMatriz(){
+    for(int row =0; row < FASE_WIDTH ; row++){
+        delete matrizFase[row];
     }
     delete matrizFase;
     matrizFase = nullptr;
