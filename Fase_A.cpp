@@ -18,6 +18,11 @@ Fase_A::Fase_A(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) 
 }
 
 Fase_A::~Fase_A() {
+    //verifica se os jogadores foram derrotados ou passaram de fase ( talvez deva ser implementado em outro lugar)
+    if(pJ1->isActive()){
+
+    }
+
     delete arqFase;
     destroimatriz();
 }
@@ -45,8 +50,12 @@ void Fase_A::criaEntidade(char aux, Vector2f pos) {
         case 'A':   //Inimigo_A
             criaInimigoA(pos);
             break;
+        case 'B':
+
+            criaProjetil(pos);
+            break;
         case 'P':
-            criaPlataforma();
+            criaPlataforma(pos);
             break;
         default:
             break;

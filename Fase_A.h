@@ -13,9 +13,6 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //ENTIDADES QUE A FASE CONHECE
-//todo fases não criam nem agregam o(s) jogador(es) foi incluido somente para testar a construção da fase, remover
-// assim que a fase estiver criando Inimigos e Obstaculos
-#include "Jogador_1.h"  //teste
 
 #include "Inimigo_A.h"
 //Inimigo_B está incluso atraves de Fase
@@ -36,6 +33,7 @@ private:
     
     void criaEntidade(char aux, Vector2f pos);
     void criaInimigoA(Vector2f pos);
+    
 
 
     //para teste//
