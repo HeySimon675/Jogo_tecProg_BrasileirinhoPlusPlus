@@ -1,6 +1,10 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 09/11/19.
+//Implementado por:
+    //Coradassi - 75%
+    //Simão - 25%
+
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Personagem
@@ -23,13 +27,8 @@ protected:
 	Keyboard::Key KeyJump;
 
 public:
-    //TODO: Metodo Precisa ser alterado para seja menos dependente de paramentros.
-    Jogador(Vector2f position = POSICAO_PADRAO);
+    Jogador(Vector2f position = POSICAO_PADRAO, float speed = VELOCIDADE_PADRAO * 1);
     virtual ~Jogador();
-
-    //void inicializaJogador(Vector2f position);
-
-
 
 };
 
