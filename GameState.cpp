@@ -9,33 +9,17 @@
 //construção//
 
 //singleton
-GameState* GameState::_instance = nullptr;
+//GameState* GameState::_instance = nullptr;
 Jogador_1* GameState::pJ1 = nullptr;
 Jogador_2* GameState::pJ2 = nullptr;
 
-GameState *GameState::getState() {
-    if(!_instance){
-        _instance = new GameState;
-    }
-        return _instance;
-}
-
-void GameState::GameState() {
-    inicializar();
-}
-
 
 GameState::GameState() {
-    listaEntidades = new ListaEntidades;
-    //coloca no state inicial
-    inicializar();
-void GameState::~GameState(){
+
+}
+
+GameState::~GameState() {
 
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
-void GameState::inicializar() {}
-
-void GameState::executar() {}
-
-void GameState::changeState(GameState *pState) {}

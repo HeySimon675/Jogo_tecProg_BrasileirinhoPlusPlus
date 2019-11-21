@@ -50,7 +50,7 @@ Jogo::~Jogo() {
 //inicializadores//
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();    //carrega e inicializa o gerenciador grafico
-    pState = GameState::getState();
+    //pState = GameState::getState();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -62,22 +62,6 @@ void Jogo::executar() {
 
 //--------------------------------------------------------------------------------------------------------------------//
 //State//
-    //testar
-void Jogo::inicializarState() {
-
-}
-
-void Jogo::changeState(GameState *pState) {
-
-}
-
-void Jogo::executarState() {
-
-}
-
-void Jogo::pausarState() {
-
-}
 
 
 
@@ -113,6 +97,18 @@ float deltaTime = 0.0f;
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
 
     }
+}
+
+void Jogo::inicializarState() {
+
+}
+
+void Jogo::executarState() {
+
+}
+
+void Jogo::pausarState() {
+
 }
 
 

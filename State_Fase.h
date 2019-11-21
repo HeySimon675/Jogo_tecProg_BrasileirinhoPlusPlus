@@ -8,18 +8,18 @@
 //Header
 #include "GameState.h"
 
-
 //--------------------------------------------------------------------------------------------------------------------//
 //classe
 class State_Fase : public GameState{
 private:
-	static State_Fase* _instance;
+	//static State_Fase* _instance;
 	State_Fase();
+	~State_Fase();
 
 	void inicializar();
     void executar();
     void changeState(GameState* pState);
-
+    //State_Fase* getInstance();
 public:
-	static State_Fase* getInstance();
+    //State_Fase* getState();
 };

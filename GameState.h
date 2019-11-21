@@ -18,7 +18,6 @@ class GameState {
 //--------------------------------------------------------------------------------------------------------------------//
 //ATRIBUTOS//
 private:
-    static GameState* _instance;
     ListaEntidades* listaEntidades;
 protected:
 
@@ -28,16 +27,16 @@ protected:
 
 //--------------------------------------------------------------------------------------------------------------------//
 //METODOS//
-private:
+public:
     GameState();
     ~GameState();
-public:
-    static GameState* getState();
-    ListaEntidades* getLista();
-
 protected:
-    virtual void inicializar();
-    virtual void executar();
-    virtual void changeState(GameState* pState);
+
+    //os metodos de inicialização para GameState serão colocados na construtora
+    virtual void inicializar()= 0;
+
+    virtual void executar() = 0;
+    virtual void changeState(GameState* pState) = 0;
+    virtual GameState* getInstance() = 0;
 };
 
