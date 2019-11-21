@@ -1,7 +1,11 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 09/11/19.
-//Last Update 09/11 12hrs
+//Implementado por:
+    //Coradassi - 90%
+    //Simão - 10%
+
+
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Entidade
@@ -47,6 +51,13 @@ public:
     void update(float deltaTime);
     const bool isDead();
     void setPositionx(const float positionx);
+
+    void emColisao(Vector2f direcao);
+
+//COLISOES
+    Vector2f getPosition(){ return body.getPosition();}
+    Vector2f getHalfSize(){ return (body.getSize()/2.0f);}
+    void move (float dx, float dy){body.move(dx,dy);}
 
 
 

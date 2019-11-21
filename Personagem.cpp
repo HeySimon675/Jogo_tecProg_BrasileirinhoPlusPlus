@@ -70,3 +70,34 @@ void Personagem::setPositionx(const float positionx)
 {
     body.setPosition(positionx, body.getPosition().y);
 }
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Ferramentas para Colisoes
+
+void Personagem::emColisao(Vector2f direcao)
+{
+    if (direcao.x != 0)
+    {
+        if (direcao.x < 0.0f)
+        {
+            vel.x = 0.0f;
+        }
+        else if (direcao.x > 0.0f)
+        {
+            vel.x = 0.0f;
+        }
+    }
+    if (direcao.y != 0)
+    {
+        if (direcao.y < 0.0f)
+        {
+            vel.y = 0.0f;
+        }
+        else if (direcao.y > 0.0f)
+        {
+            vel.y = 0.0f;
+            canJump = true;
+        }
+    }
+}
+
