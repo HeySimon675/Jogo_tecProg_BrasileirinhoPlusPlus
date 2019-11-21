@@ -10,23 +10,24 @@
 //constantes
 const int Jogador_1::id = 0;
 
+
 //--------------------------------------------------------------------------------------------------------------------//
 //construção
 
-Jogador_1::Jogador_1(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height, sf::Keyboard::Key right,
-                                    sf::Keyboard::Key left, sf::Keyboard::Key jump)
+Jogador_1::Jogador_1(Vector2f position) : Jogador(position)
 {
-    inicializaJogador_1(position, size, active, speed, jump_height, right, left, jump);
+    //deixar static assim que possivel
+    setPosition(position);
+    KeyLeft = Keyboard::Left;
+    KeyRight = Keyboard::Right;
+    KeyJump = Keyboard::Up;
 }
-
-Jogador_1::Jogador_1(){}
 
 Jogador_1::~Jogador_1(){}
 
-void Jogador_1::inicializaJogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height,
-                         Keyboard::Key right, Keyboard::Key left, Keyboard::Key jump)
+void Jogador_1::inicializaJogador_1(Vector2f position)
 {
-    inicializaJogador(position, size, active, speed, jump_height, right, left, jump);
+    setPosition(position);
 }
 
 const int Jogador_1::getID() {
@@ -39,12 +40,12 @@ void Jogador_1::calculaMovimento(const float deltaTime)
 {
     vel.x = 0.0f;
 
-		if (sf::Keyboard::isKeyPressed(KeyLeft)){
+		if (Keyboard::isKeyPressed(KeyLeft)){
 			vel.x -= speed;
 		}
-		if (sf::Keyboard::isKeyPressed(KeyRight))
+		if (Keyboard::isKeyPressed(KeyRight))
 			vel.x += speed;
-		if (sf::Keyboard::isKeyPressed(KeyJump) && canJump)
+		if (Keyboard::isKeyPressed(KeyJump) && canJump)
 		{
 			canJump = false;
 			vel.y = -sqrtf(2.0f * 981.0f * jump_height);

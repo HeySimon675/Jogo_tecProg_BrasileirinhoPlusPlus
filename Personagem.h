@@ -13,7 +13,6 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Entidade.h"
-#include <iostream>
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Personagem//
@@ -33,10 +32,6 @@ protected:
     /**booleano para dizer se sofreu dano ou não**/
     bool dead;
 
-    //função para setar posição
-
-
-public:
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos//
@@ -48,7 +43,7 @@ public:
     Personagem();
     virtual ~Personagem();
 
-    void inicializaPersonagem(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, bool active = true, float sp = 100.0f, float jh = 50.0f);
+    void inicializaPersonagem(Vector2f position = POSICAO_PADRAO, Vector2f size = Vector2f(50,50), bool active = true, float sp = 100.0f, float jh = 50.0f);
     virtual void calculaMovimento(const float deltaTime) = 0;
     void draw();
     void update(float deltaTime);
@@ -59,7 +54,6 @@ public:
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
-    static const Vector2f TAMANHO_PADRAO;
     static const Vector2f POSICAO_PADRAO;
 };
 

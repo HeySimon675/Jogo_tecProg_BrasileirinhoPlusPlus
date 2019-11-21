@@ -5,32 +5,22 @@
 #include "Jogador.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
+//CONSTANTES
+const Vector2f Jogador::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
 
-Jogador::Jogador(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
-                                 sf::Keyboard::Key right,  sf::Keyboard::Key left, sf::Keyboard::Key jump)
+Jogador::Jogador(Vector2f position)
 {
-    inicializaJogador(position, size, active, speed, jump_height, right, left, jump);
-}
-
-Jogador::Jogador()
-{
-
+    inicializaJogador(position);
 }
 
 Jogador::~Jogador()
 {
-
 }
 
 
-void Jogador::inicializaJogador(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
-                                 sf::Keyboard::Key right,  sf::Keyboard::Key left, sf::Keyboard::Key jump)
+void Jogador::inicializaJogador(Vector2f position)
 {
-    inicializaPersonagem(position, size, active, speed, jump_height);
-
-    KeyRight = right,
-    KeyLeft = left;
-    KeyJump = jump;
+    inicializaPersonagem(position,TAMANHO_PADRAO);
 
 }
 

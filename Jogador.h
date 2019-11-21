@@ -1,7 +1,6 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 09/11/19.
-//Last Update 09/11 13hrs
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Personagem
@@ -13,30 +12,24 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Personagem.h"
-#include <iostream>
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogador//
 class Jogador : public Personagem{
 
 protected:
-    sf::Keyboard::Key KeyRight;
-	sf::Keyboard::Key KeyLeft;
-	sf::Keyboard::Key KeyJump;
+    static const Vector2f TAMANHO_PADRAO;
+    Keyboard::Key KeyRight;
+	Keyboard::Key KeyLeft;
+	Keyboard::Key KeyJump;
 
 public:
     //TODO: Metodo Precisa ser alterado para seja menos dependente de paramentros.
-    Jogador(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
-                                 sf::Keyboard::Key right,  sf::Keyboard::Key left, sf::Keyboard::Key jump);
-    Jogador();
+    Jogador(Vector2f position = POSICAO_PADRAO);
     virtual ~Jogador();
 
-    void inicializaJogador(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
-                                 sf::Keyboard::Key right,  sf::Keyboard::Key left, sf::Keyboard::Key jump);
+    void inicializaJogador(Vector2f position);
 
-    void calculaMovimento(const float deltaTempo){
-        std::cout<<"calculando..."<<std::endl;
-    }
 
 
 };

@@ -21,12 +21,9 @@ private:
     //constante
     static const int id;
 public:
-    Jogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height, Keyboard::Key right,
-                                    Keyboard::Key left, Keyboard::Key jump);
+    Jogador_1(Vector2f position = POSICAO_PADRAO);
 
-    void inicializaJogador_1(Vector2f position, Vector2f size, bool active, float speed, float jump_height,
-                             Keyboard::Key right, Keyboard::Key left, Keyboard::Key jump);
-    Jogador_1();
+    void inicializaJogador_1(Vector2f position);
     ~Jogador_1();
 
     const int getID();
