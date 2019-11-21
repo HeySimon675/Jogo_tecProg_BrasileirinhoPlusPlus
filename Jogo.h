@@ -14,6 +14,7 @@
 #include "Fase_A.h" //teste
 #include "Inimigo_B.h"
 #include "Inimigo_A.h"
+#include "GameState.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -21,10 +22,11 @@
 
 class Jogo {
 private:
+    friend class GameState;
 //atributos//
     static Jogo* _instance;     //instancia
     ListaEntidades* lEntidades;  //Lista Principal de Entidades
-
+    GameState* pState;
 //--------------------------------------------------------------------------------------------------------------------//
 // TESTE
     //Jogador_1* p1;
@@ -34,8 +36,14 @@ private:
     //Obstaculo plataforma;
     //Fase_A* faseA;
 //--------------------------------------------------------------------------------------------------------------------//
+//Metodos do State
+//TODO: testar
+    void inicializarState(); //cria e chama os Menus
+    void executarState();    //inicia o state novo jogo e a partir dele, chama state fase
+    void pausarState();      //chamado a partir de fase, e retorna a fase
+    void changeState(GameState* pState);
 
-
+//--------------------------------------------------------------------------------------------------------------------//
     //gerenciadores//
     GerenciadorGrafico* g;
 

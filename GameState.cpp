@@ -1,12 +1,17 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 18/11/2019.
+//Created by simao on 19/11/2019.
 //
 
 #include "GameState.h"
 
+//--------------------------------------------------------------------------------------------------------------------//
+//construção//
+
 //singleton
 GameState* GameState::_instance = nullptr;
+Jogador_1* GameState::pJ1 = nullptr;
+Jogador_2* GameState::pJ2 = nullptr;
 
 GameState *GameState::getState() {
     if(!_instance){
@@ -15,14 +20,17 @@ GameState *GameState::getState() {
         return _instance;
 }
 
-void GameState::inicializar() {
+void GameState::GameState(){
 
 }
 
-void GameState::executar() {
+void GameState::~GameState(){
 
 }
 
-void GameState::changeState(GameState *pState) {
+//--------------------------------------------------------------------------------------------------------------------//
+void GameState::inicializar() {}
 
-}
+void GameState::executar() {}
+
+void GameState::changeState(GameState *pState) {}
