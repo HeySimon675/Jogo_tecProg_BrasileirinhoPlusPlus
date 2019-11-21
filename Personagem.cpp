@@ -6,58 +6,36 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes
 
-    const Vector2f Personagem::POSICAO_PADRAO = Vector2f(50,50);
+const Vector2f Personagem::POSICAO_PADRAO = Vector2f(50,50);
+const float Personagem::VELOCIDADE_PADRAO = 100;
+const Vector2f Personagem::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
+const float Personagem::PULO_PADRAO = 50.0f;
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Ferramentas para fase
-    void Personagem::setPosition(Vector2f position){
-        Vector2f pos;
-        if(position != POSICAO_PADRAO){
-            pos.x = POSICAO_PADRAO.x * position.x;
-            pos.y = POSICAO_PADRAO.y * position.y;
-        }else{
-            pos = position;
-        }
-        body.setPosition(pos);
-    }
+//CONSTRUÇÃO
 
-
-
-
-
-
-
-Personagem::Personagem(Vector2f position, Vector2f size, bool active, float speed, float jump_height)
+Personagem::Personagem(Vector2f position, Vector2f size, float speed): Entidade()
 {
-    inicializaPersonagem(position, size, active, speed, jump_height);
+    inicializaPersonagem(position, size,speed);
 }
 
-Personagem::Personagem()
-{
-
-}
 
 Personagem::~Personagem()
 {
 
 }
 
-void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, bool active, float sp, float jh)
+void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, float speed)
 {
-    inicializaEntidade(position, size, active);
-
+    inicializaEntidade(position, size, true);
     setPosition(position);
     body.setSize(size);
-    speed = sp;
-    jump_height = jh;
-    body.setTexture(gerenciadorGrafico->getTexture(this->getID()));
+    this->speed = speed;
+    //body.setTexture(gerenciadorGrafico->getTexture(getID()));   //TODO: tirar daqui
 }
 
 void Personagem::draw()
 {
-    /**Teste para botar uma cor no body**/
-    //body.setFillColor(sf::Color::Cyan);
-    //Draw do body em si
     gerenciadorGrafico->draw(body);
 }
 
@@ -68,6 +46,20 @@ void Personagem::update(float deltaTime)
     body.move(vel * deltaTime);
 
 }
+
+//--------------------------------------------------------------------------------------------------------------------//
+//Ferramentas para fase
+void Personagem::setPosition(Vector2f position){
+    Vector2f pos;
+    if(position != POSICAO_PADRAO){
+        pos.x = POSICAO_PADRAO.x * position.x;
+        pos.y = POSICAO_PADRAO.y * position.y;
+    }else{
+        pos = position;
+    }
+    body.setPosition(pos);
+}
+
 
 const bool Personagem::isDead()
 {

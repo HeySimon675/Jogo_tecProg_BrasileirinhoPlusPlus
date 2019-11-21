@@ -6,23 +6,21 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //CONSTANTES
-const Vector2f Jogador::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
 
-Jogador::Jogador(Vector2f position)
+Jogador::Jogador(Vector2f position) : Personagem(position,TAMANHO_PADRAO)
 {
-    inicializaJogador(position);
+
 }
 
 Jogador::~Jogador()
 {
 }
 
-
+/*
 void Jogador::inicializaJogador(Vector2f position)
 {
     inicializaPersonagem(position,TAMANHO_PADRAO);
 
 }
-
-
+*/
 

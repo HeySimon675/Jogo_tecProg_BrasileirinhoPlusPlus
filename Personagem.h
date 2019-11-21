@@ -25,7 +25,6 @@ protected:
     RectangleShape body;
     Vector2f vel;
     float speed;
-    float jump_height;
     bool canJump;
 	float deltaTime;
 
@@ -39,11 +38,10 @@ protected:
     void setPosition(Vector2f position);
 
 public:
-    Personagem(Vector2f position, Vector2f size, bool active, float speed, float jump_height);
-    Personagem();
+    Personagem(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
     virtual ~Personagem();
 
-    void inicializaPersonagem(Vector2f position = POSICAO_PADRAO, Vector2f size = Vector2f(50,50), bool active = true, float sp = 100.0f, float jh = 50.0f);
+    void inicializaPersonagem(Vector2f position, Vector2f size, float speed);
     virtual void calculaMovimento(const float deltaTime) = 0;
     void draw();
     void update(float deltaTime);
@@ -55,5 +53,9 @@ public:
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
     static const Vector2f POSICAO_PADRAO;
+protected:
+    static const float VELOCIDADE_PADRAO;
+    static const Vector2f TAMANHO_PADRAO;
+    static const float PULO_PADRAO;
 };
 

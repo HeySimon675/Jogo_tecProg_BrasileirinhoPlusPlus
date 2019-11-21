@@ -48,7 +48,7 @@ void Jogador_1::calculaMovimento(const float deltaTime)
 		if (Keyboard::isKeyPressed(KeyJump) && canJump)
 		{
 			canJump = false;
-			vel.y = -sqrtf(2.0f * 981.0f * jump_height);
+			vel.y = -sqrtf(2.0f * 981.0f * PULO_PADRAO);
 		}
 
 		//std::cout<<body.getPosition().x<<std::endl;

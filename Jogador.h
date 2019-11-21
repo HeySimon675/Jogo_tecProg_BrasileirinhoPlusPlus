@@ -18,7 +18,6 @@
 class Jogador : public Personagem{
 
 protected:
-    static const Vector2f TAMANHO_PADRAO;
     Keyboard::Key KeyRight;
 	Keyboard::Key KeyLeft;
 	Keyboard::Key KeyJump;
@@ -28,7 +27,7 @@ public:
     Jogador(Vector2f position = POSICAO_PADRAO);
     virtual ~Jogador();
 
-    void inicializaJogador(Vector2f position);
+    //void inicializaJogador(Vector2f position);
 
 
 
