@@ -63,10 +63,10 @@ GerenciadorGrafico::GerenciadorGrafico(){
 GerenciadorGrafico::~GerenciadorGrafico() {
     //todo Desalocar
     // texturas do vector antes de destruir o gerenciador
-    for(int i = 0; i< key ; i++){
-        delete _mTexture[i];
+    //for(int i = 0; i< key ; i++){
+    //    delete _mTexture[i];
         //verificar se map possui push back
-    }
+    //}
     // desalocar objetos dinamicos (_Window, _view)
     if (_instance){
         //delete pView;

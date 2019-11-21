@@ -40,7 +40,6 @@ void Fase_A::criaEntidade(char aux, Vector2f pos) {
             criaInimigoA(pos);
             break;
         case 'B':
-
             criaProjetil(pos);
             break;
         case 'P':
