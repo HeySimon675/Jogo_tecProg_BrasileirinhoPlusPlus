@@ -15,14 +15,19 @@ GameState *GameState::getState() {
         return _instance;
 }
 
-void GameState::inicializar() {
 
+ListaEntidades *GameState::getLista() {
+    return listaEntidades;
 }
 
-void GameState::executar() {
-
+GameState::GameState() {
+    listaEntidades = new ListaEntidades;
+    //coloca no state inicial
+    inicializar();
 }
 
-void GameState::changeState(GameState *pState) {
+void GameState::inicializar() {}
 
-}
+void GameState::executar() {}
+
+void GameState::changeState(GameState *pState) {}

@@ -14,6 +14,7 @@
 #include "Fase_A.h" //teste
 #include "Inimigo_B.h"
 #include "Inimigo_A.h"
+#include "GameState.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -21,10 +22,11 @@
 
 class Jogo {
 private:
+    friend class GameState;
 //atributos//
     static Jogo* _instance;     //instancia
     ListaEntidades* lEntidades;  //Lista Principal de Entidades
-
+    GameState* pState;
 //--------------------------------------------------------------------------------------------------------------------//
 // TESTE
     //Jogador_1* p1;
@@ -34,16 +36,8 @@ private:
     //Obstaculo plataforma;
     //Fase_A* faseA;
 //--------------------------------------------------------------------------------------------------------------------//
-
-
-    //gerenciadores//
     GerenciadorGrafico* g;
-
-
-
-    //delta//
     float deltaTime;
-    //Players
 
 //metodos//
     //construtora privada//

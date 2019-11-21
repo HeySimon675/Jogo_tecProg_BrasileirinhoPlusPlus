@@ -50,8 +50,9 @@ Jogo::~Jogo() {
 //inicializadores//
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();    //carrega e inicializa o gerenciador grafico
-
+    pState = GameState::getState();
 }
+
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos principais//
 void Jogo::executar() {

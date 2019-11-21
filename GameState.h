@@ -6,7 +6,7 @@
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Header
-
+#include "ListaEntidades.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -15,14 +15,15 @@ class GameState {
 
 private:
     static GameState* _instance;
+    GameState();
+    ListaEntidades* listaEntidades;
 public:
     static GameState* getState();
+    ListaEntidades* getLista();
 
 protected:
     virtual void inicializar();
     virtual void executar();
     virtual void changeState(GameState* pState);
-
-
 };
 
