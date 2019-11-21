@@ -69,9 +69,9 @@ GerenciadorGrafico::~GerenciadorGrafico() {
     }
     // desalocar objetos dinamicos (_Window, _view)
     if (_instance){
-        delete pView;
+        //delete pView;
         //delete _window;
-        delete _instance;
+        //delete _instance;
     }
     _instance = nullptr;
 }   // fim da destrutora
@@ -176,7 +176,7 @@ void GerenciadorGrafico::updateSFML() {
 void GerenciadorGrafico::executar() {
     updateSFML();
     _window->clear();
-    //TODO: se a destrutora deletear a window, a função não executa
+
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //draw//

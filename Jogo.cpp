@@ -28,7 +28,7 @@ Jogo::Jogo()
 
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
     lEntidades = new ListaEntidades;
-    faseA = new Fase_A(lEntidades);
+    //faseA = new Fase_A(lEntidades);
     inicializa();
 }   //end Construtora
 
@@ -52,7 +52,7 @@ Jogo::~Jogo() {
 //inicializadores//
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();    //carrega e inicializa o gerenciador grafico
-    p1.inicializaJogador_1(Vector2f(0.0f, 0.0f), Vector2f(100.0f, 100.0f),true,
+    p1.inicializaJogador_1(Vector2f(5,5), Vector2f(50.0f, 50.0f),true,
             100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
     lEntidades->incluir(static_cast<Entidade*>(&p1));
 }
@@ -90,7 +90,7 @@ float deltaTime = 0.0f;
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Testes//
-        lEntidades->drawEntidades();
+        lEntidades->percorrer(deltaTime);
 
 //teste//
 
