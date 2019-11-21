@@ -36,6 +36,18 @@ private:
     //Obstaculo plataforma;
     //Fase_A* faseA;
 //--------------------------------------------------------------------------------------------------------------------//
+//Metodos do State
+//TODO: testar
+
+    //considerando que cada função muda de State, não precisaria diretamente de um metodo changeState
+    void inicializarState(); //Inicializa com o primeiro State, função para ser chamada fora do loop, basicamente chama
+    //changeState com MenuPrincipal.
+    void executarState();    //inicia o state novo jogo e a partir dele, chama state fase
+    void pausarState();      //chamado a partir de fase, e retorna a fase
+    //void changeState(GameState* pState);
+
+//--------------------------------------------------------------------------------------------------------------------//
+    //gerenciadores//
     GerenciadorGrafico* g;
     float deltaTime;
 
