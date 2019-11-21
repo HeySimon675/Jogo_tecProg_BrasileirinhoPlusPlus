@@ -53,7 +53,7 @@ Jogo::~Jogo() {
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();    //carrega e inicializa o gerenciador grafico
     p1.inicializaJogador_1(Vector2f(0.0f, 0.0f), Vector2f(100.0f, 100.0f),true,
-            100.0f, 50.0f,sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::Up);
+            100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
     lEntidades->incluir(static_cast<Entidade*>(&p1));
 }
 //--------------------------------------------------------------------------------------------------------------------//
@@ -65,7 +65,7 @@ void Jogo::executar() {
 
 //--------------------------------------------------------------------------------------------------------------------//
 float deltaTime = 0.0f;
-	sf::Clock clock;
+	Clock clock;
 
 //--------------------------------------------------------------------------------------------------------------------//
     while (g->janelaAberta())
@@ -89,10 +89,8 @@ float deltaTime = 0.0f;
 
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Testes//       
-        //update(deltaTime);    
-        p1.update(deltaTime);
-        draw();
+//Testes//
+        lEntidades->drawEntidades();
 
 //teste//
 
@@ -108,7 +106,6 @@ void Jogo::update(float deltaTime) {
 }
 
 void Jogo::draw() {
-    lEntidades->drawEntidades();
     //testar e então substituir por lista->percorrer()
     //depois usar o metodo percorrer diretamente ou só chamar o metodo pState->executar() caso ele agregue a lista
 }

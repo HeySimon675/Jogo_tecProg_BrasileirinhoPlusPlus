@@ -13,6 +13,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Entidade.h"
+#include <iostream>
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Personagem//
@@ -22,8 +23,8 @@ class Personagem : public Entidade {
 private:
 
 protected:
-    sf::RectangleShape body;
-    sf::Vector2f vel;
+    RectangleShape body;
+    Vector2f vel;
     float speed;
     float jump_height;
     bool canJump;
@@ -43,7 +44,7 @@ public:
     void setPosition(Vector2f position);
 
 public:
-    Personagem(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
+    Personagem(Vector2f position, Vector2f size, bool active, float speed, float jump_height);
     Personagem();
     virtual ~Personagem();
 
