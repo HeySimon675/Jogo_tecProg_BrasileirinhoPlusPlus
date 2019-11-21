@@ -14,14 +14,19 @@
 //classe
 class GameState {
 
-private:
 //--------------------------------------------------------------------------------------------------------------------//
 //ATRIBUTOS//
+private:
     static GameState* _instance;
+protected:
+    
+	//Sera StateNovoJogo que irá definir quantos jogadores vão estar na partida
     static Jogador_1* pJ1;
     static Jogador_2* pJ2;
 
-
+//--------------------------------------------------------------------------------------------------------------------//
+//METODOS//
+private:
     GameState();
     ~GameState();
 public:

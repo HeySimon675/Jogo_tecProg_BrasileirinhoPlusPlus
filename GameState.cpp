@@ -21,7 +21,7 @@ GameState *GameState::getState() {
 }
 
 void GameState::GameState(){
-
+	inicializar();
 }
 
 void GameState::~GameState(){

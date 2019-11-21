@@ -25,6 +25,7 @@ protected:
 	sf::Keyboard::Key KeyJump;
 
 public:
+    //TODO: Metodo Precisa ser alterado para seja menos dependente de paramentros.
     Jogador(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height,
                                  sf::Keyboard::Key right,  sf::Keyboard::Key left, sf::Keyboard::Key jump);
     Jogador();
