@@ -25,8 +25,8 @@ Jogo::Jogo()
     //p1->inicializaJogador_1(Vector2f(5,5), Vector2f(50.0f, 50.0f),true,
     //                       100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
     lEntidades = new ListaEntidades;
-    faseA = new Fase_A(lEntidades, p1);
-    lEntidades->incluir(static_cast<Entidade*>(p1));
+    //faseA = new Fase_A(lEntidades, p1);
+    //lEntidades->incluir(static_cast<Entidade*>(p1));
     inicializa();
 }   //end Construtora
 
