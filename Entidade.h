@@ -1,6 +1,9 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 27/10/19.
+//Implementado por:
+    //Simão - 100%
+
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
@@ -14,30 +17,29 @@ using namespace sf;
 //Classe Entidade//
 
 class Entidade {
-protected:
-    Vector2f posicao;
+private:
     bool _active;
+protected:
     static GerenciadorGrafico* gerenciadorGrafico;
     virtual const int getID() {};
 
 
 public:
-    Entidade(float posX = 0.0f, float posY = 0.0f, bool active = false);
-    Entidade(Vector2f posicao);
-    bool isActive() { return _active;}
-
-//--------------------------------------------------------------------------------------------------------------------//
-//NECESSARIO??
-    //Entidade(sf::Vector2f position, sf::Vector2f size, float speed, float jump_height, sf::Keyboard::Key right,
-    //                                sf::Keyboard::Key left, sf::Keyboard::Key jump);
-
-//--------------------------------------------------------------------------------------------------------------------//
+    Entidade();
     virtual ~Entidade();
-    void ativarEntidade();
-    void desativarEntidade();
-    void inicializaEntidade(sf::Vector2f position, sf::Vector2f size, bool active);
+    bool isActive() { return _active;}
+    virtual void setPositionNeutra(Vector2f position) = 0;
+    virtual void setPosition(Vector2f position) = 0;
+
+//meotodos de controle
+    void ativar();
+    void desativar();
 
 //Metodos de loop//
-    virtual void update(float deltaTime);
-    virtual void draw();
+    virtual void update(float deltaTime) = 0;
+    virtual void draw() = 0;
+
+//--------------------------------------------------------------------------------------------------------------------//
+//CONSTATNTES
+
 };
