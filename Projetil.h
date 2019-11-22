@@ -1,7 +1,8 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //Coradassi - 95%
+    //Simão     - 5%
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Entidade
@@ -18,21 +19,31 @@
 //Classe Projetil//
 class Projetil : Entidade {
 
-protected:
-    sf::RectangleShape body;
-    sf::Vector2f vel;
-    float speed;
-
 private:
+    RectangleShape body;
+    static const float VELOCIDADE_PADRAO;
+    static const Vector2f TAMANHO_PADRAO;
+    Vector2f vel;
+    float speed;
+    float posicao_X_inicial;
+    float posicao_Y_inicial;
+    bool dead;
+    bool left;
 
 public:
-    Projetil(sf::Vector2f position, sf::Vector2f size, bool active, float speed);
-    Projetil();
+    Projetil(Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO * 1);
     ~Projetil();
-    void inicializaProjetil(sf::Vector2f position, sf::Vector2f size, bool active, float speed);
+    void inicializaProjetil(Vector2f size);
     void update(const float deltaTime);
     void draw();
-    virtual void calculaMovimento() = 0;
+    void calculaMovimento();
+    bool getDead() {return dead;}
+    bool setDead(bool d) {dead = d;}
+    void setPosicao(Vector2f posicao);
+    Vector2f getPosition(){ return body.getPosition();}
+    Vector2f getHalfSize(){ return (body.getSize()/2.0f);}
+    void move (float dx, float dy){body.move(dx,dy);}
+    void setLeft(bool l){left = l;}
 
 
 };
