@@ -1,7 +1,9 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //Coradassi - 60%
+    //Simão -   40%
 #pragma once
 #include <iostream>
 //--------------------------------------------------------------------------------------------------------------------//
@@ -21,19 +23,10 @@
 //Classe Inimigo//
 class Inimigo : public Personagem{
 
-protected:
-
-private:
-
 public:
-    Inimigo(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
-    Inimigo();
-    ~Inimigo();
+    Inimigo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
 
-    void inicializaInimigo(Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
-    void calculaMovimento(const float deltaTempo){
-        //std::cout<<"calculando..."<<std::endl;
-    }
+    ~Inimigo();
 
 
 };

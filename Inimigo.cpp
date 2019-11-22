@@ -5,22 +5,13 @@
 
 #include "Inimigo.h"
 
-Inimigo::Inimigo(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
-{
-    inicializaInimigo(position, size, active, speed, jump_height);
-}
-
-Inimigo::Inimigo()
+Inimigo::Inimigo(Vector2f position, Vector2f size, float speed) : Personagem(position,size,speed)
 {
 
 }
+
 
 Inimigo::~Inimigo()
 {
 
-}
-
-void Inimigo::inicializaInimigo(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
-{
-    inicializaPersonagem(position, size, active, speed, jump_height);
 }
