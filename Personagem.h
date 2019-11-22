@@ -39,12 +39,12 @@ protected:
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos//
 
-    void setPosition(Vector2f position);
+
 
 public:
     Personagem(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
     virtual ~Personagem();
-
+    void setPosition(Vector2f position);
     void inicializaPersonagem(Vector2f position, Vector2f size, float speed);
     virtual void calculaMovimento(const float deltaTime) = 0;
     void draw();

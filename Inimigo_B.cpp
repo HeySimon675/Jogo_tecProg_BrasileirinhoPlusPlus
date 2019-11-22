@@ -4,8 +4,7 @@
 
 #include "Inimigo_B.h"
 
-Inimigo_B::Inimigo_B( Vector2f position, Vector2f size, float speed ) : Inimigo(position, size, speed) :
-Inimigo(position,size,speed)
+Inimigo_B::Inimigo_B( Vector2f position, Vector2f size, float speed ) : Inimigo(position, size, speed)
 {
     passou10segundos = false;
     projetilCriado = false;

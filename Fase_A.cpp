@@ -23,7 +23,7 @@ Fase_A::~Fase_A() {
 
 void Fase_A::criaInimigoA(Vector2f pos) {
     Inimigo_A *nA;
-    nA = new Inimigo_A();
+    nA = new Inimigo_A;
     nA->inicializar(pos);
     listaEntidades->incluir(static_cast<Entidade*>(nA));
 }

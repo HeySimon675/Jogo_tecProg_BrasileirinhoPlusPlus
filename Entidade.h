@@ -28,7 +28,7 @@ public:
     Entidade();
     virtual ~Entidade();
     bool isActive() { return _active;}
-    virtual void setPositionNeutra(Vector2f position) = 0;
+    virtual void setPositionNeutra(Vector2f position) {};
     virtual void setPosition(Vector2f position) = 0;
 
 //meotodos de controle
