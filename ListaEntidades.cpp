@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Contrutora/Destrutora//
 ListaEntidades::ListaEntidades() {
-
+    aux = nullptr;
 }
 
 ListaEntidades::~ListaEntidades() {
@@ -56,8 +56,8 @@ void ListaEntidades::drawEntidades() {
         aux = lista.inicio();
         while (aux != lista.fim()){
             executar();
-            //aux = aux->getProx();
-            aux = aux++;    //testar metodo, se possivel trocar por um iterator, assim incrementando somente o iterator
+            aux = aux->getProx();
+            //aux = aux++;    //testar metodo, se possivel trocar por um iterator, assim incrementando somente o iterator
         }
         executar();
         aux = nullptr;
@@ -70,8 +70,8 @@ void ListaEntidades::percorrer(float deltaTime){
         aux = lista.inicio();
         while (aux != lista.fim()){
             executar(deltaTime);
-            //aux = aux->getProx();
-            aux = aux++;    //testar metodo, se possivel trocar por um iterator, assim incrementando somente o iterator
+            aux = aux->getProx();
+            //aux = aux++;    //testar metodo, se possivel trocar por um iterator, assim incrementando somente o iterator
         }
         executar(deltaTime);
         aux = nullptr;

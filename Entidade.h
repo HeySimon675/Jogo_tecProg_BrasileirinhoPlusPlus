@@ -29,15 +29,15 @@ public:
     virtual ~Entidade();
     bool isActive() { return _active;}
     virtual void setPositionNeutra(Vector2f position) {};
-    virtual void setPosition(Vector2f position) = 0;
+    virtual void setPosition(Vector2f position) {};
 
 //meotodos de controle
     void desativar();
     void ativar();
 
 //Metodos de loop//
-    virtual void update(float deltaTime) = 0;
-    virtual void draw() = 0;
+    virtual void update(float deltaTime) {};
+    virtual void draw() {};
 
 //--------------------------------------------------------------------------------------------------------------------//
 //CONSTATNTES

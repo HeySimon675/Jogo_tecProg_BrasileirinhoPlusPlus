@@ -68,12 +68,12 @@ GerenciadorGrafico::~GerenciadorGrafico() {
         //verificar se map possui push back
     //}
     // desalocar objetos dinamicos (_Window, _view)
-    if (_instance){
+    //if (_instance){
         //delete pView;
         //delete _window;
         //delete _instance;
-    }
-    _instance = nullptr;
+    //}
+    //_instance = nullptr;
 }   // fim da destrutora
 
 //singleton
@@ -174,7 +174,7 @@ void GerenciadorGrafico::updateSFML() {
 //--------------------------------------------------------------------------------------------------------------------//
 //Executar//
 void GerenciadorGrafico::executar() {
-    updateSFML();
+    //updateSFML();
     _window->clear();
 
 }

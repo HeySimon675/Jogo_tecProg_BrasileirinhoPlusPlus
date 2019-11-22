@@ -29,12 +29,12 @@ private:
     GameState* pState;
 //--------------------------------------------------------------------------------------------------------------------//
 // TESTE
-    //Jogador_1* p1;
+    Jogador_1* p1;
     //Inimigo_A inimigoA;
     //Inimigo_B inimigoB;
     //Projetil_Tipo_1 projetil;
     //Obstaculo plataforma;
-    //Fase_A* faseA;
+    Fase_A* faseA;
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos do State
 //TODO: testar

@@ -22,11 +22,11 @@ Jogo *Jogo::getJogo() {
 Jogo::Jogo() 
 {
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
-    //p1->inicializar(Vector2f(5,5), Vector2f(50.0f, 50.0f),true,
-    //                       100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
+    p1 = new Jogador_1;
     lEntidades = new ListaEntidades;
-    //faseA = new Fase_A(lEntidades, p1);
-    //lEntidades->incluir(static_cast<Entidade*>(p1));
+    lEntidades->incluir(static_cast<Entidade*>(p1));
+    faseA = new Fase_A(lEntidades, p1);
+
     inicializa();
 }   //end Construtora
 
@@ -89,7 +89,7 @@ float deltaTime = 0.0f;
 
 
         g->executar();  //metodo executar do gerenciador grafico
-
+        lEntidades->percorrer(deltaTime);
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Testes//

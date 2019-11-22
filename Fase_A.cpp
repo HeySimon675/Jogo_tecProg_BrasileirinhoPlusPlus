@@ -10,15 +10,7 @@ Fase_A::Fase_A(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) 
     inicializa();
 }
 
-Fase_A::~Fase_A() {
-    //verifica se os jogadores foram derrotados ou passaram de fase ( talvez deva ser implementado em outro lugar)
-    if(pJ1->isActive()){
-
-    }
-
-    delete arqFase;
-    destroiMatriz();
-}
+Fase_A::~Fase_A() {}
 //--------------------------------------------------------------------------------------------------------------------//
 
 void Fase_A::criaInimigoA(Vector2f pos) {
