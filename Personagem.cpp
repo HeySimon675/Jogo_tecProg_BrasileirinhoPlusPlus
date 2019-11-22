@@ -25,12 +25,11 @@ Personagem::~Personagem()
 
 }
 
-void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, float speed)
+void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, float sd)
 {
-    inicializaEntidade(position, size, true);
     setPosition(position);
     body.setSize(size);
-    this->speed = speed;
+    this->speed = sd;
     //body.setTexture(gerenciadorGrafico->getTexture(getID()));   //TODO: tirar daqui
 }
 
