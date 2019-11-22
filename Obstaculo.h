@@ -29,12 +29,12 @@ protected:
 
     void setPosition(Vector2f position);
 
-private:
-
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
-	static const Vector2f TAMANHO_PADRAO;
-	static const Vector2f POSICAO_PADRAO;
+    static const Vector2f TAMANHO_PADRAO;
+    static const Vector2f POSICAO_PADRAO;
+
+private:
 	
 public:
     Obstaculo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO);
