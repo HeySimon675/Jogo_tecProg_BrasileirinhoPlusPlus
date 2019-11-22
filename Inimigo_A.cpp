@@ -3,16 +3,17 @@
 // Created by simao on 11/11/2019.
 
 #include "Inimigo_A.h"
-#include <iostream>
 
-Inimigo_A::Inimigo_A(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
+//--------------------------------------------------------------------------------------------------------------------//
+//constantes
+const int Inimigo_A::id = 2;
+
+//--------------------------------------------------------------------------------------------------------------------//
+
+Inimigo_A::Inimigo_A(Vector2f position, Vector2f size, float speed) : Inimigo(position, size, speed)
 {
-    inicializaInimigo_A(position, size, active, speed, jump_height);
-}
-
-Inimigo_A::Inimigo_A()
-{
-
+    goingLeft = true;
+    position_X_inicial = position.x;
 }
 
 Inimigo_A::~Inimigo_A()
@@ -21,24 +22,14 @@ Inimigo_A::~Inimigo_A()
 }
 
 void Inimigo_A::draw() {
-    body.setFillColor(Color::Green);
     gerenciadorGrafico->draw(body);
 }
 
-void Inimigo_A::inicializaInimigo_A(Vector2f position,Vector2f size, bool active, float speed, float jump_height)
+void Inimigo_A::inicializar(Vector2f position)
 {
-    /* TODO: tecnicamente esse codigo não é mais necessario, avaliar a necessidade de chamar inicializa das funções acima  
-    Vector2f pos;
-    if(position != POSICAO_PADRAO){
-        pos.x = POSICAO_PADRAO.x * position.x;
-        pos.y = POSICAO_PADRAO.y * position.y;
-    }else{
-        pos = position;
-    }
-    */
-    inicializaInimigo(position, size, active, speed, jump_height);
+    setPosition(position);
     position_X_inicial = position.x;
-    goingLeft = true;
+
 }
 
 void Inimigo_A::calculaMovimento(const float deltaTime)
@@ -46,7 +37,7 @@ void Inimigo_A::calculaMovimento(const float deltaTime)
     vel.x = 0;
        if(goingLeft)
        {
-           if(!(body.getPosition().x <= (position_X_inicial - 508.0f) && body.getPosition().x >= (position_X_inicial - 512.0f)))
+           if(!(body.getPosition().x <= (position_X_inicial - 148.0f) && body.getPosition().x >= (position_X_inicial - 152.0f)))
            {
                vel.x -= speed;
            }

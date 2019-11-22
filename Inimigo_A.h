@@ -1,7 +1,10 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //Coradassi - 80%
+    //Simão -   20%
+
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Inimigo
@@ -15,15 +18,16 @@
 class Inimigo_A : public Inimigo{
 
 public:
-    Inimigo_A(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
-    Inimigo_A();
+    Inimigo_A(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
     ~Inimigo_A();
 
-    void inicializaInimigo_A(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, bool active = true, float speed = 100, float jump_height = 50);
+    void inicializar(Vector2f position);
     void calculaMovimento(const float deltaTime);
     void draw();
+    const int getID(){return id;}
 
 private:
+    static const int id;
     float position_X_inicial;
     bool goingLeft;
     float delta_X;
