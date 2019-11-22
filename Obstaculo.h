@@ -1,7 +1,8 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //Coradassi - 85%
+    //Simão     - 15%
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Entidade
@@ -21,9 +22,12 @@
 class Obstaculo : public Entidade{
 
 protected:
-    sf::RectangleShape body;
+    RectangleShape body;
     bool canMove;
     bool canHurt;
+    float push;
+
+    void setPosition(Vector2f position);
 
 private:
 
@@ -33,17 +37,17 @@ private:
 	static const Vector2f POSICAO_PADRAO;
 	
 public:
-    Obstaculo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, bool active = true);
+    Obstaculo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO);
 
 	~Obstaculo();
-	void inicializaObstaculo(Vector2f position, Vector2f size, bool active);
 	void setCanMove(bool canMove);
 	bool getCanMove();
 	void setCanHurt(bool canHurt);
 	bool getCanHurt();
+    float getPush(){return push;}
 	void draw();
-//	Collider GetCollider();
-	sf::Vector2f getPosition(){ return body.getPosition();}
-    sf::Vector2f getHalfSize(){ return (body.getSize()/2.0f);}
+//Metodos para Colisão
+	Vector2f getPosition(){ return body.getPosition();}
+    Vector2f getHalfSize(){ return (body.getSize()/2.0f);}
     void move (float dx, float dy){body.move(dx,dy);}
 };

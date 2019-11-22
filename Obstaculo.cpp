@@ -1,25 +1,18 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-// Created by simao on 11/11/2019.
-//
 
 #include "Obstaculo.h"
-#include <iostream>
-
-
 
 //--------------------------------------------------------------------------------------------------------------------//
 //constantes
 const Vector2f Obstaculo::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
 const Vector2f Obstaculo::POSICAO_PADRAO = Vector2f(50.0f,50.0f);
 
-Obstaculo::Obstaculo(Vector2f position,Vector2f size, bool active)
+//--------------------------------------------------------------------------------------------------------------------//
+Obstaculo::Obstaculo(Vector2f position, Vector2f size) : Entidade()
 {
-    Vector2f pos = POSICAO_PADRAO;
-    if(pos != position){
-    
-    }
-    inicializaObstaculo(position, size, active);
+    setPosition(position);
+    body.setSize(size);
 }
 
 
@@ -28,13 +21,19 @@ Obstaculo::~Obstaculo()
 
 }
 
-void Obstaculo::inicializaObstaculo(sf::Vector2f position, sf::Vector2f size, bool active)
-{
-
-    body.setPosition(position);
-    body.setSize(size);
-    inicializaEntidade(position, size, active);
+//--------------------------------------------------------------------------------------------------------------------//
+//Ferramentas para fase
+void Obstaculo::setPosition(Vector2f position){
+    Vector2f pos(0,0);
+    if(position != POSICAO_PADRAO){
+        pos.x = POSICAO_PADRAO.x * position.x;
+        pos.y = POSICAO_PADRAO.y * position.y;
+    }else{
+        pos = position;
+    }
+    body.setPosition(pos);
 }
+//--------------------------------------------------------------------------------------------------------------------//
 
 void Obstaculo::setCanHurt(bool ch)
 {
@@ -55,18 +54,9 @@ bool Obstaculo::getCanMove()
 {
     return canMove;
 }
-
+//--------------------------------------------------------------------------------------------------------------------//
 void Obstaculo::draw()
 {
-    /**Teste para botar uma cor no body**/
-    body.setFillColor(sf::Color::White);
-    //Draw do body em si
     gerenciadorGrafico->draw(body);
-    //std::cout<<"desenhou?"<<std::endl;
+
 }
-/**
-Collider Obstaculo::GetCollider()
-{
-    return Collider(body);
-}
-**/
