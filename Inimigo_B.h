@@ -1,7 +1,9 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //Coradassi - 90%
+    //Simao - 10%
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Inimigo
@@ -9,22 +11,28 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Inimigo.h"
-#include "Projetil_Tipo_1.h"
+#include "Projetil.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Inimigo_B//
 class Inimigo_B : public Inimigo{
 
 private:
-    Projetil_Tipo_1* pt1;
+    Projetil* projetil;
     bool projetilCriado;
+    bool passou10segundos;
 
 public:
-    Inimigo_B(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
-    Inimigo_B();
+    static sf::Clock clock;
+
+public:
+    Inimigo_B(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
     ~Inimigo_B();
 
-    void inicializaInimigo_B(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height);
+    void inicializar(Vector2f position, Projetil* projetil);
     void calculaMovimento(const float deltaTime);
+    bool getPassou10Segundos() {return passou10segundos;}
+    void setPassou10Segundos(bool pds){passou10segundos = pds; }
+    void setProjetil(Projetil* projetil) {this->projetil = projetil; projetilCriado = true;}
 
 };

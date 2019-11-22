@@ -32,8 +32,8 @@ public:
     virtual void setPosition(Vector2f position) = 0;
 
 //meotodos de controle
-    void ativar();
     void desativar();
+    void ativar();
 
 //Metodos de loop//
     virtual void update(float deltaTime) = 0;

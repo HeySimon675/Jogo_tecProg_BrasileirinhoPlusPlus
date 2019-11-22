@@ -3,49 +3,30 @@
 // Created by simao on 11/11/2019.
 
 #include "Inimigo_B.h"
-#include <iostream>
-//#include <windows.h>
 
-Inimigo_B::Inimigo_B(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
+Inimigo_B::Inimigo_B( Vector2f position, Vector2f size, float speed ) : Inimigo(position, size, speed) :
+Inimigo(position,size,speed)
 {
-    inicializaInimigo_B(position, size, active, speed, jump_height);
-    pt1 = nullptr;
-}
-
-Inimigo_B::Inimigo_B()
-{
-
+    passou10segundos = false;
+    projetilCriado = false;
 }
 
 Inimigo_B::~Inimigo_B()
 {
-    delete pt1;
 }
 
-void Inimigo_B::inicializaInimigo_B(sf::Vector2f position, sf::Vector2f size, bool active, float speed, float jump_height)
+void Inimigo_B::inicializar(Vector2f position, Projetil* projetil)
 {
-    inicializaInimigo(position, size, active, speed, jump_height);
-    projetilCriado = false;
+    setPosition(position);
+    setProjetil(projetil);
 }
 
 void Inimigo_B::calculaMovimento(const float deltaTime)
 {
     if(!projetilCriado)
     {
-        pt1 = new Projetil_Tipo_1(sf::Vector2f(body.getPosition().x + 25.0f, body.getPosition().y + (body.getSize().y/4)),
-                       sf::Vector2f(25.0f, 25.0f), true, 100.0f);
+        projetil->setPosicao(sf::Vector2f(body.getPosition().x, body.getPosition().y - (body.getSize().y/4.0f)));
         projetilCriado = true;
     }
-
-    pt1->update(deltaTime);
-
-    pt1->draw();
-
-    if(pt1->getDead())
-    {
-        delete pt1;
-        projetilCriado = false;
-        //deltaDeltaTempo = 0;
-    }
-
+    projetil->setDead(false);
 }
