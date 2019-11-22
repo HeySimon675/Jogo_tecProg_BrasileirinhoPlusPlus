@@ -1,7 +1,10 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //Coradassi - 90%
+    //Simão 10%
+
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Jogador
@@ -10,6 +13,9 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Jogador.h"
+
+#include <iostream>
+#include <math.h>
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogador//
@@ -23,7 +29,7 @@ private:
 public:
     Jogador_1(Vector2f position = POSICAO_PADRAO);
 
-    void inicializaJogador_1(Vector2f position);
+    void inicializar(Vector2f position);
     ~Jogador_1();
 
     const int getID();

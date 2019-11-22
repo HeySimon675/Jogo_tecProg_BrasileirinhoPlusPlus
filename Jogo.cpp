@@ -22,7 +22,7 @@ Jogo *Jogo::getJogo() {
 Jogo::Jogo() 
 {
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
-    //p1->inicializaJogador_1(Vector2f(5,5), Vector2f(50.0f, 50.0f),true,
+    //p1->inicializar(Vector2f(5,5), Vector2f(50.0f, 50.0f),true,
     //                       100.0f, 50.0f,Keyboard::Right, Keyboard::Left, Keyboard::Up);
     lEntidades = new ListaEntidades;
     //faseA = new Fase_A(lEntidades, p1);
