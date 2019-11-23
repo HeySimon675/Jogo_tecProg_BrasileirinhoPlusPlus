@@ -6,6 +6,8 @@
 #include "Projetil.h"
 #include <iostream>
 
+const float Projetil::VELOCIDADE_PADRAO = 100;
+const Vector2f Projetil::TAMANHO_PADRAO = Vector2f(50,50);
 
 Projetil::Projetil(Vector2f size, float speed) : Entidade()
 {

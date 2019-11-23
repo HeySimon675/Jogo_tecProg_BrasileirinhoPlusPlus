@@ -17,7 +17,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Projetil//
-class Projetil : Entidade {
+class Projetil : public Entidade {
 
 private:
     RectangleShape body;
