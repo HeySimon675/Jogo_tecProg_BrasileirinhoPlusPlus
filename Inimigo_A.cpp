@@ -13,7 +13,7 @@ const int Inimigo_A::id = 2;
 Inimigo_A::Inimigo_A(Vector2f position, Vector2f size, float speed) : Inimigo(position, size, speed)
 {
     goingLeft = true;
-    position_X_inicial = position.x;
+    position_X_inicial = position.x *50.0f;
     associaTextura();
 }
 
@@ -29,7 +29,7 @@ void Inimigo_A::draw() {
 void Inimigo_A::inicializar(Vector2f position)
 {
     setPosition(position);
-    position_X_inicial = position.x;
+    position_X_inicial = position.x*50.0f;
 
 }
 
