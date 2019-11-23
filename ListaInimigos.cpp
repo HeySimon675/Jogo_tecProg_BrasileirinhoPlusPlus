@@ -6,21 +6,16 @@
 #include "ListaInimigos.h"
 
 ListaInimigos::ListaInimigos() {
-
+    contador = 0;
 }
 
 ListaInimigos::~ListaInimigos() {
 
 }
 
-void ListaInimigos::incluir(Inimigo &inimigo) {
-
+void ListaInimigos::incluir(Inimigo *inimigo) {
+    vetorInimigo.push_back(inimigo);
+    contador++;
 }
 
-Lista<Inimigo> *ListaInimigos::getLista() {
-    return nullptr;
-}
 
-void ListaInimigos::checkColisao() {
-
-}
