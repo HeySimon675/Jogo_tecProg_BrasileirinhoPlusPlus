@@ -30,6 +30,9 @@ private:
     bool dead;
     bool left;
     static const int id;
+    const int getID(){return id;}
+
+    void associaTextura();
 
 public:
     Projetil(Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO * 1);

@@ -13,6 +13,7 @@ Obstaculo::Obstaculo(Vector2f position, Vector2f size) : Entidade()
 {
     setPosition(position);
     body.setSize(size);
+    associaTextura();
 }
 
 
@@ -59,4 +60,8 @@ void Obstaculo::draw()
 {
     gerenciadorGrafico->draw(body);
 
+}
+
+void Obstaculo::associaTextura() {
+    body.setTexture(gerenciadorGrafico->getTexture(getID()));
 }

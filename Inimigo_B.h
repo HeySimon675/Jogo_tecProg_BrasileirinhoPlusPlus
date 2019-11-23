@@ -22,6 +22,7 @@ private:
     bool projetilCriado;
     bool passou10segundos;
     static const int id;
+    const int getID(){return id;}
 
 public:
     static sf::Clock clock;

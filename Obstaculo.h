@@ -34,6 +34,7 @@ public:
 protected:
     static const Vector2f TAMANHO_PADRAO;
     static const Vector2f POSICAO_PADRAO;
+    void associaTextura();
 
 private:
 	

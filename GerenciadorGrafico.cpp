@@ -119,7 +119,8 @@ void GerenciadorGrafico::inicializaView() {
 //Carrega texturas//
 
 void GerenciadorGrafico::load(const String _caminho) {
-    Texture* tx = new Texture;
+    Texture* tx;
+    tx = new Texture;
     tx->loadFromFile(_caminho);
     //this->getVector()->push_back(tx);
     //TODO: TESTE DE INCLUSÃO EM MAP

@@ -11,6 +11,7 @@ Inimigo_Boss::Inimigo_Boss(Vector2f position, Vector2f size, float speed) : Inim
     goingLeft = true;
     canMove = true;
     projetilCriado = false;
+    associaTextura();
 }
 
 Inimigo_Boss::~Inimigo_Boss()

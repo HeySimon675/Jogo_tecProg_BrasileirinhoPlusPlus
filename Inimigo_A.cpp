@@ -14,6 +14,7 @@ Inimigo_A::Inimigo_A(Vector2f position, Vector2f size, float speed) : Inimigo(po
 {
     goingLeft = true;
     position_X_inicial = position.x;
+    associaTextura();
 }
 
 Inimigo_A::~Inimigo_A()

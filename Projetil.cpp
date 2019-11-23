@@ -87,3 +87,7 @@ void Projetil::setPosicao(Vector2f posicao)
     posicao_X_inicial = posicao.x;
     posicao_Y_inicial = posicao.y;
 }
+
+void Projetil::associaTextura() {
+    body.setTexture(gerenciadorGrafico->getTexture(getID()));
+}

@@ -10,6 +10,7 @@ Obstaculo_Plataforma::Obstaculo_Plataforma(Vector2f position) : Obstaculo(positi
     canMove = false;
     push = 1.0;
     setPosition(position);
+    associaTextura();
 }
 
 

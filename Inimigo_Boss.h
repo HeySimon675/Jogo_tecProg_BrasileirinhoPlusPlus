@@ -32,4 +32,5 @@ private:
     float delta_X;
     bool projetilCriado;
     static const int id;
+    const int getID(){return id;}
 };

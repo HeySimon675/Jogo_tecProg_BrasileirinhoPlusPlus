@@ -15,4 +15,5 @@
 class Jogador_2 : public Jogador{
 private:
     static const int id;
+    const int getID(){return id;}
 };

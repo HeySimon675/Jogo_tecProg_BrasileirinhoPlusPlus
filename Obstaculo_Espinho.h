@@ -17,5 +17,6 @@ public:
 
 private:
     static const int id;
+    const int getID(){return id;}
 };
 
