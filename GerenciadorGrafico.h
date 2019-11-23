@@ -10,6 +10,7 @@
 #include <string>
 #include <map>
 #include <iostream>
+#include <string.h>
 
 class Entidade;
 //--------------------------------------------------------------------------------------------------------------------//
@@ -59,6 +60,8 @@ public:
     void exibir();
     void drawEntidade(Entidade* entidade);
     void draw(RectangleShape body);
+    void drawPontos(int pontos);
+    void draw(Text text);
     
     //verifica atravez do id se a entidade possui uma textura e então associa ela atravez do map de Texturas
     void associaTextura(Entidade* entidade);

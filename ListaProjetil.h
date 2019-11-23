@@ -1,31 +1,30 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 14/11/19.
 #pragma once
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Lista.h"
-#include "Obstaculo.h"
+#include "Projetil.h"
+#include <vector>
+#include <iterator>
+using namespace std;
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Lista especializada para obstaculos//
+//Lista especializada para Projetil//
 
-class ListaObstaculos{
+class ListaProjetil{
 private:
-    vector<Obstaculo*> vetorObstaculo;
+    vector<Projetil*> vetorProjetil;
     int contador;
-
 public:
-    ListaObstaculos();
-    ~ListaObstaculos();
-    void incluir(Obstaculo* Obstaculo);
-    Obstaculo* getObstaculo(int i) {return vetorObstaculo[i];}
-    int getContador(){return contador;}
+    ListaProjetil();
+    ~ListaProjetil();
+    void incluir(Projetil* Projetil);
+    int getContador() {return contador;}
+    Projetil* getProjetil(int i) {return vetorProjetil[i];}
 
 //Metodo para teste//
 //fim teste//
-
-//--------------------------------------------------------------------------------------------------------------------//
 };
 

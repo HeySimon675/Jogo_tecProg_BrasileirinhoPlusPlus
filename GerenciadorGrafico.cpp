@@ -1,7 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 26/10/19.
-//Update: 11hrs 29/10
+
 
 #include "GerenciadorGrafico.h"
 
@@ -189,6 +189,26 @@ void GerenciadorGrafico::executar() {
 void GerenciadorGrafico::draw(const RectangleShape body) {
     _window.draw(body);
 }
+
+void GerenciadorGrafico::drawPontos(int pontos)
+{
+    sf::Font font;
+    sf::Text text;
+    font.loadFromFile("Textures/arial.ttf");
+    std::string s = "Pontos: " + std::to_string(pontos);
+    text.setString(s);
+    text.setFont(font);
+    text.setPosition(sf::Vector2f(larguraJanela - 640.0f, -325.0f));
+    text.setScale(sf::Vector2f(0.75f, 0.75f));
+    _window.draw(text);
+
+}
+
+void GerenciadorGrafico::draw(Text text)
+{
+    _window.draw(text);
+}
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Ferramentas

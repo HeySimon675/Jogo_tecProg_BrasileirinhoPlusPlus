@@ -10,11 +10,14 @@
 #include "Personagem.h" //teste
 #include "Jogador_1.h"
 #include <cmath>   //temporario
-#include "Collider.h"//temporario
+#include "GerenciadorDeColisoes.h"
 #include "Fase_A.h" //teste
 #include "Inimigo_B.h"
 #include "Inimigo_A.h"
 #include "GameState.h"
+#include "MenuPrincipal.h"
+#include "MenuPause.h"
+#include "MenuNovoJogo.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -25,16 +28,19 @@ private:
     friend class GameState;
 //atributos//
     static Jogo* _instance;     //instancia
-    ListaEntidades* lEntidades;  //Lista Principal de Entidades
+
     GameState* pState;
 //--------------------------------------------------------------------------------------------------------------------//
 // TESTE
     Jogador_1* p1;
+    ListaEntidades* lEntidades;  //Lista Principal de Entidades
     //Inimigo_A inimigoA;
     //Inimigo_B inimigoB;
     //Projetil_Tipo_1 projetil;
     //Obstaculo plataforma;
-    Fase_A* faseA;
+    //Fase_A* faseA;
+    int pontos;
+    MenuNovoJogo menuPrincipal;
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos do State
 //TODO: testar
@@ -51,7 +57,21 @@ private:
     GerenciadorGrafico* g;
     float deltaTime;
 
-//metodos//
+    //TODO teste
+    bool podeDarUpdate;
+    GerenciadorDeColisoes collider;
+    Inimigo_A* inimigoA;
+    Inimigo_B* inimigoB;
+    Projetil* projetil;
+    Projetil* projetilBoss;
+    Obstaculo_Plataforma* plataforma;
+    Obstaculo_Movel* caixa;
+    Obstaculo_Espinho* espinho;
+    Fase_A* faseA;
+
+
+
+    //metodos//
     //construtora privada//
     Jogo();
 
@@ -66,7 +86,7 @@ public:
 
     //metodos principais//
     void executar();
-    void update(float deltaTime);
+    void update(float deltaTime, float elapsed);
     void draw();
 };
 
