@@ -22,13 +22,14 @@ void Inimigo_B::inicializar(Vector2f position, Projetil* projetil)
 {
     setPosition(position);
     setProjetil(projetil);
+    projetilCriado = false;
 }
 
 void Inimigo_B::calculaMovimento(const float deltaTime)
 {
     if(!projetilCriado)
     {
-        projetil->setPosicao(sf::Vector2f(body.getPosition().x, body.getPosition().y - (body.getSize().y/4.0f)));
+        projetil->setPosicao(sf::Vector2f(750.0f, body.getPosition().y + (body.getSize().y/4.0f)));
         projetilCriado = true;
     }
     projetil->setDead(false);
