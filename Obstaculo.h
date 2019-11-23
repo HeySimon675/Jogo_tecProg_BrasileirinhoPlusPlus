@@ -26,11 +26,12 @@ protected:
     bool canMove;
     bool canHurt;
     float push;
-
+public:
     void setPosition(Vector2f position);
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
+protected:
     static const Vector2f TAMANHO_PADRAO;
     static const Vector2f POSICAO_PADRAO;
 

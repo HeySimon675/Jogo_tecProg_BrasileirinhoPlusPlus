@@ -9,6 +9,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <iostream>
 
 class Entidade;
 //--------------------------------------------------------------------------------------------------------------------//
@@ -27,8 +28,9 @@ namespace gerenciadores {
 
 typedef class GerenciadorGrafico {
 private:
-    RenderWindow* _window;
-    View* pView;
+    friend class Jogo;
+    RenderWindow _window;
+    View pView;
     map<int, Texture*> _mTexture;  //testando nova estrutura para poder carregar mais facilmente a textura das Entidades
     vector<Texture*> _vTexture;
     static GerenciadorGrafico* _instance;   //Singleton
@@ -46,7 +48,7 @@ public:
 //--------------------------------------------------------------------------------------------------------------------//
 //METODOS PARA TESTE//
 private:
-    RenderWindow* getWindow(){ return _window;}
+    //RenderWindow* getWindow(){ return _window;}
 //--------------------------------------------------------------------------------------------------------------------//
 
 //--------------------------------------------------------------------------------------------------------------------//

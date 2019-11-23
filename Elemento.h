@@ -16,7 +16,7 @@ public:
     Elemento(TIPO* el);
     ~Elemento() {prox= NULL; ante= NULL; pInfo= NULL;}
     Elemento<TIPO> *getProx() const;
-    Elemento<TIPO> *getAnte() const;
+    //Elemento<TIPO> *getAnte() const;
     void setProx(Elemento<TIPO>* px);
     void setAnte(Elemento<TIPO>* at);
     void setInfo( TIPO* info);
@@ -37,10 +37,12 @@ Elemento<TIPO> *Elemento<TIPO>::getProx() const {
     return prox;
 }
 
+/*
 template<class TIPO>
 Elemento<TIPO> *Elemento<TIPO>::getAnte() const {
     return ante;
 }
+ */
 
 template<class TIPO>
 void Elemento<TIPO>::setProx(Elemento<TIPO> *px) {

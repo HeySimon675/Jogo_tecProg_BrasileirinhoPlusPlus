@@ -4,7 +4,7 @@
 //Update: 11hrs 29/10
 
 #include "GerenciadorGrafico.h"
-#include <iostream>
+
 #include <bits/stdc++.h>
 
 GerenciadorGrafico* GerenciadorGrafico::_instance = nullptr;
@@ -55,7 +55,8 @@ const String GerenciadorGrafico::PROJETIL_tx = TEXTURE_DIR + "Projetil_texture.p
 //FIM Variaveis Static//
 
 //Construtora Privada
-GerenciadorGrafico::GerenciadorGrafico(){
+GerenciadorGrafico::GerenciadorGrafico() : _window(VideoMode(larguraJanela,alturaJanela),titulo), pView(center,WindowSize)
+{
     inicializa();
 }//fim da construtora
 
@@ -109,8 +110,9 @@ void GerenciadorGrafico::inicializa() {
 }
 //inicializa view
 void GerenciadorGrafico::inicializaView() {
-    pView = new View(center,WindowSize);
-    _window->setView(*pView);
+    //pView = new View(center,WindowSize);
+    //_window->setView(*pView);
+    _window.setView(pView);
 }
 
 
@@ -146,8 +148,9 @@ void GerenciadorGrafico::carregaFontes() {
 }
 //inicializa Window//
 void GerenciadorGrafico::inicializaWindow() {
-    _window = new RenderWindow(VideoMode(larguraJanela,alturaJanela),titulo);
-    _window->setFramerateLimit(60);
+    //_window = new RenderWindow(VideoMode(larguraJanela,alturaJanela),titulo);
+    //_window->setFramerateLimit(60);
+    _window.setFramerateLimit(60);
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -155,33 +158,34 @@ void GerenciadorGrafico::inicializaWindow() {
 
 //Verifica se a Janela Esta Aberta//
 bool GerenciadorGrafico::janelaAberta() {
-    return (_window->isOpen());
+    //return (_window->isOpen());
+    return (_window.isOpen());
 }
 
 //Chama Display, exibindo objetos renderizados//
 void GerenciadorGrafico::exibir() {
-    _window->display();
+    //_window->display();
+    _window.display();
 }
 
 //Update SFML//
 void GerenciadorGrafico::updateSFML() {
-    while(_window->pollEvent(event)){
+    while(_window.pollEvent(event)){
         if(event.type == Event::Closed){
-            _window->close();
+            _window.close();
         }
     }
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //Executar//
 void GerenciadorGrafico::executar() {
-    //updateSFML();
-    _window->clear();
-
+    updateSFML();
+    //_window.clear();
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //draw//
 void GerenciadorGrafico::draw(const RectangleShape body) {
-    getWindow()->draw(body);
+    _window.draw(body);
 }
 
 //--------------------------------------------------------------------------------------------------------------------//

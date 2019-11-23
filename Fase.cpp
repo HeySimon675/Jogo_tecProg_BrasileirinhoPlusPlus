@@ -41,10 +41,10 @@ Fase::~Fase() {
 //--------------------------------------------------------------------------------------------------------------------//
 //Criação de Entidadades
 void Fase::criaPlataforma(Vector2f pos) {
-    //Obstaculo_Plataforma* obstaculo;
-    //obstaculo = new Obstaculo();
-    //obstaculo->inicializa(pos);
-    //listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+    Obstaculo_Plataforma* obstaculo;
+    obstaculo = new Obstaculo_Plataforma;
+    obstaculo->setPosition(pos);
+    listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
 }
 
 void Fase::posicionaJogador(Vector2f pos){

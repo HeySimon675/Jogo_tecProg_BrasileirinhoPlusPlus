@@ -28,7 +28,7 @@
 #include "Projetil.h"
 #include "Obstaculo.h"  //remover assim que possivel
 
-//#include "Obstaculo_Plataforma"
+#include "Obstaculo_Plataforma.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//

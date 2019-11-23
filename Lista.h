@@ -77,10 +77,11 @@ public:
 
     //REMOVE/RETORNA/LIMPA LISTA
     void popFront();
-    void popBack();
+    //void popBack();
     void operator--();
     void limpaLista();
 
+    /*
     //FUNÇÕES DE ITERATOR
     Iterator begin (){
         return Iterator(primeiro);
@@ -89,7 +90,8 @@ public:
     Iterator end(){
         return Iterator(atual);
     }
-
+     */
+    /*
     void apaga(Iterator i){
         if( i == begin()){
              popFront();
@@ -115,7 +117,7 @@ public:
         }
         return false;
     }
-
+    */
 
     //FUNÇÕES NAO IMPLEMENTADAS
     void inicializaLista();
@@ -139,7 +141,7 @@ bool Lista<TIPO>::adicionaPrimeiro(TIPO *el) {
     primeiro=aux;
     atual=aux;
     aux->setProx(nullptr);
-    aux->setAnte(nullptr);   //Como é o primeiro elemento ele não possui proximo nem anterior
+    //aux->setAnte(nullptr);   //Como é o primeiro elemento ele não possui proximo nem anterior
     aux= nullptr;
     return true;
 }
@@ -152,7 +154,7 @@ bool Lista<TIPO>::includeElemento(TIPO *el){
         return adicionaPrimeiro(el);
     }else{// a lista possuí 1+ elementos
         aux= new Elemento<TIPO>(el);
-        aux->setAnte(atual);
+        //aux->setAnte(atual);
         atual->setProx(aux);
         aux->setProx(nullptr);
         atual=aux;
@@ -211,6 +213,7 @@ void Lista<TIPO>::popFront() {
     }
 }
 
+/*
 //remove uma elemento do começo da lista
 template<class TIPO>
 void Lista<TIPO>::popBack() {
@@ -225,7 +228,7 @@ void Lista<TIPO>::popBack() {
         }
     }
 }
-
+*/
 
 template<class TIPO>
 void Lista<TIPO>::operator--() {

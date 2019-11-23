@@ -22,10 +22,10 @@ Jogo *Jogo::getJogo() {
 Jogo::Jogo() 
 {
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
-    p1 = new Jogador_1;
+    //p1 = new Jogador_1;
     lEntidades = new ListaEntidades;
-    lEntidades->incluir(static_cast<Entidade*>(p1));
-    faseA = new Fase_A(lEntidades, p1);
+    //lEntidades->incluir(static_cast<Entidade*>(p1));
+    faseA = new Fase_A(lEntidades);
 
     inicializa();
 }   //end Construtora
