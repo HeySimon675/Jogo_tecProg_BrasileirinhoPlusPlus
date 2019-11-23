@@ -22,6 +22,6 @@ void Menu::draw(sf::Text text)
 
 sf::Font Menu::getFont()
 {
-    font.loadFromFile("Textures/arial.ttf");
+    font.loadFromFile(gerenciadorGrafico->getFont());
     return font;
 }

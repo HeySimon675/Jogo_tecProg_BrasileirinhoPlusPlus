@@ -37,6 +37,7 @@ private:
     static GerenciadorGrafico* _instance;   //Singleton
     Event event;
     static int key; //chave do Map
+    Font font;
 //contrutora privada//
     GerenciadorGrafico();
 public:
@@ -70,6 +71,7 @@ public:
     //a função iria acessar o map pelo id, retornando a textura, não teria como verificar se é a textura certa, mas como
     //nao metodos para usuario, não vejo problema.
     Texture* getTexture(int id);
+    const String getFont(){ return FONT_ARIAL;}
 private:
     void updateSFML();
 
@@ -97,10 +99,13 @@ public:
     static const Vector2f center;
     //View //
 
-    //Textures//
+    //Diretorios//
     static const String SYSTEM_PREFIX;
     static const String TEXTURE_DIR;
+    static const String FONTES_DIR;
 
+    //Fontes//
+    static const String FONT_ARIAL;
     //player//
     static const String JOGADOR_1_tx;
     static const String JOGADOR_2_tx;
@@ -117,6 +122,7 @@ public:
     
     //Projetil//
     static const String PROJETIL_tx;
+
     
 }gGrafico;
 

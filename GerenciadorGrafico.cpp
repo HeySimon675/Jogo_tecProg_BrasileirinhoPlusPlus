@@ -22,9 +22,12 @@ const String GerenciadorGrafico::SYSTEM_PREFIX = "../";
 
 //altura e largura da Window
 const unsigned int GerenciadorGrafico::larguraJanela = 800;
+//const unsigned int GerenciadorGrafico::larguraJanela = 1000;
+//const unsigned int GerenciadorGrafico::alturaJanela = 650;
 const unsigned int GerenciadorGrafico::alturaJanela = 600;
 //Tamanho da Window, usado pela View
 const Vector2f GerenciadorGrafico::WindowSize(larguraJanela,alturaJanela);
+//const Vector2f GerenciadorGrafico::center(0,0);
 const Vector2f GerenciadorGrafico::center(larguraJanela/2,alturaJanela/2);
 
 //Titulo Da janela e VideoMode da janela
@@ -32,9 +35,11 @@ const String GerenciadorGrafico::titulo("SFML_The_Game");
 
 //Chave do Map
 int GerenciadorGrafico::key = 0;
-//Textures//
+//Diretorios//
 const String GerenciadorGrafico::TEXTURE_DIR = SYSTEM_PREFIX + "Textures/";
-
+const String GerenciadorGrafico::FONTES_DIR = SYSTEM_PREFIX + "Fontes/";
+//fontes//
+const String GerenciadorGrafico::FONT_ARIAL = FONTES_DIR + "arial.ttf";
 //players//
 const String GerenciadorGrafico::JOGADOR_1_tx = TEXTURE_DIR + "Jogador_1_texture.png";
 const String GerenciadorGrafico::JOGADOR_2_tx = TEXTURE_DIR + "Jogador_2_texture.png";
@@ -147,7 +152,7 @@ void GerenciadorGrafico::carregaTexturas() {
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {
-
+    font.loadFromFile(FONT_ARIAL);
 }
 //inicializa Window//
 void GerenciadorGrafico::inicializaWindow() {
@@ -193,9 +198,7 @@ void GerenciadorGrafico::draw(const RectangleShape body) {
 
 void GerenciadorGrafico::drawPontos(int pontos)
 {
-    sf::Font font;
     sf::Text text;
-    font.loadFromFile("Textures/arial.ttf");
     std::string s = "Pontos: " + std::to_string(pontos);
     text.setString(s);
     text.setFont(font);

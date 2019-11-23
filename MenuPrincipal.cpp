@@ -96,7 +96,8 @@ void MenuPrincipal::update()
 void MenuPrincipal::inicializaTextos()
 {
     sf::Font font;
-    font.loadFromFile("Textures/arial.ttf");
+
+    font.loadFromFile(gerenciadorGrafico->getFont());
 
     NovoJogo.setString("Novo Jogo");
     Ranking.setString("Ranking");

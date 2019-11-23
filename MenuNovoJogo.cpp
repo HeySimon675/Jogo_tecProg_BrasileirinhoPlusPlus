@@ -70,7 +70,7 @@ void MenuNovoJogo::update()
 void MenuNovoJogo::inicializaTextos()
 {
     sf::Font font;
-    font.loadFromFile("Textures/arial.ttf");
+    font.loadFromFile(gerenciadorGrafico->getFont());
 
     Player1.setString("Player1");
     Player2.setString("Player2");

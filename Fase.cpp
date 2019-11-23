@@ -10,13 +10,13 @@
     "../"      -> LINUX
     ""         -> WINDOWS
 */
-//const String Fase::SYSTEM_PREFIX = "../";
+const String Fase::SYSTEM_PREFIX = "../";
 
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
 
-const String Fase::FASES_DIR = "Fases/";
+const String Fase::FASES_DIR = SYSTEM_PREFIX + "Fases/";
 const int Fase::FASE_HEIGHT = 12;
 const int Fase::FASE_WIDTH = 16;
 

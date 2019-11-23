@@ -72,7 +72,7 @@ void MenuPause::update()
 void MenuPause::inicializaTextos()
 {
     sf::Font font;
-    font.loadFromFile("Textures/arial.ttf");
+    font.loadFromFile(gerenciadorGrafico->getFont());
 
     DesPause.setString("DesPausar");
     Sair.setString("Sair");

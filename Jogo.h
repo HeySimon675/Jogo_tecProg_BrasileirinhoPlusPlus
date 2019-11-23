@@ -40,7 +40,7 @@ private:
     //Obstaculo plataforma;
     //Fase_A* faseA;
     int pontos;
-    MenuNovoJogo menuPrincipal;
+    //MenuNovoJogo menuPrincipal;
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos do State
 //TODO: testar

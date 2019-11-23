@@ -18,14 +18,14 @@ void GerenciadorDeColisoes::executar()
     for(int itr = 0 ; itr != li.getContador() ;itr++)
     {
         Inimigo* ptrI = li.getInimigo(itr);
-        if(ptrI->getAtivo())
+        if(ptrI->isActive())
             checkCollision(ptrI, j1);
     }
 
     for(int itr = 0; itr != lo.getContador(); itr++)
     {
         Obstaculo* ptrO = lo.getObstaculo(itr);
-        if(ptrO->getAtivo())
+        if(ptrO->isActive())
         {
             sf::Vector2f direction;
             checkCollision(ptrO, j1, direction, ptrO->getPush());
@@ -138,7 +138,7 @@ bool GerenciadorDeColisoes::checkCollision(Obstaculo* parada, Personagem* movime
 
                     //parada.move(0.0f,-intersecY* ((1.0f-push)));
                     movimentavel->move(0.0f,intersecY *  push);
-                    movimentavel->desativarEntidade();
+                    movimentavel->desativar();
 
                 }
             }
@@ -218,14 +218,14 @@ bool GerenciadorDeColisoes::checkCollision(Inimigo* parada, Jogador* movimentave
 
                 parada->move(intersecX* (1.0f- push),0.0f);
                 movimentavel->move((-intersecX * push),0.0f);
-                movimentavel->desativarEntidade();
+                movimentavel->desativar();
             }else {
                 direction.x =1.0f;
                 direction.y =0.0f;
 
                 parada->move(-intersecX* (1.0f-push),0.0f);
                 //movimentavel.move((intersecX * push),0.0f);
-                movimentavel->desativarEntidade();
+                movimentavel->desativar();
             }
         }else{
             if(deltaY>0.0f){
@@ -240,7 +240,7 @@ bool GerenciadorDeColisoes::checkCollision(Inimigo* parada, Jogador* movimentave
 
                 //parada.move(0.0f,-intersecY* ((1.0f-push)));
                 movimentavel->move(0.0f,intersecY *  push);
-                parada->desativarEntidade();
+                parada->desativar();
 
             }
         }
@@ -276,14 +276,14 @@ bool GerenciadorDeColisoes::checkCollision(Projetil* parada, Jogador* movimentav
 
                 // parada->move(intersecX* (1.0f- push),0.0f);
                 //movimentavel->move((-intersecX * push),0.0f);
-                movimentavel->desativarEntidade();
+                movimentavel->desativar();
             }else {
                 direction.x =1.0f;
                 direction.y =0.0f;
 
                 // parada->move(-intersecX* (1.0f-push),0.0f);
                 //movimentavel.move((intersecX * push),0.0f);
-                movimentavel->desativarEntidade();
+                movimentavel->desativar();
             }
         }else{
             if(deltaY>0.0f){
@@ -292,7 +292,7 @@ bool GerenciadorDeColisoes::checkCollision(Projetil* parada, Jogador* movimentav
 
                 // parada->move(0.0f,intersecY* (1.0f-push));
                 // movimentavel->move(0.0f ,-intersecY *  push);
-                movimentavel->desativarEntidade();
+                movimentavel->desativar();
             }else{
                 direction.x =0.0f;
                 direction.y =1.0f;
@@ -300,7 +300,7 @@ bool GerenciadorDeColisoes::checkCollision(Projetil* parada, Jogador* movimentav
                 //parada.move(0.0f,-intersecY* ((1.0f-push)));
                 //  movimentavel->move(0.0f,intersecY *  push);
                 //   parada->desativarEntidade();
-                movimentavel->desativarEntidade();
+                movimentavel->desativar();
             }
         }
         return true;

@@ -79,7 +79,7 @@ public:
 //Constantes//
 protected:
     static const String FASES_DIR;
-    //static const String SYSTEM_PREFIX;
+    static const String SYSTEM_PREFIX;
     static const int FASE_HEIGHT;
     static const int FASE_WIDTH;
 

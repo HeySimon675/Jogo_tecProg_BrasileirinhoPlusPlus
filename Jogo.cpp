@@ -53,16 +53,16 @@ void Jogo::inicializa() {
 
     //TODO TESTE
     podeDarUpdate = false;  //teste
-    plataforma = new Obstaculo_Plataforma(Vector2f(0,200));
-    espinho = new Obstaculo_Espinho(sf::Vector2f(-300.0f, 150.0f));
-    caixa = new Obstaculo_Movel(sf::Vector2f(-150.0f, 150.0f));
-    inimigoA = new Inimigo_A(sf::Vector2f(100.0f, 150.0f));
+    plataforma = new Obstaculo_Plataforma(Vector2f(0,11));
+    espinho = new Obstaculo_Espinho(sf::Vector2f(1, 11));
+    caixa = new Obstaculo_Movel(sf::Vector2f(2, 11));
+    inimigoA = new Inimigo_A(sf::Vector2f(7, 10));
     inimigoB = new Inimigo_B();
-    p1->setPosition(-450,0)
+    p1->setPosition(Vector2f(0,8));
 
     projetil = new Projetil(sf::Vector2f(25.0f, 25.0f));
-    projetilBoss = new Projetil(sf::Vector2f(25.0f, 25.0f));
-    inimigoB->inicializar(sf::Vector2f(250.0f, 145.0f),projetil)
+    //projetilBoss = new Projetil(sf::Vector2f(25.0f, 25.0f));
+    inimigoB->inicializar(sf::Vector2f(5, 10),projetil);
 
     collider.incluiInimigoNaLista(inimigoA);
     collider.incluiInimigoNaLista(inimigoB);
@@ -91,9 +91,9 @@ void Jogo::executar() {
 
 //--------------------------------------------------------------------------------------------------------------------//
 float deltaTime = 0.0f;
-	Clock clock;
+	//Clock clock;
     //TODO teste
-    sf::Clock clock, clockPontos;
+    Clock clock, clockPontos;
     sf::Time elapsed;
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -119,7 +119,7 @@ float deltaTime = 0.0f;
 
 
         elapsed = clockPontos.getElapsedTime();
-        if(elapsed.asSeconds() >= 1.0 && pontos> 0 && p1->getAtivo())
+        if(elapsed.asSeconds() >= 1.0 && pontos> 0 && p1->isActive())
         {
             pontos-=5;
             std::cout<<pontos<<std::endl;
@@ -157,15 +157,15 @@ void Jogo::update(float deltaTime, float elapsed) {
     collider.executar();
 
 
-    if(p1->getAtivo())
+    if(p1->isActive())
     {
         p1->update(deltaTime);
     }
-    if(inimigoA->getAtivo())
+    if(inimigoA->isActive())
     {
         inimigoA->update(deltaTime);
     }
-    if(inimigoB->getAtivo())
+    if(inimigoB->isActive())
     {
         inimigoB->update(deltaTime);
     }
@@ -173,8 +173,8 @@ void Jogo::update(float deltaTime, float elapsed) {
     //if(projetil->getAtivo())
     projetil->update(deltaTime);
 
-    projetilBoss->update(deltaTime);
-    menuPrincipal.update();
+    //projetilBoss->update(deltaTime);
+    //menuPrincipal.update();
 
 
 }
@@ -184,17 +184,17 @@ void Jogo::draw() {
     espinho->draw();
     caixa->draw();
 
-    if(p1->getAtivo())
+    if(p1->isActive())
     {
         p1->draw();
     }
 
-    if(inimigoA->getAtivo())
+    if(inimigoA->isActive())
     {
         inimigoA->draw();
     }
 
-    if(inimigoB->getAtivo())
+    if(inimigoB->isActive())
     {
         inimigoB->draw();
     }
