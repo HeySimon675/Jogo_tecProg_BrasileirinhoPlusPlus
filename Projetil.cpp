@@ -57,6 +57,7 @@ void Projetil::calculaMovimento()
             if(!(body.getPosition().x <= (posicao_X_inicial - 258.0f) && body.getPosition().x >= (posicao_X_inicial - 262.0f)))
             {
                 vel.x -= speed;
+                 std::cout<<posicao_X_inicial<<std::endl;
             }
             else
             {
