@@ -24,7 +24,7 @@ Jogo::Jogo()
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
     p1 = new Jogador_1;
     lEntidades = new ListaEntidades;
-    //faseA = new Fase_A(lEntidades, p1);
+    faseA = new Fase_A(lEntidades, p1);
     inicializa();
 }   //end Construtora
 
@@ -52,6 +52,7 @@ void Jogo::inicializa() {
 
 
     //TODO TESTE
+    /*
     podeDarUpdate = false;  //teste
     plataforma = new Obstaculo_Plataforma(Vector2f(0,11));
     espinho = new Obstaculo_Espinho(sf::Vector2f(1, 11));
@@ -72,7 +73,7 @@ void Jogo::inicializa() {
     collider.incluiProjetilNaLista(projetil);
     collider.getPonteiroPlayer(p1);
     lEntidades->incluir(static_cast<Entidade*>(p1));
-
+    */
     pontos = 1000;
 }
 
@@ -125,10 +126,11 @@ float deltaTime = 0.0f;
             std::cout<<pontos<<std::endl;
             clockPontos.restart();
         }
-        update(deltaTime,elapsed.asSeconds());
+        lEntidades->percorrer(deltaTime);
+        collider.executar();
         draw();
         g->drawPontos(pontos);
-        lEntidades->percorrer(deltaTime);
+
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Testes//
@@ -154,9 +156,9 @@ void Jogo::pausarState() {
 //--------------------------------------------------------------------------------------------------------------------//
 //Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
 void Jogo::update(float deltaTime, float elapsed) {
-    collider.executar();
 
 
+    /*
     if(p1->isActive())
     {
         p1->update(deltaTime);
@@ -175,11 +177,12 @@ void Jogo::update(float deltaTime, float elapsed) {
 
     //projetilBoss->update(deltaTime);
     //menuPrincipal.update();
-
+    */
 
 }
 
 void Jogo::draw() {
+    /*
     plataforma->draw();
     espinho->draw();
     caixa->draw();
@@ -201,6 +204,6 @@ void Jogo::draw() {
 
     //if(projetil->getAtivo())
     projetil->draw();
-
+    */
 }
 //--------------------------------------------------------------------------------------------------------------------//

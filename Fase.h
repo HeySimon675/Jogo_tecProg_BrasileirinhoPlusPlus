@@ -22,7 +22,7 @@
 #include <string>   //testar remover string
 #include <cstring>
 
-
+#include "GerenciadorDeColisoes.h"
 
 #include "Inimigo_B.h"
 #include "Projetil.h"
@@ -38,6 +38,7 @@ protected:
     char** matrizFase;
     int ROW;
     int COL;
+    GerenciadorDeColisoes gerenciadorDeColisoes;
 
 //--------------------------------------------------------------------------------------------------------------------//
     //Arquivo

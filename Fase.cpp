@@ -45,15 +45,18 @@ void Fase::criaPlataforma(Vector2f pos) {
     obstaculo = new Obstaculo_Plataforma;
     obstaculo->setPosition(pos);
     listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+    gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
 }
 
 void Fase::posicionaJogador(Vector2f pos){
     pJ1->setPosition(pos);
     listaEntidades->incluir(static_cast<Entidade*>(pJ1));
+    gerenciadorDeColisoes.getPonteiroPlayer(pJ1);
     if(pJ2){
         Vector2f pos2(pos.x+2, pos.y);
         pJ2->setPosition(pos2);
         listaEntidades->incluir(static_cast<Entidade*>(pJ2));
+        //incluir no gerenciador de colisoes o player 2
     }
 }
 
@@ -62,6 +65,7 @@ void Fase::criaEspinho(Vector2f pos){
     obstaculo = new Obstaculo_Espinho;
     obstaculo->setPosition(pos);
     listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+    gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
 }
 void Fase::criaProjetil_InimigoB(Vector2f pos){
     Projetil* projetil;
