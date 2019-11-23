@@ -100,3 +100,7 @@ void Personagem::emColisao(Vector2f direcao)
     }
 }
 
+void Personagem::associaTextura() {
+    body.setTexture(gerenciadorGrafico->getTexture(getID()))
+}
+

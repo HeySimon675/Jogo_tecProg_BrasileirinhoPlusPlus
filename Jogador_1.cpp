@@ -18,6 +18,7 @@ Jogador_1::Jogador_1(Vector2f position) : Jogador(position)
     KeyLeft = Keyboard::Left;
     KeyRight = Keyboard::Right;
     KeyJump = Keyboard::Up;
+    associaTextura();
 }
 
 Jogador_1::~Jogador_1(){}

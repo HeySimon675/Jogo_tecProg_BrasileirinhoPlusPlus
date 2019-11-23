@@ -2,8 +2,8 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Created by simao on 09/11/19.
 //Implementado por:
-    //Coradassi - 85%
-    //Simão - 15%
+    //Coradassi - 80%
+    //Simão - 20%
 
 
 #pragma once
@@ -34,7 +34,8 @@ protected:
 
     /**booleano para dizer se sofreu dano ou não**/
     bool dead;
-
+    virtual void associaTextura();
+    //const int getID(){return -1;}   //a ideia é que seja usada as generalizações dessa classe
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Metodos//
