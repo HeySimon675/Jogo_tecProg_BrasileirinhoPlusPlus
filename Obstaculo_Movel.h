@@ -14,6 +14,6 @@ public:
     virtual ~Obstaculo_Movel();
 
 private:
-
+    static const int id;
 };
 

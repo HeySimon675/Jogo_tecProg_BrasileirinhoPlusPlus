@@ -16,6 +16,6 @@ public:
 
 
 private:
-
+    static const int id;
 };
 

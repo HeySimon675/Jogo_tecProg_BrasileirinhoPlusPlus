@@ -129,18 +129,20 @@ void GerenciadorGrafico::load(const String _caminho) {
 
 void GerenciadorGrafico::carregaTexturas() {
     //TODO colocar try catch para carregar textura
-    load(JOGADOR_1_tx);
-    load(JOGADOR_2_tx);
+    load(JOGADOR_1_tx);     //0
+    load(JOGADOR_2_tx);     //1
     
-    load(INIMIGO_A_tx);
-    //load(INIMIGO_B_tx);
-    //load(INIMIGO_BOSS_tx);
+    load(INIMIGO_A_tx);     //2
+
     
-    load(OBSTACULO_PLATAFORMA_tx);
-    load(OBSTACULO_CAIXA_tx);
-    load(OBSTACULO_SPIKE_tx);
+    load(OBSTACULO_PLATAFORMA_tx);//3
+    load(OBSTACULO_CAIXA_tx);     //4
+    load(OBSTACULO_SPIKE_tx);     //5
     
-    load(PROJETIL_tx);
+    load(PROJETIL_tx);            //6
+
+    //load(INIMIGO_B_tx);       //7
+    //load(INIMIGO_BOSS_tx);    //8
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {

@@ -2,6 +2,9 @@
 //--------------------------------------------------------------------------------------------------------------------//
 #include "Inimigo_Boss.h"
 
+const int Inimigo_Boss::id = 2; //TODO arrumar
+//const int Inimigo_Boss::id = 8;
+
 Inimigo_Boss::Inimigo_Boss(Vector2f position, Vector2f size, float speed) : Inimigo(position,size,speed)
 {
     position_X_inicial = position.x;

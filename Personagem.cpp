@@ -17,6 +17,7 @@ const float Personagem::PULO_PADRAO = 50.0f;
 Personagem::Personagem(Vector2f position, Vector2f size, float speed): Entidade()
 {
     inicializaPersonagem(position, size,speed);
+    associaTextura();
 }
 
 
@@ -101,6 +102,6 @@ void Personagem::emColisao(Vector2f direcao)
 }
 
 void Personagem::associaTextura() {
-    body.setTexture(gerenciadorGrafico->getTexture(getID()))
+    body.setTexture(gerenciadorGrafico->getTexture(getID()));
 }
 

@@ -29,6 +29,7 @@ private:
     float posicao_Y_inicial;
     bool dead;
     bool left;
+    static const int id;
 
 public:
     Projetil(Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO * 1);

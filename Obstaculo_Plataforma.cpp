@@ -2,6 +2,8 @@
 
 #include "Obstaculo_Plataforma.h"
 
+const int Obstaculo_Plataforma::id = 3;
+
 Obstaculo_Plataforma::Obstaculo_Plataforma(Vector2f position) : Obstaculo(position)
 {
     canHurt = false;

@@ -31,4 +31,5 @@ private:
     bool canMove;
     float delta_X;
     bool projetilCriado;
+    static const int id;
 };

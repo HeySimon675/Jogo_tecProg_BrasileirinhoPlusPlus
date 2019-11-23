@@ -2,6 +2,8 @@
 
 #include "Obstaculo_Movel.h"
 
+const int Obstaculo_Movel::id = 4;
+
 Obstaculo_Movel::Obstaculo_Movel(Vector2f position): Obstaculo(position)
 {
     canHurt = false;

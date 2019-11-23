@@ -1,5 +1,7 @@
 #include "Obstaculo_Espinho.h"
 
+const int Obstaculo_Espinho::id = 5;
+
 Obstaculo_Espinho::Obstaculo_Espinho(Vector2f position) : Obstaculo(position)
 {
     canHurt = true;

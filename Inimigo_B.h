@@ -21,6 +21,7 @@ private:
     Projetil* projetil;
     bool projetilCriado;
     bool passou10segundos;
+    static const int id;
 
 public:
     static sf::Clock clock;

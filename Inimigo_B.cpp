@@ -4,6 +4,9 @@
 
 #include "Inimigo_B.h"
 
+const int Inimigo_B::id = 2;    //TODO arrumar
+//const int Inimigo_B::id = 7;
+
 Inimigo_B::Inimigo_B( Vector2f position, Vector2f size, float speed ) : Inimigo(position, size, speed)
 {
     passou10segundos = false;
