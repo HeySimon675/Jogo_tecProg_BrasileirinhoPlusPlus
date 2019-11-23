@@ -26,8 +26,7 @@
 
 #include "Inimigo_B.h"
 #include "Projetil.h"
-#include "Obstaculo.h"  //remover assim que possivel
-
+#include "Obstaculo_Espinho.h"
 #include "Obstaculo_Plataforma.h"
 
 
@@ -62,8 +61,8 @@ protected:
     virtual void criaEntidade(char aux, Vector2f pos);
     void criaPlataforma(Vector2f pos);
     void posicionaJogador(Vector2f pos);
-    void criaSpike(Vector2f pos);
-    void criaProjetil(Vector2f pos);
+    void criaEspinho(Vector2f pos);
+    void criaProjetil_InimigoB(Vector2f pos);
     void criaInimigoB(Vector2f pos, Projetil* projetil);
 
     void destroiMatriz();

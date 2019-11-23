@@ -49,31 +49,33 @@ void Fase::criaPlataforma(Vector2f pos) {
 
 void Fase::posicionaJogador(Vector2f pos){
     pJ1->setPosition(pos);
+    listaEntidades->incluir(static_cast<Entidade*>(pJ1));
     if(pJ2){
         Vector2f pos2(pos.x+2, pos.y);
         pJ2->setPosition(pos2);
+        listaEntidades->incluir(static_cast<Entidade*>(pJ2));
     }
 }
 
-void Fase::criaSpike(Vector2f pos){
-    //Obstaculo_Spike* obstaculo;
-    //obstaculo = new Obstaculo_Spike;
-    //obstaculo->inicializa(pos);
-    //listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+void Fase::criaEspinho(Vector2f pos){
+    Obstaculo_Espinho* obstaculo;
+    obstaculo = new Obstaculo_Espinho;
+    obstaculo->setPosition(pos);
+    listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
 }
-void Fase::criaProjetil(Vector2f pos){
-    //Projetil* projetil;
-    //projetil = new Projetil;
-    //projetil->inicializa(pos);
-    //listaEntidades->incluir(static_cast<Entidade*>(projetil));
-    //criaInimigoB(pos,projetil);
+void Fase::criaProjetil_InimigoB(Vector2f pos){
+    Projetil* projetil;
+    projetil = new Projetil;
+    projetil->inicializaProjetil(pos);
+    listaEntidades->incluir(static_cast<Entidade*>(projetil));
+    criaInimigoB(pos,projetil);
 }
 
 void Fase::criaInimigoB(Vector2f pos, Projetil* projetil){
-    //Inimigo_B* inimigo;
-    //inimigo = new Inimigo_B;
-    //inimigo->inicializa(pos);
-    //listaEntidades->incluir(static_cast<Entidade*>(inimigo));
+    Inimigo_B* inimigo;
+    inimigo = new Inimigo_B;
+    inimigo->inicializar(pos,projetil);
+    listaEntidades->incluir(static_cast<Entidade*>(inimigo));
 }
 
 //função para printar a matriz, podendo assim verificar a integridade da matriz

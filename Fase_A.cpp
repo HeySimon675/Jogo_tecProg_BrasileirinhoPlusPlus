@@ -23,19 +23,20 @@ void Fase_A::criaInimigoA(Vector2f pos) {
 void Fase_A::criaEntidade(char aux, Vector2f pos) {
 
     switch (aux){
-        //Alterar ja que fases não iram criar Jogadores
         case 'J' :
-            //modificar nome da função, pois a função posiciona o jogador
             posicionaJogador(pos);
             break;
         case 'A':   //Inimigo_A
             criaInimigoA(pos);
             break;
         case 'B':
-            criaProjetil(pos);
+            criaProjetil_InimigoB(pos);
             break;
         case 'P':
             criaPlataforma(pos);
+            break;
+        case 'E':
+            criaEspinho(pos);
             break;
         default:
             break;

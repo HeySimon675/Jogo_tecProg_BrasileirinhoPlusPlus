@@ -180,7 +180,7 @@ void GerenciadorGrafico::updateSFML() {
 //Executar//
 void GerenciadorGrafico::executar() {
     updateSFML();
-    //_window.clear();
+    _window.clear();
 }
 //--------------------------------------------------------------------------------------------------------------------//
 //draw//
