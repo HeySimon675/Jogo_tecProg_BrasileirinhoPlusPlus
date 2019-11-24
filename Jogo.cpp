@@ -20,11 +20,10 @@ Jogo *Jogo::getJogo() {
 //construtora Privada//
 Jogo::Jogo() 
 {
-    //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
     p1 = new Jogador_1;
-    //lEntidades = new ListaEntidades;
+    p2 = new Jogador_2;
     faseA = new Fase_A();
-    faseA->setJogadores(p1);
+    //faseB = new Fase_B();
     inicializa();
 }   //end Construtora
 
@@ -52,6 +51,7 @@ void Jogo::inicializa() {
     menuOp = 0;
     pause = false;
     faseA->desativar();
+    //faseB->desativar();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -74,81 +74,7 @@ float deltaTime = 0.0f;
         g->executar();  //metodo executar do gerenciador grafico
 //--------------------------------------------------------------------------------------------------------------------//
 //menu//
-        int op = -1;
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::P) && !pause)
-        {
-            pause = true;
-            menu.setMenuPause(true);
-            menuOp = 1;
-        }
-
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-        {
-            menuOp = 2;
-            menu.setSairOuMenu(true);
-        }
-
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-        {
-            menuOp = 3;
-            menu.setSeguirFaseDois(true);
-        }
-
-
-        op = menu.executar(menuOp);
-
-
-        switch (op)
-        {
-            case 5:
-            {
-                std::cout<< "Fechar"<< std::endl;
-                g->fechar();
-                op = -1;
-            }
-                break;
-
-            case 1:
-            {
-                criaFase1player1();
-                op = -1;
-            }
-                break;
-
-            case 2:
-            {
-                criaFase2player1();
-                op = -1;
-            }
-                break;
-
-            case 3:
-            {
-                criaFase1player2();
-                op = -1;
-            }
-                break;
-
-            case 4:
-            {
-                criaFase2player2();
-                op = -1;
-            }
-                break;
-
-            case 6:
-            {
-                pause = false;
-                op = -1;
-            }
-                break;
-            case 7:
-            {
-
-            }
-                break;
-        }
-
+        executarMenu();
 //--------------------------------------------------------------------------------------------------------------------//
         elapsed = clockPontos.getElapsedTime();
         if(elapsed.asSeconds() >= 1.0 && pontos> 0 && p1->isActive())
@@ -159,17 +85,12 @@ float deltaTime = 0.0f;
         }
         g->drawPontos(pontos);
 //--------------------------------------------------------------------------------------------------------------------//
-        if(faseA && faseA->isActive()){
+//FASES
+        if(faseA->isActive() && !pause) {
             faseA->draw();
             faseA->update(deltaTime);
-        }else{
-            //delete faseA;
         }
-        if(!pause)
-        {
-            //TODO trocar pelo update da fase
-            //lEntidades->percorrer(deltaTime);
-        }
+       //TODO Repetir o codigo para fase_b
 
 //--------------------------------------------------------------------------------------------------------------------//
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
@@ -177,23 +98,96 @@ float deltaTime = 0.0f;
     }
 }
 //--------------------------------------------------------------------------------------------------------------------//
-//funções inuteis
-void Jogo::inicializarState() {}
+//Metodos do Menu
+void Jogo::executarMenu() {
+    int op = -1;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::P) && !pause)
+    {
+        pause = true;
+        menu.setMenuPause(true);
+        menuOp = 1;
+    }
 
-void Jogo::executarState() {}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    {
+        menuOp = 2;
+        menu.setSairOuMenu(true);
+    }
 
-void Jogo::pausarState() {}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+    {
+        menuOp = 3;
+        menu.setSeguirFaseDois(true);
+    }
 
 
-//--------------------------------------------------------------------------------------------------------------------//
-//Nesse momento do desenvolvimento, esses metodos se tornaram obsoletos//
-void Jogo::update(float deltaTime, float elapsed) {}
+    op = menu.executar(menuOp);
 
-void Jogo::draw() {}
-//--------------------------------------------------------------------------------------------------------------------//
+
+    switch (op)
+    {
+        case 5:
+        {
+            //std::cout<< "Fechar"<< std::endl;
+            g->fechar();
+            op = -1;
+            return;
+        }
+            break;
+
+        case 1:
+        {
+            criaFase1player1();
+            op = -1;
+            return;
+        }
+            break;
+
+        case 2:
+        {
+            criaFase2player1();
+            op = -1;
+            return;
+        }
+            break;
+
+        case 3:
+        {
+            criaFase1player2();
+            op = -1;
+            return;
+        }
+            break;
+
+        case 4:
+        {
+            criaFase2player2();
+            op = -1;
+            return;
+        }
+            break;
+
+        case 6:
+        {
+            pause = false;
+            op = -1;
+        }
+            break;
+        case 7:
+        {
+
+        }
+            break;
+
+    }
+
+}
+
 void Jogo::criaFase1player1()
 {
     player2 = false;
+    faseA->ativar();
+    faseA->setJogadores(p1);
 }
 
 void Jogo::criaFase2player1()
@@ -211,3 +205,4 @@ void Jogo::criaFase1player2()
     player2 = true;
 }
 
+//--------------------------------------------------------------------------------------------------------------------//

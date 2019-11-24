@@ -33,10 +33,7 @@ private:
     
     void criaEntidade(char aux, Vector2f pos);
     void criaInimigoA(Vector2f pos);
-    
-
-
-    //para teste//
+    //O Resto das Entidades tem metodos de criação em Fase
 
 public:
     Fase_A(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);

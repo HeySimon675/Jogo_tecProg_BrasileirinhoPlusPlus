@@ -6,7 +6,7 @@
 #include <iterator>
 
 GerenciadorDeColisoes::GerenciadorDeColisoes(){
-
+    p2 = false;
 }
 
 GerenciadorDeColisoes::~GerenciadorDeColisoes() {
@@ -22,7 +22,10 @@ void GerenciadorDeColisoes::executar()
         if (ptrI->isActive())
             checkCollision(ptrI, j1);
         if (ptrI->isActive() && p2) //TODO TESTAR
-            checkCollision(ptrI, j2);
+            if(j2->isActive()){
+                checkCollision(ptrI, j2);
+            }
+
     }
 
     for(int itr = 0; itr != lo.getContador(); itr++)
@@ -255,10 +258,10 @@ bool GerenciadorDeColisoes::checkCollision(Inimigo* parada, Jogador* movimentave
                 movimentavel->move(0.0f,intersecY *  push);
                 parada->desativar();
                 //Para desativar o projetil
-                if(parada->getInimigoB())
-                {
-                    parada->getProjetil()->desativar();
-                }
+                //if(parada->getInimigoB())
+                //{
+                //    parada->getProjetil()->desativar();
+                //}
 
             }
         }

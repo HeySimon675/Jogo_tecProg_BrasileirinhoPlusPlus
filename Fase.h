@@ -61,30 +61,38 @@ protected:
 public:
     Fase(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase();
-    void setJogadores(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
-//--------------------------------------------------------------------------------------------------------------------//
-//metodos de inicialização
 protected:
 //--------------------------------------------------------------------------------------------------------------------//
 //Criando Entidades
     virtual void criaEntidade(char aux, Vector2f pos);
+
     void criaPlataforma(Vector2f pos);
-    void posicionaJogador(Vector2f pos);
     void criaEspinho(Vector2f pos);
     void criaProjetil_InimigoB(Vector2f pos);
     void criaInimigoB(Vector2f pos, Projetil* projetil);
+
+//Armazena a posição do Player, que será posicionado quando receceber os ponteiros
     void armazenaPosicao(Vector2f position){posicaoPlayer = position;}
-    void destroiMatriz();
+    void posicionaJogador(Vector2f pos);
+
+//Matriz da fase
     virtual void constroiMatriz();
+    void destroiMatriz();
     void printaMatriz();
+
+//Randomiza numero de Obstaculos e Inimigos
     void randomizaEntidades();
+
+//Verificador se a Fase Acabou
     bool checkFim();
     virtual void setFinalPosition(){}
+//--------------------------------------------------------------------------------------------------------------------//
+//metodos de inicialização
 public:
     virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
     void draw(){gerenciadorGrafico->draw(background);}
     void update(float deltaTime);
-
+    void setJogadores(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     //implementação de update, onde vai percorrer as listas verificando colisão
 
 //--------------------------------------------------------------------------------------------------------------------//

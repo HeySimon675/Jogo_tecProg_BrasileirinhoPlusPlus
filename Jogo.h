@@ -17,76 +17,48 @@
 #include "Inimigo_B.h"
 #include "Inimigo_A.h"
 #include "GameState.h"
-
-
-
 #include "Menu.h"
-
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogo//
 
 class Jogo {
+//--------------------------------------------------------------------------------------------------------------------//
 private:
-    friend class GameState;
-//atributos//
+//ATRIBUTOS//
     static Jogo* _instance;     //instancia
-    bool firstUse;
-    GameState* pState;
-//--------------------------------------------------------------------------------------------------------------------//
-// TESTE
-    Jogador_1* p1;
-    Jogador_2* p2;
-    //ListaEntidades* lEntidades;  //Lista Principal de Entidades
-    //Fase_A* faseA;
     int pontos;
-    //MenuNovoJogo menuPrincipal;
-//--------------------------------------------------------------------------------------------------------------------//
-//Metodos do State
-//TODO: testar
-
-    //considerando que cada função muda de State, não precisaria diretamente de um metodo changeState
-    void inicializarState(); //Inicializa com o primeiro State, função para ser chamada fora do loop, basicamente chama
-    //changeState com MenuPrincipal.
-    void executarState();    //inicia o state novo jogo e a partir dele, chama state fase
-    void pausarState();      //chamado a partir de fase, e retorna a fase
-    //void changeState(GameState* pState);
-
-//--------------------------------------------------------------------------------------------------------------------//
-    //gerenciadores//
-    GerenciadorGrafico* g;
     float deltaTime;
-    Menu menu;
-
-    //TODO teste
+//Menu
+    bool firstUse;
     bool podeDarUpdate;
-    Fase_A* faseA;
     int menuOp;
     bool pause;
     bool player2;
+//Jogadores
+    Jogador_1* p1;
+    Jogador_2* p2;
+//Fases
+    Fase_A* faseA;
 
+//gerenciadores//
+    GerenciadorGrafico* g;
+    Menu menu;
 
-    //metodos//
-    //construtora privada//
+//--------------------------------------------------------------------------------------------------------------------//
+//METODOS//
+private:
     Jogo();
-
-    //inicializadores//
     void inicializa();
-public:
-//metodos//
-    //singleton//
-    static Jogo* getJogo();
-    //destrutora//
-    ~Jogo();
-
-    //metodos principais//
-    void executar();
-    void update(float deltaTime, float elapsed);
-    void draw();
+    void executarMenu();
     //Metodos de Menu//
     void criaFase1player1();
     void criaFase1player2();
     void criaFase2player1();
     void criaFase2player2();
+public:
+    static Jogo* getJogo(); //singleton
+    ~Jogo();
+    void executar();
 };
 

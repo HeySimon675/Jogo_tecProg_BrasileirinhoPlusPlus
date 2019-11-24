@@ -13,6 +13,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogador//
 class Jogador_2 : public Jogador{
+public:
     ~Jogador_2();
     Jogador_2(Vector2f position = POSICAO_PADRAO);
     void inicializar(Vector2f position);
