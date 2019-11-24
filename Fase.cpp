@@ -24,6 +24,8 @@ Fase::Fase(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : En
     listaEntidades = lista;
     pJ1 = jogador1;
     pJ2 = jogador2;
+    srand(time(NULL));
+    randomizaEntidades();
 }
 
 Fase::~Fase() {
@@ -68,18 +70,26 @@ void Fase::posicionaJogador(Vector2f pos){
 }
 
 void Fase::criaEspinho(Vector2f pos){
-    Obstaculo_Espinho* obstaculo;
-    obstaculo = new Obstaculo_Espinho;
-    obstaculo->setPosition(pos);
-    listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
-    gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
+    if(numEspinhos){
+        Obstaculo_Espinho* obstaculo;
+        obstaculo = new Obstaculo_Espinho;
+        obstaculo->setPosition(pos);
+        listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+        gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
+        numEspinhos--;
+    }
+
 }
 void Fase::criaProjetil_InimigoB(Vector2f pos){
-    Projetil* projetil;
-    projetil = new Projetil;
-    listaEntidades->incluir(static_cast<Entidade*>(projetil));
-    gerenciadorDeColisoes.incluiProjetilNaLista(projetil);
-    criaInimigoB(pos,projetil);
+    if(numInimigos){
+        Projetil* projetil;
+        projetil = new Projetil;
+        listaEntidades->incluir(static_cast<Entidade*>(projetil));
+        gerenciadorDeColisoes.incluiProjetilNaLista(projetil);
+        criaInimigoB(pos,projetil);
+        numInimigos--;
+    }
+
 }
 
 void Fase::criaInimigoB(Vector2f pos, Projetil* projetil){
@@ -143,3 +153,9 @@ void Fase::update() {
 }
 
 void Fase::inicializa() {}
+
+void Fase::randomizaEntidades() {
+    numCaixas = rand() % 3 + 2;
+    numEspinhos = rand() % 3 + 3;
+    numInimigos = rand() % 5 + 5;
+}

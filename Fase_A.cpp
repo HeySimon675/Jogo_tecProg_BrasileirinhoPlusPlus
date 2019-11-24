@@ -14,11 +14,15 @@ Fase_A::~Fase_A() {}
 //--------------------------------------------------------------------------------------------------------------------//
 
 void Fase_A::criaInimigoA(Vector2f pos) {
-    Inimigo_A *nA;
-    nA = new Inimigo_A;
-    nA->inicializar(pos);
-    listaEntidades->incluir(static_cast<Entidade*>(nA));
-    gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(nA));
+    if(numInimigos){
+        Inimigo_A *nA;
+        nA = new Inimigo_A;
+        nA->inicializar(pos);
+        listaEntidades->incluir(static_cast<Entidade*>(nA));
+        gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(nA));
+        numInimigos--;
+    }
+
 }
 
 void Fase_A::criaEntidade(char aux, Vector2f pos) {

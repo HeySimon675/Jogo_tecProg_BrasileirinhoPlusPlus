@@ -17,6 +17,7 @@
 #include "Jogador_1.h"
 #include "Jogador_2.h"
 #include <fstream>
+#include "time.h"
 
 #include <iostream>
 #include <string>   //testar remover string
@@ -40,6 +41,9 @@ protected:
     int COL;
     GerenciadorDeColisoes gerenciadorDeColisoes;
     Vector2f posicaoPlayer;
+    int numInimigos;
+    int numEspinhos;
+    int numCaixas;
 
 //--------------------------------------------------------------------------------------------------------------------//
     //Arquivo
@@ -71,6 +75,7 @@ protected:
     void destroiMatriz();
     virtual void constroiMatriz();
     void printaMatriz();
+    void randomizaEntidades();
 public:
     virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
     void update();
