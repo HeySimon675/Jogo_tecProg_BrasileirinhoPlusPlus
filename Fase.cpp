@@ -1,9 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-// Created by simao on 11/11/2019.
 
 #include "Fase.h"
-
 
 //--------------------------------------------------------------------------------------------------------------------//
 /*PREFIXO DO SISTEMA//
@@ -11,7 +9,6 @@
     ""         -> WINDOWS
 */
 const String Fase::SYSTEM_PREFIX = "../";
-
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
@@ -100,7 +97,7 @@ void Fase::criaInimigoB(Vector2f pos, Projetil* projetil){
     listaEntidades.incluir(static_cast<Entidade*>(inimigo));
     gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(inimigo));
 }
-
+//--------------------------------------------------------------------------------------------------------------------//
 //função para printar a matriz, podendo assim verificar a integridade da matriz
 void Fase::printaMatriz() {
     for(ROW = 0; ROW < FASE_HEIGHT; ROW++){
@@ -143,6 +140,7 @@ void Fase::constroiMatriz() {
 }
 
 void Fase::criaEntidade(char aux, Vector2f pos) {}
+//--------------------------------------------------------------------------------------------------------------------//
 
 void Fase::update(float deltaTime) {
     listaEntidades.percorrer(deltaTime);
@@ -160,6 +158,7 @@ void Fase::update(float deltaTime) {
     }
 
 }
+//--------------------------------------------------------------------------------------------------------------------//
 
 void Fase::inicializa() {}
 
