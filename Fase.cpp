@@ -25,6 +25,8 @@ Fase::Fase(Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     pJ2 = jogador2;
     srand(time(NULL));
     randomizaEntidades();
+    background.setSize(Vector2f(800,600));
+    background.setPosition(0,0);
 }
 
 Fase::~Fase() {

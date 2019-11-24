@@ -42,6 +42,7 @@ public:
     Fase_A(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase_A();
     void inicializa();
+    const int getID(){ return id;}
 //--------------------------------------------------------------------------------------------------------------------//
 //variaveis para fase
 
@@ -53,4 +54,5 @@ private:
     //static const char* charFaseFile;
     static const int FASE_WIDTH;
     static const int FASE_HEIGHT;
+    static const int id;
 };

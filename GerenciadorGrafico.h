@@ -121,6 +121,9 @@ public:
     //Projetil//
     static const String PROJETIL_tx;
 
+    //Fases//
+    static const String FASE_A_tx;
+
     
 }gGrafico;
 

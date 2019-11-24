@@ -56,6 +56,9 @@ const String GerenciadorGrafico::OBSTACULO_SPIKE_tx = TEXTURE_DIR + "Obstaculo_S
 
 //Projetil//
 const String GerenciadorGrafico::PROJETIL_tx = TEXTURE_DIR + "Projetil_texture.png";
+
+//Fases//
+const String GerenciadorGrafico::FASE_A_tx = TEXTURE_DIR + "Fase_1_texture.png";
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM Variaveis Static//
 
@@ -142,9 +145,10 @@ void GerenciadorGrafico::carregaTexturas() {
     load(OBSTACULO_SPIKE_tx);     //5
     
     load(PROJETIL_tx);            //6
+    load(FASE_A_tx);            //7
+    //load(INIMIGO_B_tx);       //8
+    //load(INIMIGO_BOSS_tx);    //9
 
-    //load(INIMIGO_B_tx);       //7
-    //load(INIMIGO_BOSS_tx);    //8
 }
 //Carrega fontes//
 void GerenciadorGrafico::carregaFontes() {

@@ -81,6 +81,7 @@ float deltaTime = 0.0f;
         g->drawPontos(pontos);
 //--------------------------------------------------------------------------------------------------------------------//
         if(faseA && faseA->isActive()){
+            faseA->draw();
             faseA->update(deltaTime);
         }else{
             //delete faseA;

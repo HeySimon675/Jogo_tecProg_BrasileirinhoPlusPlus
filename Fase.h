@@ -44,6 +44,7 @@ protected:
     int numInimigos;
     int numEspinhos;
     int numCaixas;
+    RectangleShape background;
 
 //--------------------------------------------------------------------------------------------------------------------//
     //Arquivo
@@ -78,6 +79,7 @@ protected:
     void randomizaEntidades();
 public:
     virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
+    void draw(){gerenciadorGrafico->draw(background);}
     void update(float deltaTime);
 
     //implementação de update, onde vai percorrer as listas verificando colisão
