@@ -127,7 +127,12 @@ float deltaTime = 0.0f;
             clockPontos.restart();
         }
         lEntidades->percorrer(deltaTime);
-        collider.executar();
+        if(faseA->isActive()){
+            faseA->update();
+        }else{
+            delete faseA;
+        }
+
         draw();
         g->drawPontos(pontos);
 

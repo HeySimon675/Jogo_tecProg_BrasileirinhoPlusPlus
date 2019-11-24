@@ -9,7 +9,7 @@
 const Vector2f Personagem::POSICAO_PADRAO = Vector2f(50,50);
 const float Personagem::VELOCIDADE_PADRAO = 100;
 const Vector2f Personagem::TAMANHO_PADRAO = Vector2f(50.0f,50.0f);
-const float Personagem::PULO_PADRAO = 50.0f;
+const float Personagem::PULO_PADRAO = 150.0f;
 
 //--------------------------------------------------------------------------------------------------------------------//
 //CONSTRUÇÃO

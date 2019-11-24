@@ -69,10 +69,9 @@ protected:
     void destroiMatriz();
     virtual void constroiMatriz();
     void printaMatriz();
-    void carregaInimigo();
-    void carregaObstaculo();
 public:
     virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
+    void update();
 
     //implementação de update, onde vai percorrer as listas verificando colisão
 

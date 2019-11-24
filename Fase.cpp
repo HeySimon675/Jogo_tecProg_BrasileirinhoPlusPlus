@@ -49,7 +49,7 @@ void Fase::criaPlataforma(Vector2f pos) {
 }
 
 void Fase::posicionaJogador(Vector2f pos){
-    pJ1->setPosition(pos);
+    pJ1->inicializar(pos);
     listaEntidades->incluir(static_cast<Entidade*>(pJ1));
     gerenciadorDeColisoes.getPonteiroPlayer(pJ1);
     if(pJ2){
@@ -71,6 +71,7 @@ void Fase::criaProjetil_InimigoB(Vector2f pos){
     Projetil* projetil;
     projetil = new Projetil;
     listaEntidades->incluir(static_cast<Entidade*>(projetil));
+    gerenciadorDeColisoes.incluiProjetilNaLista(projetil);
     criaInimigoB(pos,projetil);
 }
 
@@ -79,6 +80,7 @@ void Fase::criaInimigoB(Vector2f pos, Projetil* projetil){
     inimigo = new Inimigo_B;
     inimigo->inicializar(pos,projetil);
     listaEntidades->incluir(static_cast<Entidade*>(inimigo));
+    gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(inimigo));
 }
 
 //função para printar a matriz, podendo assim verificar a integridade da matriz
@@ -124,11 +126,12 @@ void Fase::constroiMatriz() {
 
 void Fase::criaEntidade(char aux, Vector2f pos) {}
 
-void Fase::carregaInimigo() {
-
-}
-
-void Fase::carregaObstaculo() {
+void Fase::update() {
+    if(pJ1->isActive() || pJ2->isActive() ){
+        gerenciadorDeColisoes.executar();
+    }else{
+        this->desativar();
+    }
 
 }
 

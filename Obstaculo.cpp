@@ -13,6 +13,7 @@ Obstaculo::Obstaculo(Vector2f position, Vector2f size) : Entidade()
 {
     setPosition(position);
     body.setSize(size);
+    body.setOrigin(size/2.0f);
     //associaTextura();
 }
 
@@ -33,6 +34,7 @@ void Obstaculo::setPosition(Vector2f position){
         pos = position;
     }
     body.setPosition(pos);
+    body.move(25,25);
 }
 //--------------------------------------------------------------------------------------------------------------------//
 

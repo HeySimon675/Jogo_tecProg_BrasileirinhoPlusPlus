@@ -27,7 +27,7 @@ protected:
 	Keyboard::Key KeyJump;
 
 public:
-    Jogador(Vector2f position = POSICAO_PADRAO, float speed = VELOCIDADE_PADRAO * 1);
+    Jogador(Vector2f position = POSICAO_PADRAO, float speed = VELOCIDADE_PADRAO * 3);
     virtual ~Jogador();
 
 };

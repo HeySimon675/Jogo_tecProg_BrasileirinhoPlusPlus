@@ -18,6 +18,7 @@ void Fase_A::criaInimigoA(Vector2f pos) {
     nA = new Inimigo_A;
     nA->inicializar(pos);
     listaEntidades->incluir(static_cast<Entidade*>(nA));
+    gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(nA));
 }
 
 void Fase_A::criaEntidade(char aux, Vector2f pos) {

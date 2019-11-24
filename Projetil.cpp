@@ -17,6 +17,7 @@ Projetil::Projetil(Vector2f size, float speed) : Entidade()
     dead = false;
     left = true;
     vel = Vector2f(0,0);
+    associaTextura();
     inicializaProjetil(size);
 }
 
@@ -41,8 +42,6 @@ void Projetil::update(const float deltaTime)
 
 void Projetil::draw()
 {
-    /**Teste para botar uma cor no body**/
-    body.setFillColor(Color::Yellow);
     //Draw do body em si
     gerenciadorGrafico->draw(body);
 }
