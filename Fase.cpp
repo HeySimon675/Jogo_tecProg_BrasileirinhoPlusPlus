@@ -38,6 +38,13 @@ Fase::~Fase() {
     arqFase = nullptr;
 
 }
+
+void Fase::setJogadores(Jogador_1 *jogador1, Jogador_2 *jogador2) {
+    pJ1 = jogador1;
+    pJ2 = jogador2;
+    posicionaJogador(posicaoPlayer);
+}
+
 //--------------------------------------------------------------------------------------------------------------------//
 //Criação de Entidadades
 void Fase::criaPlataforma(Vector2f pos) {

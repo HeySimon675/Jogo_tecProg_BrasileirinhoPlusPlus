@@ -25,7 +25,7 @@ void Fase_A::criaEntidade(char aux, Vector2f pos) {
 
     switch (aux){
         case 'J' :
-            posicionaJogador(pos);
+            armazenaPosicao(pos);
             break;
         case 'A':   //Inimigo_A
             criaInimigoA(pos);

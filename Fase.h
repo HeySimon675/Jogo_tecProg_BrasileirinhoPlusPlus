@@ -39,6 +39,7 @@ protected:
     int ROW;
     int COL;
     GerenciadorDeColisoes gerenciadorDeColisoes;
+    Vector2f posicaoPlayer;
 
 //--------------------------------------------------------------------------------------------------------------------//
     //Arquivo
@@ -54,6 +55,7 @@ protected:
 public:
     Fase(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase();
+    void setJogadores(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
 //--------------------------------------------------------------------------------------------------------------------//
 //metodos de inicialização
 protected:
@@ -65,7 +67,7 @@ protected:
     void criaEspinho(Vector2f pos);
     void criaProjetil_InimigoB(Vector2f pos);
     void criaInimigoB(Vector2f pos, Projetil* projetil);
-
+    void armazenaPosicao(Vector2f position){posicaoPlayer = position;}
     void destroiMatriz();
     virtual void constroiMatriz();
     void printaMatriz();
