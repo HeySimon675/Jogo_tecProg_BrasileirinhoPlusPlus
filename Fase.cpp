@@ -10,7 +10,7 @@
     "../"      -> LINUX
     ""         -> WINDOWS
 */
-const String Fase::SYSTEM_PREFIX = "";
+const String Fase::SYSTEM_PREFIX = "../";
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -70,7 +70,6 @@ void Fase::criaEspinho(Vector2f pos){
 void Fase::criaProjetil_InimigoB(Vector2f pos){
     Projetil* projetil;
     projetil = new Projetil;
-    projetil->inicializaProjetil(sf::Vector2f(25.0f, 25.0f));
     listaEntidades->incluir(static_cast<Entidade*>(projetil));
     criaInimigoB(pos,projetil);
 }

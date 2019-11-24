@@ -22,6 +22,7 @@ Inimigo_Boss::~Inimigo_Boss()
 void Inimigo_Boss::inicializarBoss(Vector2f position)
 {
     setPosition(position);
+    body.move(25,25);
 }
 
 void Inimigo_Boss::calculaMovimento(const float deltaTime)

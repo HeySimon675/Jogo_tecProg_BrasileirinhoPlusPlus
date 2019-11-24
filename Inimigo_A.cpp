@@ -30,6 +30,7 @@ void Inimigo_A::inicializar(Vector2f position)
 {
     setPosition(position);
     position_X_inicial = position.x*50.0f;
+    corrigePosicao();
 
 }
 
@@ -38,7 +39,7 @@ void Inimigo_A::calculaMovimento(const float deltaTime)
     vel.x = 0;
        if(goingLeft)
        {
-           if(!(body.getPosition().x <= (position_X_inicial - 148.0f) && body.getPosition().x >= (position_X_inicial - 152.0f)))
+           if(!(body.getPosition().x <= (position_X_inicial - 123.0f) && body.getPosition().x >= (position_X_inicial - 127.0f)))
            {
                vel.x -= speed;
            }
@@ -51,7 +52,7 @@ void Inimigo_A::calculaMovimento(const float deltaTime)
 
     else{
 
-        if(!(body.getPosition().x >= (position_X_inicial - 2.0f) && body.getPosition().x <= position_X_inicial +2.0f))
+        if(!(body.getPosition().x >= (position_X_inicial - 23.0f) && body.getPosition().x <= position_X_inicial +27.0f))
         {
             vel.x += speed;
         }

@@ -23,6 +23,7 @@ void Inimigo_B::inicializar(Vector2f position, Projetil* projetil)
     setPosition(position);
     setProjetil(projetil);
     projetilCriado = false;
+    body.move(25,25);
 }
 
 void Inimigo_B::calculaMovimento(const float deltaTime)

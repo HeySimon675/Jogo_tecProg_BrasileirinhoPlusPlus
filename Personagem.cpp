@@ -28,9 +28,10 @@ Personagem::~Personagem()
 void Personagem::inicializaPersonagem(Vector2f position, Vector2f size, float sd)
 {
     setPosition(position);
+
     body.setSize(size);
+    body.setOrigin(size/2.0f);
     this->speed = sd;
-    //body.setTexture(gerenciadorGrafico->getTexture(getID()));   //TODO: tirar daqui
 }
 
 void Personagem::draw()

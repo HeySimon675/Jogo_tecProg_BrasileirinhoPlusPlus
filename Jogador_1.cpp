@@ -26,6 +26,7 @@ Jogador_1::~Jogador_1(){}
 void Jogador_1::inicializar(Vector2f position)
 {
     setPosition(position);
+    body.move(25,25);
 }
 
 const int Jogador_1::getID() {

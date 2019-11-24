@@ -52,6 +52,7 @@ public:
     void update(float deltaTime);
     const bool isDead();
     void setPositionx(const float positionx);
+    void corrigePosicao(){body.move(25,25);}
 
     void emColisao(Vector2f direcao);
 
