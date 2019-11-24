@@ -10,6 +10,7 @@ GerenciadorDeColisoes::GerenciadorDeColisoes(){
 }
 
 GerenciadorDeColisoes::~GerenciadorDeColisoes() {
+    li.desativar();
 
 }
 

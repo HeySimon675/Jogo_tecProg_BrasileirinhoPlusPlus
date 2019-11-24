@@ -81,11 +81,12 @@ float deltaTime = 0.0f;
         g->drawPontos(pontos);
 //--------------------------------------------------------------------------------------------------------------------//
         lEntidades->percorrer(deltaTime);
-        if(faseA->isActive()){
+        if(faseA && faseA->isActive()){
             faseA->update();
         }else{
             delete faseA;
         }
+
 //--------------------------------------------------------------------------------------------------------------------//
         g->exibir();   //Display, exibindo em tela o que ja foi renderizado
 

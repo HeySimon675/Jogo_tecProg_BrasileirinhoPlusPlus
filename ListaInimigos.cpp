@@ -18,4 +18,11 @@ void ListaInimigos::incluir(Inimigo *inimigo) {
     contador++;
 }
 
+void ListaInimigos::desativar() {
+    vector<Inimigo*>::iterator iterator = vetorInimigo.begin();
+    while(iterator != vetorInimigo.end()){
+        (*iterator)->desativar();
+    }
+}
+
 

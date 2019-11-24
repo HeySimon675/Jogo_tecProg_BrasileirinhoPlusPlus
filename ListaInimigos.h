@@ -25,6 +25,7 @@ public:
     void incluir(Inimigo* inimigo);
     int getContador() {return contador;}
     Inimigo* getInimigo(int i) {return vetorInimigo[i];}
+    void desativar();
 
 //Metodo para teste//
 //fim teste//

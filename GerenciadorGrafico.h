@@ -52,21 +52,19 @@ public:
 private:
     //RenderWindow* getWindow(){ return _window;}
 //--------------------------------------------------------------------------------------------------------------------//
-
+//METODOS OBSOLETOS
+void drawEntidade(Entidade* entidade);
 //--------------------------------------------------------------------------------------------------------------------//
 //loop//
 public:
     void executar();
     bool janelaAberta();
     void exibir();
-    void drawEntidade(Entidade* entidade);
     void draw(RectangleShape body);
     void drawPontos(int pontos);
     void draw(Text text);
-    
     //verifica atravez do id se a entidade possui uma textura e então associa ela atravez do map de Texturas
     void associaTextura(Entidade* entidade);
-    
     //ou poderia implementar um metodo que só retorna a textura para a Entidade, somente passando o proprio id
     //a função iria acessar o map pelo id, retornando a textura, não teria como verificar se é a textura certa, mas como
     //nao metodos para usuario, não vejo problema.

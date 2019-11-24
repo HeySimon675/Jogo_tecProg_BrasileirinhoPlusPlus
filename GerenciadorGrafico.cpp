@@ -69,17 +69,13 @@ GerenciadorGrafico::GerenciadorGrafico() : _window(VideoMode(larguraJanela,altur
 GerenciadorGrafico::~GerenciadorGrafico() {
     //todo Desalocar
     // texturas do vector antes de destruir o gerenciador
-    //for(int i = 0; i< key ; i++){
-    //    delete _mTexture[i];
-        //verificar se map possui push back
-    //}
-    // desalocar objetos dinamicos (_Window, _view)
-    //if (_instance){
-        //delete pView;
-        //delete _window;
-        //delete _instance;
-    //}
-    //_instance = nullptr;
+    for(int i = 0; i< key ; i++){
+        delete _mTexture[i];
+    }
+    if (_instance){
+        delete _instance;
+    }
+    _instance = nullptr;
 }   // fim da destrutora
 
 //singleton
