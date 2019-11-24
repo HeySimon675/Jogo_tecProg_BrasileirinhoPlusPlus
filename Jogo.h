@@ -1,6 +1,8 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 27/10/19.
+//Implementado por:
+    //Simão     - 80%
+    //Coradassi - 20%
 #pragma once
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -28,16 +30,13 @@ private:
     friend class GameState;
 //atributos//
     static Jogo* _instance;     //instancia
-
+    bool firstUse;
     GameState* pState;
 //--------------------------------------------------------------------------------------------------------------------//
 // TESTE
     Jogador_1* p1;
-    ListaEntidades* lEntidades;  //Lista Principal de Entidades
-    //Inimigo_A inimigoA;
-    //Inimigo_B inimigoB;
-    //Projetil_Tipo_1 projetil;
-    //Obstaculo plataforma;
+    Jogador_2* p2;
+    //ListaEntidades* lEntidades;  //Lista Principal de Entidades
     //Fase_A* faseA;
     int pontos;
     //MenuNovoJogo menuPrincipal;
@@ -59,16 +58,10 @@ private:
 
     //TODO teste
     bool podeDarUpdate;
-    GerenciadorDeColisoes collider;
-    Inimigo_A* inimigoA;
-    Inimigo_B* inimigoB;
-    Projetil* projetil;
-    Projetil* projetilBoss;
-    Obstaculo_Plataforma* plataforma;
-    Obstaculo_Movel* caixa;
-    Obstaculo_Espinho* espinho;
     Fase_A* faseA;
-
+    int menuOp;
+    bool pause;
+    bool player2;
 
 
     //metodos//
@@ -88,5 +81,10 @@ public:
     void executar();
     void update(float deltaTime, float elapsed);
     void draw();
+    //Metodos de Menu//
+    void criaFase1player1();
+    void criaFase1player2();
+    void criaFase2player1();
+    void criaFase2player2();
 };
 

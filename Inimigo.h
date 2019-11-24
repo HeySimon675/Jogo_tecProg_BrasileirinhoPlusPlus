@@ -1,9 +1,8 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 11/11/19.
 //Implementado por:
-    //Coradassi - 60%
-    //Simão -   40%
+    //Coradassi - 65%
+    //Simão -   35%
 #pragma once
 #include <iostream>
 //--------------------------------------------------------------------------------------------------------------------//
@@ -23,9 +22,12 @@
 //Classe Inimigo//
 class Inimigo : public Personagem{
 
+protected:
+    //Para desativar o projetil
+    bool inimigoB;
 public:
     Inimigo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
-
+    virtual Projetil* getProjetil() {}
     ~Inimigo();
 
 

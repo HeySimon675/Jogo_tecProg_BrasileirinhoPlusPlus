@@ -1,8 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Implemetado por:
-    //Coradassi - 95%
-    //Simão     - 5%
+    //Coradassi - 100%
 
 //todo Classe ainda não otimizada para o projeto
 
@@ -26,6 +25,7 @@ private:
     ListaInimigos li;
     ListaObstaculos lo;
     ListaProjetil lp;
+    bool p2;
 
 public:
     GerenciadorDeColisoes();
@@ -36,6 +36,7 @@ public:
     // void setBody(sf::RectangleShape& body);
     void executar();
     void getPonteiroPlayer(Jogador_1* j1) {this->j1 = j1;}
+    void getPonteiroPlayer2(Jogador_2* j2) {p2 = true;   this->j2 = j2;}
     void incluiObstaculoNalista(Obstaculo* obstaculo) {lo.incluir(obstaculo);}
     void incluiInimigoNaLista(Inimigo* inimigo) {li.incluir(inimigo);}
     void incluiProjetilNaLista(Projetil* projetil) {lp.incluir(projetil);}

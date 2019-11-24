@@ -1,7 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 09/11/19.
-//Last Update 11/11 12hrs
+//Implementado por:
+    //coradassi - 100%
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Jogador
@@ -13,6 +13,10 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogador//
 class Jogador_2 : public Jogador{
+    ~Jogador_2();
+    Jogador_2(Vector2f position = POSICAO_PADRAO);
+    void inicializar(Vector2f position);
+    void calculaMovimento(const float deltaTempo);
 private:
     static const int id;
     const int getID(){return id;}

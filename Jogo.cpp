@@ -1,6 +1,5 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-// Created by simao on 27/10/2019//
 #include "Jogo.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -50,6 +49,9 @@ Jogo::~Jogo() {
 void Jogo::inicializa() {
     g = GerenciadorGrafico::getGerGrafico();    //carrega e inicializa o gerenciador grafico
     pontos = 1000;
+    menuOp = 0;
+    pause = false;
+    faseA->desativar();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -71,6 +73,83 @@ float deltaTime = 0.0f;
 
         g->executar();  //metodo executar do gerenciador grafico
 //--------------------------------------------------------------------------------------------------------------------//
+//menu//
+        int op = -1;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::P) && !pause)
+        {
+            pause = true;
+            menu.setMenuPause(true);
+            menuOp = 1;
+        }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        {
+            menuOp = 2;
+            menu.setSairOuMenu(true);
+        }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+        {
+            menuOp = 3;
+            menu.setSeguirFaseDois(true);
+        }
+
+
+        op = menu.executar(menuOp);
+
+
+        switch (op)
+        {
+            case 5:
+            {
+                std::cout<< "Fechar"<< std::endl;
+                g->fechar();
+                op = -1;
+            }
+                break;
+
+            case 1:
+            {
+                criaFase1player1();
+                op = -1;
+            }
+                break;
+
+            case 2:
+            {
+                criaFase2player1();
+                op = -1;
+            }
+                break;
+
+            case 3:
+            {
+                criaFase1player2();
+                op = -1;
+            }
+                break;
+
+            case 4:
+            {
+                criaFase2player2();
+                op = -1;
+            }
+                break;
+
+            case 6:
+            {
+                pause = false;
+                op = -1;
+            }
+                break;
+            case 7:
+            {
+
+            }
+                break;
+        }
+
+//--------------------------------------------------------------------------------------------------------------------//
         elapsed = clockPontos.getElapsedTime();
         if(elapsed.asSeconds() >= 1.0 && pontos> 0 && p1->isActive())
         {
@@ -85,6 +164,11 @@ float deltaTime = 0.0f;
             faseA->update(deltaTime);
         }else{
             //delete faseA;
+        }
+        if(!pause)
+        {
+            //TODO trocar pelo update da fase
+            //lEntidades->percorrer(deltaTime);
         }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -107,3 +191,23 @@ void Jogo::update(float deltaTime, float elapsed) {}
 
 void Jogo::draw() {}
 //--------------------------------------------------------------------------------------------------------------------//
+void Jogo::criaFase1player1()
+{
+    player2 = false;
+}
+
+void Jogo::criaFase2player1()
+{
+    player2 = false;
+}
+
+void Jogo::criaFase2player2()
+{
+    player2 = true;
+}
+
+void Jogo::criaFase1player2()
+{
+    player2 = true;
+}
+
