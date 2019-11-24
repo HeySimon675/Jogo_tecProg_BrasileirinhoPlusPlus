@@ -434,7 +434,7 @@ int Menu::funMenuPause()
     if(menuPause)
     {
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Blue);
         gerenciadorGrafico->draw(fundo);
 
@@ -447,8 +447,8 @@ int Menu::funMenuPause()
         DesPause.setFont(font);
         Sair.setFont(font);
 
-        DesPause.setPosition(0.0f, 0.0f);
-        Sair.setPosition(0.0f, 30.0f);
+        DesPause.setPosition(50.0f, 0.0f);
+        Sair.setPosition(50.0f, 30.0f);
 
         gerenciadorGrafico->draw(DesPause);
         gerenciadorGrafico->draw(Sair);
@@ -515,7 +515,7 @@ int Menu::funMenuSairOuMenu()
     if(sairOuMenu)
     {
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Blue);
         gerenciadorGrafico->draw(fundo);
 
@@ -528,8 +528,8 @@ int Menu::funMenuSairOuMenu()
         MenuPrincipalText.setFont(font);
         Sair.setFont(font);
 
-        MenuPrincipalText.setPosition(0.0f, 0.0f);
-        Sair.setPosition(0.0f, 30.0f);
+        MenuPrincipalText.setPosition(50.0f, 0.0f);
+        Sair.setPosition(50.0f, 30.0f);
 
         gerenciadorGrafico->draw(MenuPrincipalText);
         gerenciadorGrafico->draw(Sair);
@@ -596,7 +596,7 @@ int Menu::funMenuSeguirFase2()
     if(seguirFaseDois)
     {
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Blue);
         gerenciadorGrafico->draw(fundo);
 
@@ -609,8 +609,8 @@ int Menu::funMenuSeguirFase2()
         SeguirFaseDois.setFont(font);
         Sair.setFont(font);
 
-        SeguirFaseDois.setPosition(0.0f, 0.0f);
-        Sair.setPosition(0.0f, 30.0f);
+        SeguirFaseDois.setPosition(50.0f, 0.0f);
+        Sair.setPosition(50.0f, 30.0f);
 
         gerenciadorGrafico->draw(SeguirFaseDois);
         gerenciadorGrafico->draw(Sair);

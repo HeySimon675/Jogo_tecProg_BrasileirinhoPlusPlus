@@ -86,9 +86,13 @@ float deltaTime = 0.0f;
         g->drawPontos(pontos);
 //--------------------------------------------------------------------------------------------------------------------//
 //FASES
-        if(faseA->isActive() && !pause) {
-            faseA->draw();
-            faseA->update(deltaTime);
+        if(faseA->isActive()) {
+            if(!pause){
+                faseA->draw();
+                faseA->update(deltaTime);
+            }
+        }else{
+            menu.ativar();
         }
        //TODO Repetir o codigo para fase_b
 
