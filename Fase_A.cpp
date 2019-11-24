@@ -67,7 +67,7 @@ void Fase_A::inicializa()  {
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
 
-const String Fase_A::FASE_FILE = FASES_DIR + "FaseTest.txt";
+const String Fase_A::FASE_FILE = FASES_DIR + "Fase_A.txt";
 const int Fase_A::FASE_WIDTH = 16;
 const int Fase_A::FASE_HEIGHT = 12;
 //fase agora tem o a dimensão da view, a ideia é expandir tanto vertical, quanto horizontalmente, percorrendo a view,

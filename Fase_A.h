@@ -1,7 +1,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
-//Created by simao on 11/11/19.
-//Last Update 11/11 12hrs
+//Implementação por:
+    //Simão - 100%
 #pragma once
 //--------------------------------------------------------------------------------------------------------------------//
 //Herança de Fase_A
@@ -48,7 +48,6 @@ public:
 //Constantes
 private:
     static const String FASE_FILE;
-    //static const char* charFaseFile;
     static const int FASE_WIDTH;
     static const int FASE_HEIGHT;
     static const int id;
