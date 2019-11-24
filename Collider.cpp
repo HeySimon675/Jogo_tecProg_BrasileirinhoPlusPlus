@@ -19,10 +19,10 @@ bool Collider::checkCollision(Obstaculo& parada, Personagem& movimentavel, sf::V
     sf::Vector2f thisHalfSize = parada.getHalfSize();
     //pegando as informações sobre os cubos de colisão
 
-    std::cout<< "Posicao do player .x : " << otherPosition.x <<std::endl;
-    std::cout<< "Posicao da plataforma .x : " << thisPosition.x <<std::endl;
-    std::cout<< "Posicao do player .y : " << otherPosition.y <<std::endl;
-    std::cout<< "Posicao da plataforma .y : " << thisPosition.y <<std::endl;
+    //std::cout<< "Posicao do player .x : " << otherPosition.x <<std::endl;
+    //std::cout<< "Posicao da plataforma .x : " << thisPosition.x <<std::endl;
+    //std::cout<< "Posicao do player .y : " << otherPosition.y <<std::endl;
+    //std::cout<< "Posicao da plataforma .y : " << thisPosition.y <<std::endl;
 
     float deltaX = otherPosition.x - thisPosition.x;
     float deltaY = otherPosition.y - thisPosition.y;
