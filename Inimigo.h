@@ -17,6 +17,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Personagem.h"
+#include "Projetil.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Inimigo//
@@ -28,6 +29,7 @@ protected:
 public:
     Inimigo(Vector2f position = POSICAO_PADRAO, Vector2f size = TAMANHO_PADRAO, float speed = VELOCIDADE_PADRAO);
     virtual Projetil* getProjetil() {}
+    bool getInimigoB(){return inimigoB;}
     ~Inimigo();
 
 

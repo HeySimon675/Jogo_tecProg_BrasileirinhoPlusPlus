@@ -17,9 +17,10 @@
 #include "Inimigo_B.h"
 #include "Inimigo_A.h"
 #include "GameState.h"
-#include "MenuPrincipal.h"
-#include "MenuPause.h"
-#include "MenuNovoJogo.h"
+
+
+
+#include "Menu.h"
 
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -55,6 +56,7 @@ private:
     //gerenciadores//
     GerenciadorGrafico* g;
     float deltaTime;
+    Menu menu;
 
     //TODO teste
     bool podeDarUpdate;

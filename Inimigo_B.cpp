@@ -11,6 +11,7 @@ Inimigo_B::Inimigo_B( Vector2f position, Vector2f size, float speed ) : Inimigo(
 {
     passou10segundos = false;
     projetilCriado = false;
+    inimigoB = true;
     associaTextura();
 }
 

@@ -22,7 +22,7 @@ Jogo::Jogo()
 {
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
     p1 = new Jogador_1;
-    lEntidades = new ListaEntidades;
+    //lEntidades = new ListaEntidades;
     faseA = new Fase_A();
     faseA->setJogadores(p1);
     inicializa();

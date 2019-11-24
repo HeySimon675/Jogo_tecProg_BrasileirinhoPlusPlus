@@ -216,10 +216,10 @@ int Menu::funMenuPrincipal()
 {
     if(menuPrincipal)
     {
-        std::cout<<"TRUEEE"<<std::endl;
+        //std::cout<<"TRUEEE"<<std::endl;
 
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Red);
         gerenciadorGrafico->draw(fundo);
 
@@ -234,9 +234,9 @@ int Menu::funMenuPrincipal()
         Ranking.setFont(font);
         Sair.setFont(font);
 
-        NovoJogo.setPosition(0.0f, 0.0f);
-        Ranking.setPosition(0.0f, 30.0f);
-        Sair.setPosition(0.0f, 60.0f);
+        NovoJogo.setPosition(50.0f, 0.0f);
+        Ranking.setPosition(50.0f, 30.0f);
+        Sair.setPosition(50.0f, 60.0f);
 
         gerenciadorGrafico->draw(NovoJogo);
         gerenciadorGrafico->draw(Ranking);
@@ -273,7 +273,7 @@ int Menu::funMenuPrincipal()
     if(novoJogo)
     {
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Cyan);
         gerenciadorGrafico->draw(fundo);
 
@@ -286,8 +286,8 @@ int Menu::funMenuPrincipal()
         Player1.setFont(font);
         Player2.setFont(font);
 
-        Player1.setPosition(0.0f, 0.0f);
-        Player2.setPosition(0.0f, 30.0f);
+        Player1.setPosition(50.0f, 0.0f);
+        Player2.setPosition(50.0f, 30.0f);
 
         gerenciadorGrafico->draw(Player1);
         gerenciadorGrafico->draw(Player2);
@@ -312,7 +312,7 @@ int Menu::funMenuPrincipal()
     if(fase1player)
     {
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Magenta);
         gerenciadorGrafico->draw(fundo);
 
@@ -325,8 +325,8 @@ int Menu::funMenuPrincipal()
         Fase1.setFont(font);
         Fase2.setFont(font);
 
-        Fase1.setPosition(0.0f, 0.0f);
-        Fase2.setPosition(0.0f, 30.0f);
+        Fase1.setPosition(50.0f, 0.0f);
+        Fase2.setPosition(50.0f, 30.0f);
 
         gerenciadorGrafico->draw(Fase1);
         gerenciadorGrafico->draw(Fase2);
@@ -351,7 +351,7 @@ int Menu::funMenuPrincipal()
     if(fase2player)
     {
         fundo.setSize(sf::Vector2f(800.0f, 600.0f));
-        fundo.setPosition(sf::Vector2f(0.0f, 0.0f));
+        fundo.setPosition(sf::Vector2f(50.0f, 0.0f));
         fundo.setFillColor(sf::Color::Magenta);
         gerenciadorGrafico->draw(fundo);
 
@@ -364,8 +364,8 @@ int Menu::funMenuPrincipal()
         Fase1.setFont(font);
         Fase2.setFont(font);
 
-        Fase1.setPosition(0.0f, 0.0f);
-        Fase2.setPosition(0.0f, 30.0f);
+        Fase1.setPosition(50.0f, 0.0f);
+        Fase2.setPosition(50.0f, 30.0f);
 
         gerenciadorGrafico->draw(Fase1);
         gerenciadorGrafico->draw(Fase2);

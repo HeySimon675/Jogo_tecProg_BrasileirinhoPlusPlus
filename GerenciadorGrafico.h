@@ -63,6 +63,7 @@ public:
     void draw(RectangleShape body);
     void drawPontos(int pontos);
     void draw(Text text);
+    void fechar(){_window.close();}
     //verifica atravez do id se a entidade possui uma textura e então associa ela atravez do map de Texturas
     void associaTextura(Entidade* entidade);
     //ou poderia implementar um metodo que só retorna a textura para a Entidade, somente passando o proprio id

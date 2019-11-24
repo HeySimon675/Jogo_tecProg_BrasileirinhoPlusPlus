@@ -13,9 +13,9 @@ public:
     void update();
     void draw(sf::Text text);
     int executar(int i);
-    virtual void inicializaTextos() = 0;
+    virtual void inicializaTextos(){};
     sf::Font getFont();
-
+    int funMenuPrincipal();
     int opcaoMenuPrincipal();
     int opcaoMenuNovoJogo();
     int opcaoMenuFase1player();
@@ -30,7 +30,7 @@ public:
     int opcaoMenuSairOuMenu();
     int funMenuSeguirFase2();
     int opcaoMenuSeguiFase2();
-protected:
+private:
     sf::RectangleShape fundo;
     sf::Text DesPause;
     sf::Text NovoJogo;
