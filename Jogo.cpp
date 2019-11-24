@@ -24,7 +24,7 @@ Jogo::Jogo()
     //TODO: Analisar a necessidade de lista estar em Jogo, não seria mais conveniente ficar em State, ou Fase
     p1 = new Jogador_1;
     lEntidades = new ListaEntidades;
-    faseA = new Fase_A(lEntidades);
+    faseA = new Fase_A();
     faseA->setJogadores(p1);
     inicializa();
 }   //end Construtora
@@ -80,11 +80,10 @@ float deltaTime = 0.0f;
         }
         g->drawPontos(pontos);
 //--------------------------------------------------------------------------------------------------------------------//
-        lEntidades->percorrer(deltaTime);
         if(faseA && faseA->isActive()){
-            faseA->update();
+            faseA->update(deltaTime);
         }else{
-            delete faseA;
+            //delete faseA;
         }
 
 //--------------------------------------------------------------------------------------------------------------------//

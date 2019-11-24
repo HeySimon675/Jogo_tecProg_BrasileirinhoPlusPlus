@@ -22,6 +22,7 @@ public:
     void incluir(Obstaculo* Obstaculo);
     Obstaculo* getObstaculo(int i) {return vetorObstaculo[i];}
     int getContador(){return contador;}
+    void desativar();
 
 //Metodo para teste//
 //fim teste//

@@ -18,7 +18,7 @@ const int Fase_B::FASE_HEIGHT = 12;
 //--------------------------------------------------------------------------------------------------------------------//
 //Construtoras//
 
-Fase_B::Fase_B(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : Fase(lista, jogador1, jogador2) {
+Fase_B::Fase_B( Jogador_1* jogador1, Jogador_2* jogador2) : Fase( jogador1, jogador2) {
     inicializa();
 }
 

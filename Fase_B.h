@@ -33,7 +33,7 @@ private:
     void criaInimigoBoss(Vector2f pos);
 
 public:
-	Fase_B(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
+	Fase_B( Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
 	~Fase_B();
 	void inicializa();
 

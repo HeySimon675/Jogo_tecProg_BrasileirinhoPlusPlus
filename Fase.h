@@ -50,14 +50,14 @@ protected:
     std::ifstream* arqFase;
 
     //lista
-    ListaEntidades* listaEntidades;
+    ListaEntidades listaEntidades;
 
     //Jogadores
     Jogador_1* pJ1;
     Jogador_2* pJ2;
 
 public:
-    Fase(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
+    Fase(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase();
     void setJogadores(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
 //--------------------------------------------------------------------------------------------------------------------//
@@ -78,7 +78,7 @@ protected:
     void randomizaEntidades();
 public:
     virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
-    void update();
+    void update(float deltaTime);
 
     //implementação de update, onde vai percorrer as listas verificando colisão
 

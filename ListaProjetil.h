@@ -23,8 +23,6 @@ public:
     void incluir(Projetil* Projetil);
     int getContador() {return contador;}
     Projetil* getProjetil(int i) {return vetorProjetil[i];}
-
-//Metodo para teste//
-//fim teste//
+    void desativar();
 };
 

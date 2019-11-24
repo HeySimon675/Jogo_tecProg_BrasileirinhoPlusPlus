@@ -17,4 +17,11 @@ void ListaProjetil::incluir(Projetil *Projetil) {
     contador++;
 }
 
+void ListaProjetil::desativar() {
+    vector<Projetil*>::iterator iterator = vetorProjetil.begin();
+    while(iterator != vetorProjetil.end()){
+        (*iterator)->desativar();
+    }
+}
+
 

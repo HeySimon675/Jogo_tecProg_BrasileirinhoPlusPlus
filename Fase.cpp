@@ -20,8 +20,7 @@ const String Fase::FASES_DIR = SYSTEM_PREFIX + "Fases/";
 const int Fase::FASE_HEIGHT = 12;
 const int Fase::FASE_WIDTH = 16;
 
-Fase::Fase(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
-    listaEntidades = lista;
+Fase::Fase(Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     pJ1 = jogador1;
     pJ2 = jogador2;
     srand(time(NULL));
@@ -36,7 +35,6 @@ Fase::~Fase() {
     destroiMatriz();
     pJ1 = nullptr;
     pJ2 = nullptr;
-    listaEntidades = nullptr;
     arqFase = nullptr;
 
 }
@@ -53,18 +51,18 @@ void Fase::criaPlataforma(Vector2f pos) {
     Obstaculo_Plataforma* obstaculo;
     obstaculo = new Obstaculo_Plataforma;
     obstaculo->setPosition(pos);
-    listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+    listaEntidades.incluir(static_cast<Entidade*>(obstaculo));
     gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
 }
 
 void Fase::posicionaJogador(Vector2f pos){
     pJ1->inicializar(pos);
-    listaEntidades->incluir(static_cast<Entidade*>(pJ1));
+    listaEntidades.incluir(static_cast<Entidade*>(pJ1));
     gerenciadorDeColisoes.getPonteiroPlayer(pJ1);
     if(pJ2){
         Vector2f pos2(pos.x+2, pos.y);
         pJ2->setPosition(pos2);
-        listaEntidades->incluir(static_cast<Entidade*>(pJ2));
+        listaEntidades.incluir(static_cast<Entidade*>(pJ2));
         //incluir no gerenciador de colisoes o player 2
     }
 }
@@ -74,7 +72,7 @@ void Fase::criaEspinho(Vector2f pos){
         Obstaculo_Espinho* obstaculo;
         obstaculo = new Obstaculo_Espinho;
         obstaculo->setPosition(pos);
-        listaEntidades->incluir(static_cast<Entidade*>(obstaculo));
+        listaEntidades.incluir(static_cast<Entidade*>(obstaculo));
         gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
         numEspinhos--;
     }
@@ -84,7 +82,7 @@ void Fase::criaProjetil_InimigoB(Vector2f pos){
     if(numInimigos){
         Projetil* projetil;
         projetil = new Projetil;
-        listaEntidades->incluir(static_cast<Entidade*>(projetil));
+        listaEntidades.incluir(static_cast<Entidade*>(projetil));
         gerenciadorDeColisoes.incluiProjetilNaLista(projetil);
         criaInimigoB(pos,projetil);
         numInimigos--;
@@ -96,7 +94,7 @@ void Fase::criaInimigoB(Vector2f pos, Projetil* projetil){
     Inimigo_B* inimigo;
     inimigo = new Inimigo_B;
     inimigo->inicializar(pos,projetil);
-    listaEntidades->incluir(static_cast<Entidade*>(inimigo));
+    listaEntidades.incluir(static_cast<Entidade*>(inimigo));
     gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(inimigo));
 }
 
@@ -143,7 +141,8 @@ void Fase::constroiMatriz() {
 
 void Fase::criaEntidade(char aux, Vector2f pos) {}
 
-void Fase::update() {
+void Fase::update(float deltaTime) {
+    listaEntidades.percorrer(deltaTime);
     if(pJ1->isActive()){
         gerenciadorDeColisoes.executar();
     }else if(pJ2){

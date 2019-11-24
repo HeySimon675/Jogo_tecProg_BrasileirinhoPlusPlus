@@ -6,7 +6,7 @@
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Construção
-Fase_A::Fase_A(ListaEntidades* lista, Jogador_1* jogador1, Jogador_2* jogador2) : Fase(lista, jogador1, jogador2) {
+Fase_A::Fase_A(Jogador_1* jogador1, Jogador_2* jogador2) : Fase(jogador1, jogador2) {
     inicializa();
 }
 
@@ -18,7 +18,7 @@ void Fase_A::criaInimigoA(Vector2f pos) {
         Inimigo_A *nA;
         nA = new Inimigo_A;
         nA->inicializar(pos);
-        listaEntidades->incluir(static_cast<Entidade*>(nA));
+        listaEntidades.incluir(static_cast<Entidade*>(nA));
         gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(nA));
         numInimigos--;
     }

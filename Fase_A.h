@@ -39,7 +39,7 @@ private:
     //para teste//
 
 public:
-    Fase_A(ListaEntidades* lista = nullptr, Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
+    Fase_A(Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);
     ~Fase_A();
     void inicializa();
 //--------------------------------------------------------------------------------------------------------------------//

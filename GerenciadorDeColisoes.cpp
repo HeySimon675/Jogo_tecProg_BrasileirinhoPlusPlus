@@ -11,7 +11,8 @@ GerenciadorDeColisoes::GerenciadorDeColisoes(){
 
 GerenciadorDeColisoes::~GerenciadorDeColisoes() {
     li.desativar();
-
+    lo.desativar();
+    lp.desativar();
 }
 
 void GerenciadorDeColisoes::executar()
