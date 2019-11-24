@@ -45,6 +45,7 @@ protected:
     int numEspinhos;
     int numCaixas;
     RectangleShape background;
+    float finalPosition;
 
 //--------------------------------------------------------------------------------------------------------------------//
     //Arquivo
@@ -77,6 +78,8 @@ protected:
     virtual void constroiMatriz();
     void printaMatriz();
     void randomizaEntidades();
+    bool checkFim();
+    virtual void setFinalPosition(){}
 public:
     virtual void inicializa();  //deve ditar a prioridade de cada entidade que vai ser desenhada
     void draw(){gerenciadorGrafico->draw(background);}

@@ -55,4 +55,6 @@ private:
     static const int FASE_WIDTH;
     static const int FASE_HEIGHT;
     static const int id;
+    static const float FIM;
+    void setFinalPosition(){finalPosition = FIM*50.0f;}
 };

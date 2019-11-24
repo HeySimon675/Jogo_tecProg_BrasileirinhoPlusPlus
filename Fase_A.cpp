@@ -9,6 +9,7 @@
 Fase_A::Fase_A(Jogador_1* jogador1, Jogador_2* jogador2) : Fase(jogador1, jogador2) {
     background.setTexture(gerenciadorGrafico->getTexture(getID()));
     inicializa();
+    setFinalPosition();
 }
 
 Fase_A::~Fase_A() {}
@@ -72,3 +73,4 @@ const int Fase_A::FASE_HEIGHT = 12;
 //fase agora tem o a dimensão da view, a ideia é expandir tanto vertical, quanto horizontalmente, percorrendo a view,
 //ou deixando a view menor, fazendo à caminhar pela fase, seguindo o jogador
 const int Fase_A::id = 7;
+const float Fase_A::FIM = 18;

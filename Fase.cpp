@@ -18,7 +18,7 @@ const String Fase::SYSTEM_PREFIX = "../";
 
 const String Fase::FASES_DIR = SYSTEM_PREFIX + "Fases/";
 const int Fase::FASE_HEIGHT = 12;
-const int Fase::FASE_WIDTH = 16;
+const int Fase::FASE_WIDTH = 18;
 
 Fase::Fase(Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     pJ1 = jogador1;
@@ -26,7 +26,8 @@ Fase::Fase(Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     srand(time(NULL));
     randomizaEntidades();
     background.setSize(Vector2f(800,600));
-    background.setPosition(0,0);
+    background.setPosition(50,0);
+    //setFinalPosition();
 }
 
 Fase::~Fase() {
@@ -154,6 +155,9 @@ void Fase::update(float deltaTime) {
     }else{
         this->desativar();
     }
+    if(checkFim()){
+        this->desativar();
+    }
 
 }
 
@@ -163,4 +167,18 @@ void Fase::randomizaEntidades() {
     numCaixas = rand() % 3 + 2;
     numEspinhos = rand() % 3 + 3;
     numInimigos = rand() % 5 + 5;
+}
+
+bool Fase::checkFim() {
+    if(pJ1->isActive()) {
+        if (pJ1->getPosition().x > finalPosition) {
+            return true;
+        }
+    }
+    if(pJ2){
+        if (pJ2->isActive() && pJ2->getPosition().x > finalPosition){
+            return true;
+        }
+    }
+    return false;
 }
