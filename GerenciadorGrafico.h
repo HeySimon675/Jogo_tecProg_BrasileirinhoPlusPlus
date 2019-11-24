@@ -124,6 +124,7 @@ public:
 
     //Fases//
     static const String FASE_A_tx;
+    static const String FASE_B_tx;
 
     
 }gGrafico;

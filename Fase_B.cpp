@@ -6,13 +6,13 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Constantes//
 
-const String Fase_B::FASE_FILE = "Fase_B.txt";
-const int Fase_B::FASE_WIDTH = 16;
+const String Fase_B::FASE_FILE = FASES_DIR + "Fase_B.txt";
+const int Fase_B::FASE_WIDTH = 18;
 const int Fase_B::FASE_HEIGHT = 12;
 //fase agora tem o a dimensão da view, a ideia é expandir tanto vertical, quanto horizontalmente, percorrendo a view,
 //ou deixando a view menor, fazendo à caminhar pela fase, seguindo o jogador
 const int Fase_B::id = 8;
-const float Fase_A::FIM = 0;
+const float Fase_B::FIM = 17;
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Construtoras//
@@ -49,7 +49,7 @@ void Fase_B::criaEntidade(char aux, Vector2f pos){
             armazenaPosicao(pos);
             break;
         case 'Z':   //Inimigo_Boss
-            criaInimigoA(pos);
+            criaInimigoBoss(pos);
             break;
         case 'B':
             criaProjetil_InimigoB(pos);
@@ -72,18 +72,18 @@ void Fase_B::criaInimigoBoss(Vector2f pos){
     if(numBoss){
         Inimigo_Boss *inimigo;
         inimigo = new Inimigo_Boss;
-        inimigo->inicializar(pos);
+        inimigo->inicializarBoss(pos);
         listaEntidades.incluir(static_cast<Entidade*>(inimigo));
         gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(inimigo));
         numBoss--;
     }
 }
 
-void Fase_B::criaCaixa(vector2f pos) {
+void Fase_B::criaCaixa(Vector2f pos) {
     if(numCaixas){
         Obstaculo_Movel *obstaculo;
         obstaculo = new Obstaculo_Movel;
-        obstaculo->inicializar(pos);
+        obstaculo->setPosition(pos);
         listaEntidades.incluir(static_cast<Entidade*>(obstaculo));
         gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
         numCaixas--;

@@ -18,6 +18,7 @@
 #include "Inimigo_A.h"
 #include "GameState.h"
 #include "Menu.h"
+#include "Fase_B.h"
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Classe Jogo//
@@ -40,6 +41,7 @@ private:
     Jogador_2* p2;
 //Fases
     Fase_A* faseA;
+    Fase_B* faseB;
 
 //gerenciadores//
     GerenciadorGrafico* g;

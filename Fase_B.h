@@ -9,6 +9,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 //Header//
 #include "Fase.h"
+#include <stdio.h>
 
 //--------------------------------------------------------------------------------------------------------------------//
 //Entidades da Fase
@@ -33,7 +34,7 @@ private:
 //funções
     void criaEntidade(char aux, Vector2f pos);
     void criaInimigoBoss(Vector2f pos);
-    void criaCaixa(vector2f pos);
+    void criaCaixa(Vector2f pos);
 
 public:
 	Fase_B( Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);

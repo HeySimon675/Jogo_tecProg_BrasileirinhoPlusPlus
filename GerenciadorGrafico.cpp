@@ -59,6 +59,7 @@ const String GerenciadorGrafico::PROJETIL_tx = TEXTURE_DIR + "Projetil_texture.p
 
 //Fases//
 const String GerenciadorGrafico::FASE_A_tx = TEXTURE_DIR + "Fase_1_texture.png";
+const String GerenciadorGrafico::FASE_B_tx = TEXTURE_DIR + "Fase_2_texture.png";
 //--------------------------------------------------------------------------------------------------------------------//
 //FIM Variaveis Static//
 
@@ -146,7 +147,7 @@ void GerenciadorGrafico::carregaTexturas() {
     
     load(PROJETIL_tx);            //6
     load(FASE_A_tx);            //7
-    //load(FASE_B_tx);          //8
+    load(FASE_B_tx);          //8
     //load(INIMIGO_B_tx);       //9
     //load(INIMIGO_BOSS_tx);    //10
 
