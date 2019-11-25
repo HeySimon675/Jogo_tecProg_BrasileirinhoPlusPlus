@@ -2,8 +2,7 @@
 //--------------------------------------------------------------------------------------------------------------------//
 #include "Inimigo_Boss.h"
 
-const int Inimigo_Boss::id = 2; //TODO arrumar
-//const int Inimigo_Boss::id = 8;
+const int Inimigo_Boss::id = 9;
 
 Inimigo_Boss::Inimigo_Boss(Vector2f position, Vector2f size, float speed) : Inimigo(position,size,speed)
 {
@@ -22,7 +21,8 @@ Inimigo_Boss::~Inimigo_Boss()
 void Inimigo_Boss::inicializarBoss(Vector2f position)
 {
     setPosition(position);
-    body.move(25,25);
+    corrigePosicao();
+    position_X_inicial = position.x*50.0f;
 }
 
 void Inimigo_Boss::calculaMovimento(const float deltaTime)
@@ -39,7 +39,7 @@ void Inimigo_Boss::calculaMovimento(const float deltaTime)
         vel.x = 0;
         if(goingLeft)
         {
-            if(!(body.getPosition().x <= (position_X_inicial - 548.0f) && body.getPosition().x >= (position_X_inicial - 552.0f)))
+            if(!(body.getPosition().x <= (position_X_inicial - 173.0f) && body.getPosition().x >= (position_X_inicial - 177.0f)))
             {
                 vel.x -= speed;
             }
@@ -55,7 +55,7 @@ void Inimigo_Boss::calculaMovimento(const float deltaTime)
 
         else{
 
-            if(!(body.getPosition().x >= (position_X_inicial - 2.0f) && body.getPosition().x <= position_X_inicial +2.0f))
+            if(!(body.getPosition().x >= (position_X_inicial - 48.0f) && body.getPosition().x <= position_X_inicial +52.0f))
             {
                 vel.x += speed;
             }

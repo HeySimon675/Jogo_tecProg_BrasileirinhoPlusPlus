@@ -33,8 +33,9 @@ private:
 //--------------------------------------------------------------------------------------------------------------------//
 //funções
     void criaEntidade(char aux, Vector2f pos);
-    void criaInimigoBoss(Vector2f pos);
+    void criaInimigoBoss(Vector2f pos,Projetil* projetil);
     void criaCaixa(Vector2f pos);
+    void criaProjetilBoss(Vector2f pos);
 
 public:
 	Fase_B( Jogador_1* jogador1 = nullptr, Jogador_2* jogador2 = nullptr);

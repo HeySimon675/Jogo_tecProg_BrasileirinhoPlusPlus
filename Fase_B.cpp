@@ -19,9 +19,10 @@ const float Fase_B::FIM = 17;
 
 Fase_B::Fase_B( Jogador_1* jogador1, Jogador_2* jogador2) : Fase( jogador1, jogador2) {
     background.setTexture(gerenciadorGrafico->getTexture(getID()));
+    numBoss= 1;
     inicializa();
     setFinalPosition();
-    numBoss= 1;
+
 }
 
 Fase_B::~Fase_B() {}
@@ -49,7 +50,7 @@ void Fase_B::criaEntidade(char aux, Vector2f pos){
             armazenaPosicao(pos);
             break;
         case 'Z':   //Inimigo_Boss
-            criaInimigoBoss(pos);
+            criaProjetilBoss(pos);
             break;
         case 'B':
             criaProjetil_InimigoB(pos);
@@ -68,15 +69,13 @@ void Fase_B::criaEntidade(char aux, Vector2f pos){
     }
 }
 
-void Fase_B::criaInimigoBoss(Vector2f pos){
-    if(numBoss){
+void Fase_B::criaInimigoBoss(Vector2f pos, Projetil* projetil){
         Inimigo_Boss *inimigo;
         inimigo = new Inimigo_Boss;
         inimigo->inicializarBoss(pos);
+        inimigo->setProjetil(projetil);
         listaEntidades.incluir(static_cast<Entidade*>(inimigo));
         gerenciadorDeColisoes.incluiInimigoNaLista(static_cast<Inimigo*>(inimigo));
-        numBoss--;
-    }
 }
 
 void Fase_B::criaCaixa(Vector2f pos) {
@@ -88,6 +87,19 @@ void Fase_B::criaCaixa(Vector2f pos) {
         gerenciadorDeColisoes.incluiObstaculoNalista(static_cast<Obstaculo*>(obstaculo));
         numCaixas--;
     }
+}
+
+void Fase_B::criaProjetilBoss(Vector2f pos) {
+    if(numBoss){
+        Projetil* projetil;
+        projetil = new Projetil;
+        listaEntidades.incluir(static_cast<Entidade*>(projetil));
+        gerenciadorDeColisoes.incluiProjetilNaLista(projetil);
+        criaInimigoBoss(pos,projetil);
+        numBoss--;
+    }
+
+
 }
 //--------------------------------------------------------------------------------------------------------------------//
 

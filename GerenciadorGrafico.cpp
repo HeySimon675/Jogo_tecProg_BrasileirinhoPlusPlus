@@ -148,8 +148,9 @@ void GerenciadorGrafico::carregaTexturas() {
     load(PROJETIL_tx);            //6
     load(FASE_A_tx);            //7
     load(FASE_B_tx);          //8
+    load(INIMIGO_BOSS_tx);    //9
     //load(INIMIGO_B_tx);       //9
-    //load(INIMIGO_BOSS_tx);    //10
+
 
 }
 //Carrega fontes//
