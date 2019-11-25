@@ -46,6 +46,7 @@ protected:
     int numCaixas;
     RectangleShape background;
     float finalPosition;
+    bool isDoisPlayer;
 
 //--------------------------------------------------------------------------------------------------------------------//
     //Arquivo

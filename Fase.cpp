@@ -24,7 +24,7 @@ Fase::Fase(Jogador_1* jogador1, Jogador_2* jogador2) : Entidade() {
     randomizaEntidades();
     background.setSize(Vector2f(800,600));
     background.setPosition(50,0);
-    //setFinalPosition();
+    isDoisPlayer = false;
 }
 
 Fase::~Fase() {
@@ -41,8 +41,11 @@ Fase::~Fase() {
 
 void Fase::setJogadores(Jogador_1 *jogador1, Jogador_2 *jogador2) {
     pJ1 = jogador1;
-    pJ2 = jogador2;
     posicionaJogador(posicaoPlayer);
+    if(jogador2){
+        pJ2 = jogador2;
+        isDoisPlayer = true;
+    }
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -57,12 +60,12 @@ void Fase::criaPlataforma(Vector2f pos) {
 
 void Fase::posicionaJogador(Vector2f pos){
     pJ1->inicializar(pos);
-    listaEntidades.incluir(static_cast<Entidade*>(pJ1));
+    //listaEntidades.incluir(static_cast<Entidade*>(pJ1));
     gerenciadorDeColisoes.getPonteiroPlayer(pJ1);
     if(pJ2){
         Vector2f pos2(pos.x+2, pos.y);
         pJ2->setPosition(pos2);
-        listaEntidades.incluir(static_cast<Entidade*>(pJ2));
+        //listaEntidades.incluir(static_cast<Entidade*>(pJ2));
         //incluir no gerenciador de colisoes o player 2
     }
 }
@@ -145,9 +148,13 @@ void Fase::criaEntidade(char aux, Vector2f pos) {}
 void Fase::update(float deltaTime) {
     listaEntidades.percorrer(deltaTime);
     if(pJ1->isActive()){
+        pJ1->draw();
+        pJ1->update(deltaTime);
         gerenciadorDeColisoes.executar();
-    }else if(pJ2){
+    }else if(isDoisPlayer){
         if(pJ2->isActive()){
+            pJ2->draw();
+            pJ2->update(deltaTime);
             gerenciadorDeColisoes.executar();
         }
     }else{
