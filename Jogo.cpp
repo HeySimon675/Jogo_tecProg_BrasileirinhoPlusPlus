@@ -22,8 +22,8 @@ Jogo::Jogo()
 {
     p1 = new Jogador_1;
     p2 = new Jogador_2;
-    //faseA = new Fase_A();
-    faseB = new Fase_B();
+    faseA = new Fase_A();
+    //faseB = new Fase_B();
     inicializa();
 }   //end Construtora
 
@@ -31,12 +31,8 @@ Jogo::Jogo()
 //destrutora//
 
 Jogo::~Jogo() {
-    //TODO: destrutora 
-    //delete lEntidades;
+    //TODO: destrutora
     delete g;
-    //delete pstate;
-
-
     if(_instance){
         delete _instance;
     }
@@ -50,8 +46,8 @@ void Jogo::inicializa() {
     pontos = 1000;
     menuOp = 0;
     pause = false;
-    //faseA->desativar();
-    faseB->desativar();
+    faseA->desativar();
+    //faseB->desativar();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -86,18 +82,18 @@ float deltaTime = 0.0f;
         g->drawPontos(pontos);
 //--------------------------------------------------------------------------------------------------------------------//
 //FASES
-        /*
+
         if(faseA->isActive()) {
             if(!pause){
                 faseA->draw();
                 faseA->update(deltaTime);
             }
-        }else*/ if(faseB->isActive()) {
+        }/*else if(faseB->isActive()) {
             if(!pause){
                 faseB->draw();
                 faseB->update(deltaTime);
             }
-        }else{
+        }*/else{
             menu.ativar();
         }
 
