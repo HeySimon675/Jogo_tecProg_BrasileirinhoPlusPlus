@@ -40,19 +40,17 @@ void Jogador_1::calculaMovimento(const float deltaTime)
     vel.x = 0.0f;
     // vel.y = 0.0f;
 
-    if (Keyboard::isKeyPressed(KeyLeft)){
+    if (Keyboard::isKeyPressed(sf::Keyboard::Left)){
         vel.x -= speed;
     }
-    if (Keyboard::isKeyPressed(KeyRight))
+    if (Keyboard::isKeyPressed(sf::Keyboard::Right))
         vel.x += speed;
-    if (Keyboard::isKeyPressed(KeyJump) && canJump)
+    if (Keyboard::isKeyPressed(sf::Keyboard::Up) && canJump)
     {
         canJump = false;
         //vel.y -= speed;
         vel.y = -sqrtf(2.0f * 981.0f * PULO_PADRAO);
     }
-    if (Keyboard::isKeyPressed(Keyboard::Down))
-        vel.y += speed;
 
     //std::cout<<body.getPosition().x<<std::endl;
 
