@@ -151,14 +151,17 @@ void Fase::update(float deltaTime) {
         pJ1->draw();
         pJ1->update(deltaTime);
         gerenciadorDeColisoes.executar();
-    }else if(isDoisPlayer){
+    }
+    else{
+        this->desativar();
+    }
+
+    if(isDoisPlayer){
         if(pJ2->isActive()){
             pJ2->draw();
             pJ2->update(deltaTime);
             gerenciadorDeColisoes.executar();
         }
-    }else{
-        this->desativar();
     }
     if(checkFim()){
         this->desativar();
