@@ -63,7 +63,7 @@ void Fase::posicionaJogador(Vector2f pos){
     //listaEntidades.incluir(static_cast<Entidade*>(pJ1));
     gerenciadorDeColisoes.getPonteiroPlayer(pJ1);
     if(pJ2){
-        Vector2f pos2(pos.x+2, pos.y);
+        Vector2f pos2(pos.x, pos.y);
         pJ2->setPosition(pos2);
         //listaEntidades.incluir(static_cast<Entidade*>(pJ2));
         //incluir no gerenciador de colisoes o player 2
