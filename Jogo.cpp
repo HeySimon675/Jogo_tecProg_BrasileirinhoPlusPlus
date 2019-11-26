@@ -18,12 +18,12 @@ Jogo *Jogo::getJogo() {
 
 //--------------------------------------------------------------------------------------------------------------------//
 //construtora Privada//
-Jogo::Jogo() 
+Jogo::Jogo()
 {
     p1 = new Jogador_1;
     p2 = new Jogador_2;
     faseA = new Fase_A();
-    //faseB = new Fase_B();
+    faseB = new Fase_B();
     inicializa();
 }   //end Construtora
 
@@ -47,7 +47,7 @@ void Jogo::inicializa() {
     menuOp = 0;
     pause = false;
     faseA->desativar();
-    //faseB->desativar();
+    faseB->desativar();
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -88,12 +88,13 @@ float deltaTime = 0.0f;
                 faseA->draw();
                 faseA->update(deltaTime);
             }
-        }/*else if(faseB->isActive()) {
+        }
+        else if(faseB->isActive()) {
             if(!pause){
                 faseB->draw();
                 faseB->update(deltaTime);
             }
-        }*/else{
+        }else{
             menu.ativar();
         }
 
@@ -206,11 +207,15 @@ void Jogo::criaFase2player1()
 void Jogo::criaFase2player2()
 {
     player2 = true;
+    faseB->ativar();
+    faseB->setJogadores(p1, p2);
 }
 
 void Jogo::criaFase1player2()
 {
     player2 = true;
+    faseA->ativar();
+    faseA->setJogadores(p1, p2);
 }
 
 //--------------------------------------------------------------------------------------------------------------------//
